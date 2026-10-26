@@ -1,27 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Fonts */
+  --font-primary: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', sans-serif; /* Agar display headline alag karni ho to 'Syne' bhi use kar sakte hain */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  /* Background Colors */
+  --bg-primary: #050505;        /* Ultra dark hero/page background */
+  --bg-card: rgba(255, 255, 255, 0.03); /* Glassmorphism card bg */
+  --bg-card-hover: rgba(255, 255, 255, 0.06);
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  /* Brand Accent Colors */
+  --accent-primary: #f54e11;     /* Main CTA orange button color */
+  --accent-hover: #ff6229;       /* Button hover state */
+  --accent-glow: rgba(245, 78, 17, 0.35); /* Shadow aur glow kelye */
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  /* Text Colors */
+  --text-primary: #ffffff;      /* Main headings aur titles */
+  --text-secondary: #a3a3a3;    /* Subheadings aur paragraph text */
+  --text-muted: #737373;        /* Minor details / inactive links */
+
+  /* Borders & Dividers */
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-card: rgba(255, 255, 255, 0.08);
 }
