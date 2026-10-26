@@ -16,11 +16,17 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://zorzex.vercel.app"
+  ),
   title: "Zorzex — Systematic Growth for Ambitious Businesses",
   description:
     "We provide UI/UX design, development, and branding services helping ambitious brands grow through strategy, design, and innovation.",
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.png" },
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+    ],
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
@@ -32,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Zorzex",
     images: [
       {
-        url: "/favicon.png",
+        url: "/favicon.png", 
         width: 1200,
         height: 630,
         alt: "Zorzex Logo",
