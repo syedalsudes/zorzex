@@ -5,7 +5,7 @@ import ServicesSection from "@/components/ServicesSection";
 import ServicesTicker from "@/components/ServicesTicker";
 import TeamSection from "@/components/TeamSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import Image from "next/image";
+
 
 export default function Home() {
   return (

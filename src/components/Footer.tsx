@@ -48,15 +48,8 @@ export default function Footer() {
   };
 
   return (
-    /* Outer section: isme pt-12 md:pt-20 lagaya hai taake upar se layout ka warm/white background saaf dikhe */
-    <section className="relative w-full pt-12 sm:pt-16 md:pt-20 bg-transparent">
-      {/* 
-        Main Curved Footer Container: 
-        Deep smooth curve (rounded-t-[50px] md:rounded-t-[72px] lg:rounded-t-[90px])
-      */}
-      <footer className="relative w-full overflow-hidden rounded-t-[50px] md:rounded-t-[72px] lg:rounded-t-[90px] bg-black text-white shadow-2xl">
-        
-        {/* 1. Background Video Layer */}
+    <section className="relative w-full pt-10 sm:pt-16 md:pt-20 bg-transparent font-sans">
+      <footer className="relative w-full overflow-hidden rounded-t-[36px] sm:rounded-t-[50px] md:rounded-t-[72px] lg:rounded-t-[90px] bg-black text-white shadow-2xl">
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
@@ -70,46 +63,39 @@ export default function Footer() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-black pointer-events-none" />
         </div>
 
-        {/* 2. Main Content Container */}
-        <div className="relative z-10 mx-auto w-[90%] max-w-7xl pt-16 md:pt-24">
-          
-          {/* Top Branding */}
-          <div className="mb-14 md:mb-16">
+        <div className="relative z-10 mx-auto w-[92%] sm:w-[90%] max-w-7xl pt-12 sm:pt-16 md:pt-24">
+          <div className="mb-10 sm:mb-14 md:mb-16">
             <div className="flex items-center gap-3">
               <span className="font-heading text-2xl md:text-3xl font-bold tracking-tight text-white">
                 Zorzex<span className="text-brand">.</span>
               </span>
             </div>
-            <p className="mt-3 text-sm md:text-base text-neutral-400 font-normal">
+            <p className="mt-2 sm:mt-3 text-xs sm:text-sm md:text-base text-neutral-400 font-normal">
               Systematic growth for ambitious businesses.
             </p>
           </div>
 
-          {/* Middle Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start mb-16 md:mb-20">
-            
-            {/* Left Column: Headline + Input */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-8 items-start mb-12 sm:mb-16 md:mb-20">
             <div className="lg:col-span-6 flex flex-col justify-start">
-              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.08] mb-8">
+              <h2 className="font-heading text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6 sm:mb-8">
                 Let’s Work <br />
                 Together.
               </h2>
 
-              {/* Email Input Capsule */}
               <form onSubmit={handleSubmit} className="w-full max-w-md">
-                <div className="relative flex items-center rounded-full bg-white p-1.5 shadow-2xl">
+                <div className="relative flex items-center rounded-full bg-white p-1 sm:p-1.5 shadow-2xl">
                   <input
                     type="email"
                     value={email}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                     placeholder="EMAIL ADDRESS"
                     required
-                    className="w-full rounded-full bg-transparent px-5 py-2 text-xs md:text-sm font-semibold tracking-wider text-black placeholder-neutral-500 uppercase focus:outline-none"
+                    className="w-full rounded-full bg-transparent px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold tracking-wider text-black placeholder-neutral-500 uppercase focus:outline-none"
                   />
                   <button
                     type="submit"
                     aria-label="Submit Email"
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f54e11] text-white transition-transform duration-200 hover:scale-105 hover:bg-[#ff6229] shadow-md"
+                    className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-brand text-white transition-transform duration-200 hover:scale-105 hover:bg-brand-hover shadow-md"
                   >
                     <ArrowRight className="h-4 w-4 stroke-[2.5]" />
                   </button>
@@ -117,15 +103,12 @@ export default function Footer() {
               </form>
             </div>
 
-            {/* Right Columns: Pages, Services, Contact */}
-            <div className="lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
-              
-              {/* Pages */}
+            <div className="lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 text-sm">
               <div>
-                <h3 className="font-medium text-white text-sm md:text-base mb-4">
+                <h3 className="font-medium text-white text-sm md:text-base mb-3 sm:mb-4">
                   Pages
                 </h3>
-                <ul className="flex flex-col space-y-2.5 text-xs md:text-sm text-neutral-400">
+                <ul className="flex flex-col space-y-2 sm:space-y-2.5 text-xs sm:text-sm text-neutral-400">
                   <li>
                     <Link href="#about" className="hover:text-white transition-colors">
                       About
@@ -144,12 +127,11 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* Services */}
               <div>
-                <h3 className="font-medium text-white text-sm md:text-base mb-4">
+                <h3 className="font-medium text-white text-sm md:text-base mb-3 sm:mb-4">
                   Services
                 </h3>
-                <ul className="flex flex-col space-y-2.5 text-xs md:text-sm text-neutral-400">
+                <ul className="flex flex-col space-y-2 sm:space-y-2.5 text-xs sm:text-sm text-neutral-400">
                   <li>
                     <Link href="#content-marketing" className="hover:text-white transition-colors">
                       Content marketing
@@ -178,12 +160,11 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* Contact */}
               <div className="col-span-2 sm:col-span-1">
-                <h3 className="font-medium text-white text-sm md:text-base mb-4">
+                <h3 className="font-medium text-white text-sm md:text-base mb-3 sm:mb-4">
                   Contact
                 </h3>
-                <div className="flex flex-col space-y-2 text-xs md:text-sm text-neutral-400 mb-6">
+                <div className="flex flex-col space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-neutral-400 mb-5 sm:mb-6">
                   <p>
                     Email:{' '}
                     <a href="mailto:hello@allboundpro.com" className="text-neutral-300 hover:text-white transition-colors">
@@ -198,7 +179,6 @@ export default function Footer() {
                   </p>
                 </div>
 
-                {/* Social Badges */}
                 <div className="flex items-center gap-2">
                   {socialLinks.map((item) => (
                     <a
@@ -207,27 +187,21 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={item.name}
-                      className="flex h-7 w-7 items-center justify-center rounded-md bg-white text-black transition-all duration-200 hover:scale-110 hover:bg-[#f54e11] hover:text-white"
+                      className="flex h-7 w-7 items-center justify-center rounded-md bg-white text-black transition-all duration-200 hover:scale-110 hover:bg-brand hover:text-white"
                     >
                       {item.icon}
                     </a>
                   ))}
                 </div>
               </div>
-
             </div>
           </div>
 
-          {/* 
-            3. Cut-off Big Watermark Typography 
-            Height ko limit karke translate-y lagaya hai taake adha hissa container ke niche gayab ho jaye
-          */}
-          <div className="relative w-full h-32 sm:h-44 md:h-56 lg:h-64 overflow-hidden pointer-events-none select-none flex justify-center items-start">
-            <span className="font-heading text-[25vw] md:text-[27vw] font-black leading-none tracking-tighter text-white/[0.14] translate-y-[2%]">
+          <div className="relative w-full h-24 sm:h-36 md:h-52 lg:h-64 overflow-hidden pointer-events-none select-none flex justify-center items-start">
+            <span className="font-heading text-[24vw] md:text-[27vw] font-black leading-none tracking-tighter text-white/[0.14] translate-y-[2%]">
               Zorzex
             </span>
           </div>
-
         </div>
       </footer>
     </section>

@@ -13,40 +13,33 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="relative w-full py-16 lg:py-24">
-      {/* 90% Width Container (5% left aur 5% right margin) */}
-      <div className="mx-auto w-[90%]">
-        {/* Full Wide Dark Card */}
-        <div className="w-full rounded-[36px] bg-black p-8 sm:p-12 md:p-16 lg:p-20 text-white shadow-2xl">
-          {/* Section Heading */}
-          <h2 className="font-heading text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-10 sm:mb-14">
+    <section className="relative w-full py-12 sm:py-16 lg:py-24 font-sans">
+      <div className="mx-auto w-[92%] sm:w-[90%] max-w-7xl">
+        <div className="w-full rounded-3xl sm:rounded-[36px] bg-black p-6 sm:p-10 md:p-14 lg:p-20 text-white shadow-2xl">
+          <h2 className="font-heading text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-8 sm:mb-12">
             Services
           </h2>
 
-          {/* Top Divider */}
-          <div className="w-full border-t border-neutral-700/80" />
+          <div className="w-full border-t border-neutral-800" />
 
-          {/* Services Rows */}
-          <div className="divide-y divide-neutral-700/80">
+          <div className="divide-y divide-neutral-800">
             {services.map((service) => (
               <Link
                 key={service.id}
                 href={service.href}
-                className="group flex items-center justify-between py-7 sm:py-8 transition-colors duration-200"
+                className="group flex items-center justify-between py-5 sm:py-7 md:py-8 transition-colors duration-200"
               >
-                {/* Left Side: Number + Title */}
-                <div className="flex items-center gap-10 sm:gap-20 md:gap-32">
-                  <span className="text-sm sm:text-base font-light text-neutral-400">
+                <div className="flex items-center gap-4 sm:gap-12 md:gap-20 lg:gap-32">
+                  <span className="text-xs sm:text-sm md:text-base font-light text-neutral-400">
                     {service.id}
                   </span>
-                  <span className="text-lg sm:text-2xl md:text-3xl font-medium tracking-wide text-neutral-200 transition-colors duration-200 group-hover:text-white">
+                  <span className="text-base sm:text-2xl md:text-3xl font-medium tracking-wide text-neutral-200 transition-colors duration-200 group-hover:text-white">
                     {service.title}
                   </span>
                 </div>
 
-                {/* Right Side: Circular Arrow Button */}
-                <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-neutral-800/80 text-neutral-400 transition-all duration-200 group-hover:bg-[#f54e11] group-hover:text-white group-hover:scale-105">
-                  <ArrowUpRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <div className="flex h-9 w-9 sm:h-11 sm:w-11 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-full bg-neutral-800/80 text-neutral-400 transition-all duration-200 group-hover:bg-brand group-hover:text-white group-hover:scale-105">
+                  <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
               </Link>
             ))}
