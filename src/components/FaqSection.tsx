@@ -11,101 +11,165 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    id: '1',
-    question: '1. What services does Zorzex offer?',
+    id: '01',
+    question: 'What kind of digital products does Zorzex build?',
     answer:
-      'We offer comprehensive digital solutions including UI/UX design, full-stack web and mobile development, branding, AI automation, and performance marketing tailored to accelerate business growth.',
+      'Hum high-performance web applications (Next.js, React, TypeScript), cross-platform mobile apps (Flutter), interactive design systems, aur custom AI automation pipelines develop karte hain jo real business revenue scale karti hain.',
   },
   {
-    id: '2',
-    question: '2. How can Zorzex help my business grow?',
+    id: '02',
+    question: 'How fast can you deliver an MVP or full platform?',
     answer:
-      'We combine data-driven strategy with modern design and high-performance engineering to build digital experiences that drive engagement, convert visitors, and scale operations efficiently.',
+      'Hum 2-week continuous sprint model par kaam karte hain. Standard web platforms aur modern landing experiences 10 se 14 days me live ho jate hain, jabki complex custom platforms 3 se 5 weeks ke andar production-ready ho jate hain.',
   },
   {
-    id: '3',
-    question: '3. How much do your services cost?',
+    id: '03',
+    question: 'Do we get direct access to core engineers?',
     answer:
-      'Our pricing depends on scope, complexity, and timeline. We offer transparent project-based tiers as well as ongoing retainer models to suit both startups and established businesses.',
+      'Bilkul 100%. Zorzex me koi non-technical account managers ya delay lane wale middlemen nahi hote. Aap seedha un core software engineers aur designers ke sath direct Slack ya WhatsApp channel me sync karte hain jo code likh rahe hain.',
   },
   {
-    id: '4',
-    question: '4. How long does it take to complete a project?',
+    id: '04',
+    question: 'How do you guarantee 98+ performance and zero lag?',
     answer:
-      'Most design and branding projects take between 2 to 4 weeks, while full-scale custom software or web platform development typically ranges from 4 to 8 weeks.',
+      'Hum bloated templates ya slow WordPress stacks touch bhi nahi karte. Clean code architecture, dynamic imports, asset compression aur zero main-thread blocking ke sath har product Google Lighthouse 98+ score par benchmark hota hai.',
   },
   {
-    id: '5',
-    question: '5. How do I get started with Zorzex?',
+    id: '05',
+    question: 'Who retains the intellectual property and code repository?',
     answer:
-      'Simply book a discovery call via the "Book a Meeting" button above or reach out through our contact form. We will analyze your requirements and outline a tailored roadmap.',
+      'Day one se 100% IP ownership aapki hoti hai. Milestone approval ke baad complete GitHub repository, Figma components, production environment variables aur credentials fully handover kiye jaate hain.',
+  },
+  {
+    id: '06',
+    question: 'What does the post-launch sprint support include?',
+    answer:
+      'Launch ke baad aap akele nahi hote. Har release ke sath 30 days ki dedicated sprint support included hoti hai jisme real-time monitoring, edge bug fixes aur core performance fine-tuning hum handle karte hain.',
   },
 ];
 
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleAccordion = (index: number): void => {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
 
   return (
-    <section className="relative w-full bg-black py-16 sm:py-24 md:py-32 xl:py-40 2xl:py-48 px-4 sm:px-6 md:px-12 xl:px-16 text-white overflow-hidden font-sans">
-      {/* Container synchronized with Hero, Navbar, Services, and AboutStats */}
-      <div className="mx-auto w-[92%] sm:w-[90%] max-w-5xl xl:max-w-[1400px] 2xl:max-w-[1600px]">
-        {/* Section Header */}
-        <div className="mb-10 sm:mb-16 md:mb-20 xl:mb-24 text-center">
-          <h2 className="font-heading text-3xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl font-bold tracking-tight text-white">
-            Questions, answered.
-          </h2>
+    <section className="relative w-full bg-[#070707] text-white py-28 md:py-36 px-6 md:px-12 lg:px-20 overflow-hidden border-t border-white/5 font-sans">
+      {/* Background Giant Orange Radial Glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-gradient-to-b from-[#ff4d00]/25 via-[#ff4d00]/10 to-transparent blur-[160px] pointer-events-none rounded-full" />
+      
+      {/* Subtle Bottom Ambient Orange Accent */}
+      <div className="absolute -bottom-32 right-10 w-[450px] h-[450px] bg-[#ff4d00]/10 blur-[150px] pointer-events-none rounded-full" />
+
+      <div className="relative z-10 max-w-6xl mx-auto space-y-20">
+        
+        {/* Massive High-Impact Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-12">
+          <div className="space-y-6 max-w-3xl">
+            {/* Tech Status Pill */}
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md shadow-inner">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d00] opacity-80" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff4d00]" />
+              </span>
+              <span className="text-[11px] font-mono tracking-[0.22em] uppercase text-neutral-300">
+                FAQS & ARCHITECTURE
+              </span>
+            </div>
+
+            {/* Massive Bold Heading */}
+            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight leading-[0.95]">
+              <span className="text-neutral-500 font-light block">Clear Answers.</span>
+              <span className="text-white">Zero Bullshit<span className="text-[#ff4d00]">.</span></span>
+            </h2>
+          </div>
+
+          <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed max-w-sm">
+            Hamare sprint cycles, code architecture aur direct development workflow ke baare me sab kuch transparent.
+          </p>
         </div>
 
-        {/* Accordion List */}
-        <div className="flex flex-col">
+        {/* Dark Accordion List */}
+        <div className="divide-y divide-white/10 border-b border-white/10">
           {faqs.map((faq: FaqItem, index: number) => {
             const isOpen = openIndex === index;
 
             return (
               <div
                 key={faq.id}
-                className="border-b border-neutral-800 transition-colors"
+                className="group transition-colors duration-300 hover:bg-white/[0.015]"
               >
                 <button
                   type="button"
                   onClick={() => toggleAccordion(index)}
-                  className="group flex w-full items-center justify-between py-5 sm:py-6 md:py-8 xl:py-10 2xl:py-12 text-left focus:outline-none"
+                  className="flex w-full items-center justify-between py-8 md:py-10 text-left focus:outline-none cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-sm sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-neutral-200 transition-colors duration-200 group-hover:text-white pr-4">
-                    {faq.question}
-                  </span>
+                  <div className="flex items-center gap-6 sm:gap-10 pr-6">
+                    {/* Index Number */}
+                    <span className="text-xs sm:text-sm md:text-base font-mono font-medium tracking-widest text-[#ff4d00]">
+                      {faq.id}
+                    </span>
+                    
+                    {/* Question Title */}
+                    <span className={`text-lg sm:text-2xl md:text-3xl font-medium tracking-tight transition-colors duration-300 ${
+                      isOpen ? 'text-white' : 'text-neutral-300 group-hover:text-white'
+                    }`}>
+                      {faq.question}
+                    </span>
+                  </div>
 
+                  {/* Circular Orange / Dark Icon */}
                   <div
-                    className={`flex h-7 w-7 sm:h-8 sm:w-8 xl:h-11 xl:w-11 2xl:h-13 2xl:w-13 shrink-0 items-center justify-center rounded-full bg-brand text-white shadow-brand-glow transition-transform duration-300 ${
-                      isOpen ? 'rotate-45' : 'rotate-0'
+                    className={`flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+                      isOpen
+                        ? 'bg-[#ff4d00] border-[#ff4d00] text-white rotate-45 shadow-[0_0_25px_rgba(255,77,0,0.5)]'
+                        : 'bg-white/5 border-white/10 text-neutral-400 group-hover:border-[#ff4d00]/60 group-hover:text-white rotate-0'
                     }`}
                   >
-                    <Plus className="h-4 w-4 xl:h-5 xl:w-5 2xl:h-6 2xl:w-6 stroke-[2.5]" />
+                    <Plus className="h-5 w-5 stroke-[2.2]" />
                   </div>
                 </button>
 
+                {/* Smooth Expandable Content */}
                 <div
                   className={`grid transition-all duration-300 ease-in-out ${
                     isOpen
-                      ? 'grid-rows-[1fr] opacity-100 pb-5 sm:pb-6 md:pb-8 xl:pb-10'
+                      ? 'grid-rows-[1fr] opacity-100 pb-8 md:pb-10'
                       : 'grid-rows-[0fr] opacity-0 pb-0'
                   }`}
                 >
-                  <div className="overflow-hidden">
-                    <p className="max-w-3xl xl:max-w-5xl text-xs sm:text-sm md:text-base xl:text-xl 2xl:text-2xl text-neutral-400 font-normal leading-relaxed pl-3 sm:pl-4 xl:pl-6 border-l-2 xl:border-l-4 border-brand/70">
-                      {faq.answer}
-                    </p>
+                  <div className="overflow-hidden pl-12 sm:pl-20">
+                    <div className="border-l-2 border-[#ff4d00] pl-6 max-w-3xl">
+                      <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
+
+        {/* Bottom Fast Contact Prompt */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-4 text-xs md:text-sm text-neutral-400">
+          <div className="flex items-center gap-3">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Developers active on Slack & Discord</span>
+          </div>
+
+          <a
+            href="#contact"
+            className="group flex items-center gap-2 text-white font-medium hover:text-[#ff4d00] transition-colors"
+          >
+            <span>Have a custom requirement? Book a call directly</span>
+            <span className="text-[#ff4d00] transition-transform group-hover:translate-x-1">&rarr;</span>
+          </a>
+        </div>
+
       </div>
     </section>
   );

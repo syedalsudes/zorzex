@@ -3,51 +3,137 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
 const services = [
-  { id: '(01)', title: 'UI/UX Design', href: '#ui-ux' },
-  { id: '(02)', title: 'Web Development', href: '#web-development' },
-  { id: '(03)', title: 'App Development', href: '#app-development' },
-  { id: '(04)', title: 'Graphic Design', href: '#graphic-design' },
-  { id: '(05)', title: 'Figma Design', href: '#figma-design' },
-  { id: '(06)', title: 'AI Automation', href: '#ai-automation' },
+  { 
+    id: '01', 
+    title: 'UI/UX Design', 
+    href: '#ui-ux',
+    tags: ['Design Systems', 'Wireframing', 'User Flows'],
+    desc: 'High-converting design patterns built for seamless and intuitive user experiences.'
+  },
+  { 
+    id: '02', 
+    title: 'Web Development', 
+    href: '#web-development',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    desc: 'Lightning-fast, SEO-optimized web applications engineered for scalability.'
+  },
+  { 
+    id: '03', 
+    title: 'App Development', 
+    href: '#app-development',
+    tags: ['Flutter', 'iOS & Android', 'Cross-Platform'],
+    desc: 'Native-feel mobile applications with fluid interactions and rock-solid architecture.'
+  },
+  { 
+    id: '04', 
+    title: 'Graphic & Brand Identity', 
+    href: '#graphic-design',
+    tags: ['Visual Identity', 'Logos', 'Brand Guidelines'],
+    desc: 'Distinctive brand identities and systems designed to leave a memorable impression.'
+  },
+  { 
+    id: '05', 
+    title: 'Interactive Prototypes', 
+    href: '#prototyping',
+    tags: ['Figma Prototypes', 'Micro-interactions', 'Demos'],
+    desc: 'High-fidelity clickable product previews to validate flows before writing code.'
+  },
+  { 
+    id: '06', 
+    title: 'AI Automation & Solutions', 
+    href: '#ai-automation',
+    tags: ['Custom Workflows', 'API Integrations', 'AI Agents'],
+    desc: 'Smart operational automations and modern model integrations to scale workflows.'
+  },
 ];
 
 export default function ServicesSection() {
   return (
-    <section className="relative w-full py-14 px-4 sm:px-6 md:px-12 md:py-20 lg:py-28 xl:px-16 xl:py-36 2xl:py-44 font-sans">
-      {/* Container synchronized with Hero, Navbar, and AboutStats */}
-      <div className="mx-auto w-full max-w-7xl xl:max-w-[1600px] 2xl:max-w-[1850px]">
-        <div className="w-full rounded-3xl sm:rounded-[36px] xl:rounded-[44px] 2xl:rounded-[52px] bg-black p-6 sm:p-10 md:p-14 lg:p-20 xl:p-24 2xl:p-28 text-white shadow-2xl">
-          {/* Section Header */}
-          <h2 className="font-heading text-3xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl font-bold tracking-tight text-white mb-8 sm:mb-12 xl:mb-16">
-            Services
-          </h2>
+    <section className="relative w-full bg-white text-neutral-900 py-16 sm:py-20 lg:py-24 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 overflow-hidden border-t border-neutral-100 font-sans">
+      {/* Background Soft Orange Ambient Light */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[350px] sm:w-[500px] lg:w-[650px] h-[350px] sm:h-[500px] lg:h-[650px] bg-gradient-to-b from-[#ff4d00]/10 via-[#ff4d00]/5 to-transparent blur-[140px] pointer-events-none rounded-full" />
 
-          <div className="w-full border-t border-neutral-800" />
+      <div className="relative z-10 max-w-7xl mx-auto space-y-12 sm:space-y-16">
+        
+        {/* Section Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end justify-between border-b border-neutral-200/80 pb-8 sm:pb-10">
+          <div className="lg:col-span-8 space-y-3 sm:space-y-4">
+            {/* Tech Status Pill */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ff4d00]/[0.08] border border-[#ff4d00]/25 shadow-xs">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d00] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff4d00]"></span>
+              </span>
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#ff4d00]">
+                Capabilities & Scope
+              </span>
+            </div>
 
-          {/* Services Rows */}
-          <div className="divide-y divide-neutral-800">
-            {services.map((service) => (
-              <Link
-                key={service.id}
-                href={service.href}
-                className="group flex items-center justify-between py-5 sm:py-7 md:py-8 xl:py-10 2xl:py-12 transition-all duration-300 hover:px-2"
-              >
-                <div className="flex items-center gap-4 sm:gap-12 md:gap-20 lg:gap-32 xl:gap-40">
-                  <span className="text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-xl font-light text-neutral-400">
-                    {service.id}
-                  </span>
-                  <span className="text-base sm:text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-medium tracking-wide text-neutral-200 transition-colors duration-200 group-hover:text-white">
-                    {service.title}
-                  </span>
-                </div>
-
-                <div className="flex h-9 w-9 sm:h-11 sm:w-11 md:h-12 md:w-12 xl:h-14 xl:w-14 2xl:h-16 2xl:w-16 shrink-0 items-center justify-center rounded-full bg-neutral-800/80 text-neutral-400 transition-all duration-300 group-hover:bg-brand group-hover:text-white group-hover:scale-110">
-                  <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5 xl:h-6 xl:w-6 2xl:h-7 2xl:w-7 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </div>
-              </Link>
-            ))}
+            {/* Controlled Balanced Heading Size */}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light uppercase tracking-wider leading-[1.15]">
+              <span className="text-neutral-400">Crafting digital</span> <br />
+              <strong className="font-semibold text-neutral-950">
+                Capabilities<span className="text-[#ff4d00]">.</span>
+              </strong>
+            </h2>
           </div>
+
+          <p className="lg:col-span-4 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
+            Every project is engineered with modern architecture, strict performance standards, and a focus on fast sprint delivery.
+          </p>
         </div>
+
+        {/* Services Editorial List */}
+        <div className="divide-y divide-neutral-200/80 border-b border-neutral-200/80">
+          {services.map((service) => (
+            <Link
+              key={service.id}
+              href={service.href}
+              className="group relative flex flex-col md:flex-row md:items-center justify-between py-6 sm:py-8 lg:py-9 px-3 sm:px-4 rounded-2xl transition-all duration-300 hover:bg-[#fff9f6]"
+            >
+              {/* Animated Orange Left Border Indicator on Hover */}
+              <div className="absolute left-0 top-3 bottom-3 w-1 bg-[#ff4d00] opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 rounded-full" />
+
+              {/* Left Column: Number + Title + Description */}
+              <div className="flex items-start md:items-center gap-4 sm:gap-8 lg:gap-12">
+                {/* Permanent Orange Monospace ID */}
+                <span className="text-xs sm:text-sm font-bold tracking-widest text-[#ff4d00] font-mono shrink-0 pt-1 md:pt-0">
+                  {service.id}
+                </span>
+
+                <div className="space-y-1">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-light tracking-tight text-neutral-900 group-hover:text-neutral-950 group-hover:font-normal transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-xs text-neutral-500 font-normal leading-relaxed max-w-md hidden sm:block">
+                    {service.desc}
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Column: Tags & Interactive Arrow Button */}
+              <div className="mt-4 md:mt-0 flex items-center justify-between md:justify-end gap-4 lg:gap-8">
+                {/* Micro Tech Tags with Permanent Orange Tint */}
+                <div className="hidden lg:flex items-center gap-2">
+                  {service.tags.map((tag, i) => (
+                    <span 
+                      key={i} 
+                      className="px-2.5 py-1 text-[11px] font-medium tracking-wide text-neutral-600 bg-white border border-[#ff4d00]/20 rounded-full shadow-xs group-hover:border-[#ff4d00]/40 transition-colors"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Arrow Icon Button with Smooth Orange Glow Hover */}
+                <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-full border border-[#ff4d00]/25 bg-white text-[#ff4d00] flex items-center justify-center shadow-xs transition-all duration-300 group-hover:bg-[#ff4d00] group-hover:border-[#ff4d00] group-hover:text-white group-hover:scale-105 group-hover:shadow-[0_4px_14px_rgba(255,77,0,0.3)] shrink-0">
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45" />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
       </div>
     </section>
   );

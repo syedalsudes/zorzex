@@ -69,7 +69,7 @@ export default function RootLayout({
               "radial-gradient(circle at 90% 40%, rgba(245, 178, 140, 0.35) 0%, rgba(250, 214, 195, 0.18) 35%, transparent 70%)",
           }}
         />
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
         <Footer />
       </body>

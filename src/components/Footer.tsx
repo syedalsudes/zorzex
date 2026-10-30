@@ -80,7 +80,7 @@ export default function Footer() {
           <div className="mb-10 sm:mb-14 md:mb-16 xl:mb-20">
             <div className="flex items-center gap-3">
               <span className="font-heading text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold tracking-tight text-white">
-                Zorzex<span className="text-brand">.</span>
+                zorzex<span className="text-brand">.</span>
               </span>
             </div>
             <p className="mt-2 sm:mt-3 text-xs sm:text-sm md:text-base xl:text-lg text-neutral-400 font-normal">
