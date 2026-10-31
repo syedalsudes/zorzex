@@ -3,26 +3,43 @@
 @tailwind utilities;
 
 :root {
-  /* Fonts */
-  --font-primary: var(--font-poppins), sans-serif;
-  --font-heading: Arial, Helvetica, sans-serif;
-
-  /* Background Colors */
-  --bg-primary: #050505;        /* Ultra dark background */
-  --bg-card: rgba(255, 255, 255, 0.03); 
-  --bg-card-hover: rgba(255, 255, 255, 0.06);
-
   /* Brand Accent Colors */
-  --accent-primary: #f54e11;     /* Main brand orange */
-  --accent-hover: #ff6229;
-  --accent-glow: rgba(245, 78, 17, 0.35);
+  --accent-primary: #ff4d00;
+  --accent-hover: #e64500;
+  --accent-glow: rgba(255, 77, 0, 0.35);
 
-  /* Text Colors */
-  --text-primary: #ffffff;      
-  --text-secondary: #a3a3a3;    
-  --text-muted: #737373;        
+  /* Light / Warm Theme Backgrounds */
+  --bg-primary: #FFF4ED;
+  --bg-card: #ffffff;
+  --bg-card-tint: #fff9f6;
 
-  /* Borders & Dividers */
-  --border-light: rgba(255, 255, 255, 0.1);
-  --border-card: rgba(255, 255, 255, 0.08);
+  /* Typography Colors */
+  --text-primary: #171717;
+  --text-secondary: #525252;
+  --text-muted: #737373;
+
+  /* Borders */
+  --border-light: rgba(255, 77, 0, 0.15);
+  --border-strong: rgba(255, 77, 0, 0.3);
+}
+
+/* Base resets & direct font binding */
+html,
+body {
+  font-family: var(--font-body), sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Force headings to use the modern display font */
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading), sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+/* Clean text selection */
+::selection {
+  background-color: #ff4d00;
+  color: #ffffff;
 }

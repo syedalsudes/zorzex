@@ -59,16 +59,12 @@ export default function WhyChooseUsSection() {
         {/* Section Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end justify-between border-b-2 border-neutral-100 pb-8 sm:pb-10">
           <div className="lg:col-span-8 space-y-3 sm:space-y-4">
-            {/* Tech Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ff4d00]/15 border border-[#ff4d00]/40 shadow-[0_2px_12px_rgba(255,77,0,0.15)]">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d00] opacity-80"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff4d00]"></span>
-              </span>
-              <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-[#ff4d00]">
-                The Zorzex Standard
-              </span>
-            </div>
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-neutral-100/90 border border-neutral-200">
+  <span className="w-1 h-2.5 rounded-[1px] bg-[#ff4d00]" />
+  <span className="text-[10.5px] font-mono font-semibold tracking-[0.16em] uppercase text-neutral-700">
+    The Zorzex Standard
+  </span>
+</div>
 
             {/* Balanced Controlled Heading */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light uppercase tracking-wider leading-[1.15]">

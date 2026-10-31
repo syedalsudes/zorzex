@@ -26,18 +26,14 @@ export default function ProcessSection() {
       <div className="absolute top-1/3 right-10 w-[350px] sm:w-[500px] lg:w-[650px] h-[350px] sm:h-[500px] lg:h-[650px] bg-gradient-to-bl from-[#ff4d00]/10 via-[#ff4d00]/5 to-transparent blur-[140px] pointer-events-none rounded-full" />
 
       <div className="relative z-10 max-w-7xl xl:max-w-[1550px] 2xl:max-w-[1850px] mx-auto space-y-12 sm:space-y-16">
-        
+
         {/* Top Header & CTA */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end justify-between border-b border-neutral-200/80 pb-8 sm:pb-10">
           <div className="lg:col-span-8 space-y-3 sm:space-y-4">
-            {/* Tech Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ff4d00]/[0.08] border border-[#ff4d00]/25 shadow-xs">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d00] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff4d00]"></span>
-              </span>
-              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#ff4d00]">
-                Methodology & Flow
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-neutral-100/90 border border-neutral-200">
+              <span className="w-1 h-2.5 rounded-[1px] bg-[#ff4d00]" />
+              <span className="text-[10.5px] font-mono font-semibold tracking-[0.16em] uppercase text-neutral-700">
+                Methodology &amp; Flow
               </span>
             </div>
 
@@ -56,7 +52,7 @@ export default function ProcessSection() {
             </p>
 
             <div>
-              <a 
+              <a
                 href="#contact"
                 className="group inline-flex items-center gap-3 px-6 py-3.5 bg-neutral-950 text-white rounded-full font-medium text-xs tracking-wider uppercase transition-all duration-300 hover:bg-[#ff4d00] hover:shadow-[0_4px_16px_rgba(255,77,0,0.35)]"
               >
@@ -98,14 +94,14 @@ export default function ProcessSection() {
             <circle cx="190" cy="320" r="7" fill="#ff4d00" />
 
             {/* Watermark Number 1 - Vibrant Orange Fill + Crisp Outline */}
-            <text 
-              x="360" 
-              y="380" 
-              fontSize="130" 
-              fontWeight="900" 
-              fill="rgba(255, 77, 0, 0.16)" 
-              stroke="#ff4d00" 
-              strokeWidth="1.2" 
+            <text
+              x="360"
+              y="380"
+              fontSize="130"
+              fontWeight="900"
+              fill="rgba(255, 77, 0, 0.16)"
+              stroke="#ff4d00"
+              strokeWidth="1.2"
               strokeOpacity="0.3"
               fontFamily="sans-serif"
               className="select-none pointer-events-none"
@@ -132,14 +128,14 @@ export default function ProcessSection() {
             <circle cx="580" cy="230" r="7" fill="#ff4d00" />
 
             {/* Watermark Number 2 - Vibrant Orange Fill + Crisp Outline */}
-            <text 
-              x="750" 
-              y="290" 
-              fontSize="130" 
-              fontWeight="900" 
-              fill="rgba(255, 77, 0, 0.16)" 
-              stroke="#ff4d00" 
-              strokeWidth="1.2" 
+            <text
+              x="750"
+              y="290"
+              fontSize="130"
+              fontWeight="900"
+              fill="rgba(255, 77, 0, 0.16)"
+              stroke="#ff4d00"
+              strokeWidth="1.2"
               strokeOpacity="0.3"
               fontFamily="sans-serif"
               className="select-none pointer-events-none"
@@ -166,14 +162,14 @@ export default function ProcessSection() {
             <circle cx="960" cy="70" r="7" fill="#ff4d00" />
 
             {/* Watermark Number 3 - Vibrant Orange Fill + Crisp Outline */}
-            <text 
-              x="1110" 
-              y="140" 
-              fontSize="130" 
-              fontWeight="900" 
-              fill="rgba(255, 77, 0, 0.16)" 
-              stroke="#ff4d00" 
-              strokeWidth="1.2" 
+            <text
+              x="1110"
+              y="140"
+              fontSize="130"
+              fontWeight="900"
+              fill="rgba(255, 77, 0, 0.16)"
+              stroke="#ff4d00"
+              strokeWidth="1.2"
               strokeOpacity="0.3"
               fontFamily="sans-serif"
               className="select-none pointer-events-none"

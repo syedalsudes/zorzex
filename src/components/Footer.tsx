@@ -57,7 +57,8 @@ export default function Footer() {
   };
 
   return (
-    <section className="relative w-full pt-10 sm:pt-16 md:pt-20 xl:pt-28 font-sans bg-transparent">
+    // bg-white aur z-20 add kiya hai taaki piche ka koi bhi glow/shade hide ho jaye aur space wesi hi rahe
+    <section className="relative z-20 w-full bg-white pt-10 sm:pt-16 md:pt-20 xl:pt-28 font-sans">
       <footer className="relative w-full overflow-hidden rounded-t-[36px] sm:rounded-t-[50px] md:rounded-t-[72px] lg:rounded-t-[90px] xl:rounded-t-[110px] bg-black text-white shadow-2xl">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
@@ -73,7 +74,7 @@ export default function Footer() {
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-black" />
         </div>
 
-        {/* Content Container synchronized with Hero, Navbar, Services & About */}
+        {/* Content Container */}
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-12 pt-12 sm:pt-16 md:pt-24 xl:max-w-[1600px] xl:px-16 xl:pt-32 2xl:max-w-[1850px] 2xl:pt-36">
           
           {/* Top Brand Identity */}
@@ -156,7 +157,7 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* Services Column (Updated with Exact Services) */}
+              {/* Services Column */}
               <div>
                 <h3 className="font-medium text-white text-sm md:text-base xl:text-lg mb-3 sm:mb-4 xl:mb-6">
                   Services
@@ -211,7 +212,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Independent Full-Width Zorzex Watermark - SVG Scaled (Never Cut Off) */}
+        {/* Independent Full-Width Zorzex Watermark */}
         <div className="relative w-full pointer-events-none select-none overflow-hidden leading-none px-2 sm:px-4">
           <svg
             viewBox="0 0 1200 240"

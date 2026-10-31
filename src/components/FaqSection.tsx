@@ -59,26 +59,22 @@ export default function FaqSection() {
     <section className="relative w-full bg-[#070707] text-white py-28 md:py-36 px-6 md:px-12 lg:px-20 overflow-hidden border-t border-white/5 font-sans">
       {/* Background Giant Orange Radial Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-gradient-to-b from-[#ff4d00]/25 via-[#ff4d00]/10 to-transparent blur-[160px] pointer-events-none rounded-full" />
-      
+
       {/* Subtle Bottom Ambient Orange Accent */}
       <div className="absolute -bottom-32 right-10 w-[450px] h-[450px] bg-[#ff4d00]/10 blur-[150px] pointer-events-none rounded-full" />
 
       <div className="relative z-10 max-w-6xl mx-auto space-y-20">
-        
+
         {/* Massive High-Impact Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-12">
           <div className="space-y-6 max-w-3xl">
             {/* Tech Status Pill */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md shadow-inner">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d00] opacity-80" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff4d00]" />
-              </span>
-              <span className="text-[11px] font-mono tracking-[0.22em] uppercase text-neutral-300">
-                FAQS & ARCHITECTURE
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-transparent border border-neutral-500">
+              <span className="w-1 h-2.5 rounded-[1px] bg-[#ff4d00]" />
+              <span className="text-[10.5px] font-mono font-semibold tracking-[0.16em] uppercase text-neutral-200">
+                FAQs &amp; Architecture
               </span>
             </div>
-
             {/* Massive Bold Heading */}
             <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight leading-[0.95]">
               <span className="text-neutral-500 font-light block">Clear Answers.</span>
@@ -112,22 +108,20 @@ export default function FaqSection() {
                     <span className="text-xs sm:text-sm md:text-base font-mono font-medium tracking-widest text-[#ff4d00]">
                       {faq.id}
                     </span>
-                    
+
                     {/* Question Title */}
-                    <span className={`text-lg sm:text-2xl md:text-3xl font-medium tracking-tight transition-colors duration-300 ${
-                      isOpen ? 'text-white' : 'text-neutral-300 group-hover:text-white'
-                    }`}>
+                    <span className={`text-lg sm:text-2xl md:text-3xl font-medium tracking-tight transition-colors duration-300 ${isOpen ? 'text-white' : 'text-neutral-300 group-hover:text-white'
+                      }`}>
                       {faq.question}
                     </span>
                   </div>
 
                   {/* Circular Orange / Dark Icon */}
                   <div
-                    className={`flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
-                      isOpen
+                    className={`flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${isOpen
                         ? 'bg-[#ff4d00] border-[#ff4d00] text-white rotate-45 shadow-[0_0_25px_rgba(255,77,0,0.5)]'
                         : 'bg-white/5 border-white/10 text-neutral-400 group-hover:border-[#ff4d00]/60 group-hover:text-white rotate-0'
-                    }`}
+                      }`}
                   >
                     <Plus className="h-5 w-5 stroke-[2.2]" />
                   </div>
@@ -135,11 +129,10 @@ export default function FaqSection() {
 
                 {/* Smooth Expandable Content */}
                 <div
-                  className={`grid transition-all duration-300 ease-in-out ${
-                    isOpen
+                  className={`grid transition-all duration-300 ease-in-out ${isOpen
                       ? 'grid-rows-[1fr] opacity-100 pb-8 md:pb-10'
                       : 'grid-rows-[0fr] opacity-0 pb-0'
-                  }`}
+                    }`}
                 >
                   <div className="overflow-hidden pl-12 sm:pl-20">
                     <div className="border-l-2 border-[#ff4d00] pl-6 max-w-3xl">

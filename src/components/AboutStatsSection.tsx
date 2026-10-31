@@ -1,12 +1,12 @@
 import React from 'react';
-import { 
-  TrendingUp, 
-  Zap, 
-  Terminal, 
-  Layers, 
-  Star, 
-  Sparkles, 
-  ArrowUpRight 
+import {
+  TrendingUp,
+  Zap,
+  Terminal,
+  Layers,
+  Star,
+  Sparkles,
+  ArrowUpRight
 } from 'lucide-react';
 
 export default function AboutBentoSection() {
@@ -21,17 +21,14 @@ export default function AboutBentoSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end justify-between border-b border-neutral-200/80 pb-8 sm:pb-12 xl:pb-16">
           <div className="lg:col-span-8 space-y-4 xl:space-y-6">
             {/* Mission Pill with Glow Pulse */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#ff4d00]/[0.08] border border-[#ff4d00]/30 shadow-[0_2px_10px_rgba(255,77,0,0.1)] backdrop-blur-md">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d00] opacity-80" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#ff4d00]" />
-              </span>
-              <span className="text-[10px] sm:text-xs font-bold tracking-[0.22em] uppercase text-[#ff4d00]">
-                Mission & Velocity
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-neutral-100/90 border border-neutral-200">
+              <span className="w-1 h-2.5 rounded-[1px] bg-[#ff4d00]" />
+              <span className="text-[10.5px] font-mono font-semibold tracking-[0.16em] uppercase text-neutral-700">
+                Mission &amp; Velocity
               </span>
             </div>
 
-             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider leading-[1.15]">
               <span className="text-neutral-400">Our focus is simple</span> <br />
               <strong className="font-semibold text-neutral-950">
                 Design to <span className="text-[#ff4d00]">convert.</span>
@@ -49,7 +46,7 @@ export default function AboutBentoSection() {
 
           {/* ================= COLUMN 1 (LEFT STACK) ================= */}
           <div className="flex flex-col gap-6 sm:gap-8 xl:gap-10 md:col-span-1">
-            
+
             {/* Top Pill Card */}
             <div className="group relative bg-gradient-to-br from-white via-white to-[#fff8f5] border border-[#ff4d00]/25 rounded-[28px] xl:rounded-[36px] 2xl:rounded-[42px] p-6 xl:p-8 flex items-center justify-between shadow-xs transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_16px_36px_-10px_rgba(255,77,0,0.22)] hover:border-[#ff4d00]/60 overflow-hidden cursor-pointer">
               {/* Hover Radial Background Shade */}
