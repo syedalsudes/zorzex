@@ -36,7 +36,6 @@ export const metadata: Metadata = {
     apple: "/favicon.png",
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -44,46 +43,40 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${interTight.variable}`}>
-      <body className="relative min-h-screen bg-[#FFF4ED] font-body text-neutral-900 antialiased overflow-x-hidden selection:bg-[#ff4d00] selection:text-white">
+      <body className="relative min-h-screen bg-[#fafafa] font-body text-neutral-900 antialiased overflow-x-hidden selection:bg-[#ff4d00] selection:text-white">
         
-        {/* Dominant Orange Radial Ambient Glows - Now Fully Visible */}
+        {/* ================= EXACT IMAGE BACKGROUND LAYER ================= */}
+        {/* Right side subtle warm orange ambient glow */}
         <div
           aria-hidden="true"
-          className="pointer-events-none fixed -top-24 -right-24 h-[650px] w-[650px] rounded-full z-0 opacity-80 blur-[130px]"
+          className="pointer-events-none fixed top-0 right-0 h-full w-[55vw] max-w-[900px] z-0 opacity-70 blur-[140px]"
           style={{
-            background: "radial-gradient(circle, #ff5e1a 0%, #ffa070 45%, transparent 75%)",
+            background: "radial-gradient(circle at 100% 50%, rgba(255, 120, 60, 0.28) 0%, rgba(255, 180, 140, 0.12) 45%, transparent 75%)",
           }}
         />
 
+        {/* Top-Right Soft Aura Accent */}
         <div
           aria-hidden="true"
-          className="pointer-events-none fixed top-[40%] -left-32 h-[600px] w-[600px] rounded-full z-0 opacity-70 blur-[140px]"
+          className="pointer-events-none fixed -top-20 -right-20 h-[500px] w-[500px] rounded-full z-0 opacity-50 blur-[130px]"
           style={{
-            background: "radial-gradient(circle, #ff4d00 0%, #ff9f68 40%, transparent 75%)",
+            background: "radial-gradient(circle, rgba(255, 90, 20, 0.25) 0%, transparent 70%)",
           }}
         />
 
+        {/* Global Faint Dot Grid Tint (Optional - clean rakhne ke liye opacity bilkul low rakhi hai) */}
         <div
           aria-hidden="true"
-          className="pointer-events-none fixed -bottom-32 right-[20%] h-[550px] w-[550px] rounded-full z-0 opacity-75 blur-[140px]"
+          className="pointer-events-none fixed inset-0 z-0 opacity-[0.03]"
           style={{
-            background: "radial-gradient(circle, #ff7a3d 0%, #ffd0b5 50%, transparent 80%)",
-          }}
-        />
-
-        {/* Global Orange Tech Grid Tint */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed inset-0 z-0 opacity-[0.06]"
-          style={{
-            backgroundImage: "radial-gradient(#ff4d00 1.2px, transparent 1.2px)",
-            backgroundSize: "24px 24px",
+            backgroundImage: "radial-gradient(#171717 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
           }}
         />
 
         {/* Content Layer */}
         <div className="relative z-10 flex min-h-screen flex-col justify-between">
-          {/* <Navbar /> */}
+          <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>

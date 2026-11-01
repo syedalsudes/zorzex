@@ -36,8 +36,8 @@ export default function AboutBentoSection() {
             </h2>
           </div>
 
-          <p className="lg:col-span-4 text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-xl text-neutral-600 font-normal leading-relaxed">
-            Hum slow delivery aur generic templates mein vishwas nahi rakhte. Hamara core promise high-speed execution aur zero-compromise code quality hai.
+          <p className="lg:col-span-4 text-sm sm:text-base text-neutral-700 font-medium leading-relaxed border-l-2 border-[#ff4d00] pl-4">
+            We don't do slow delivery or generic templates. Our promise is simple: high-speed execution with uncompromising code quality.
           </p>
         </div>
 

@@ -3,27 +3,22 @@
 @tailwind utilities;
 
 :root {
-  /* Brand Accent Colors */
   --accent-primary: #ff4d00;
   --accent-hover: #e64500;
   --accent-glow: rgba(255, 77, 0, 0.35);
 
-  /* Light / Warm Theme Backgrounds */
   --bg-primary: #FFF4ED;
   --bg-card: #ffffff;
   --bg-card-tint: #fff9f6;
 
-  /* Typography Colors */
   --text-primary: #171717;
   --text-secondary: #525252;
   --text-muted: #737373;
 
-  /* Borders */
   --border-light: rgba(255, 77, 0, 0.15);
   --border-strong: rgba(255, 77, 0, 0.3);
 }
 
-/* Base resets & direct font binding */
 html,
 body {
   font-family: var(--font-body), sans-serif;
@@ -32,13 +27,11 @@ body {
   overflow-x: hidden;
 }
 
-/* Force headings to use the modern display font */
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-heading), sans-serif !important;
   letter-spacing: -0.02em;
 }
 
-/* Clean text selection */
 ::selection {
   background-color: #ff4d00;
   color: #ffffff;

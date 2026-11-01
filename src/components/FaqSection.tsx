@@ -14,37 +14,37 @@ const faqs: FaqItem[] = [
     id: '01',
     question: 'What kind of digital products does Zorzex build?',
     answer:
-      'Hum high-performance web applications (Next.js, React, TypeScript), cross-platform mobile apps (Flutter), interactive design systems, aur custom AI automation pipelines develop karte hain jo real business revenue scale karti hain.',
+      'We engineer high-performance web applications (Next.js, React, TypeScript), cross-platform mobile apps (Flutter), design systems, and custom AI automation pipelines built to scale business revenue.',
   },
   {
     id: '02',
     question: 'How fast can you deliver an MVP or full platform?',
     answer:
-      'Hum 2-week continuous sprint model par kaam karte hain. Standard web platforms aur modern landing experiences 10 se 14 days me live ho jate hain, jabki complex custom platforms 3 se 5 weeks ke andar production-ready ho jate hain.',
+      'We operate on continuous 2-week agile sprints. Standard web platforms and landing experiences launch in 10 to 14 business days, while complex custom platforms ship within 3 to 5 weeks.',
   },
   {
     id: '03',
     question: 'Do we get direct access to core engineers?',
     answer:
-      'Bilkul 100%. Zorzex me koi non-technical account managers ya delay lane wale middlemen nahi hote. Aap seedha un core software engineers aur designers ke sath direct Slack ya WhatsApp channel me sync karte hain jo code likh rahe hain.',
+      '100% direct access. We eliminate non-technical middlemen and account manager bottlenecks. You collaborate directly via dedicated Slack or WhatsApp channels with the engineers building your product.',
   },
   {
     id: '04',
     question: 'How do you guarantee 98+ performance and zero lag?',
     answer:
-      'Hum bloated templates ya slow WordPress stacks touch bhi nahi karte. Clean code architecture, dynamic imports, asset compression aur zero main-thread blocking ke sath har product Google Lighthouse 98+ score par benchmark hota hai.',
+      'We never touch bloated templates or legacy CMS stacks. Through clean code architecture, dynamic imports, asset compression, and zero main-thread blocking, every build is benchmarked to 98+ Google Lighthouse scores.',
   },
   {
     id: '05',
     question: 'Who retains the intellectual property and code repository?',
     answer:
-      'Day one se 100% IP ownership aapki hoti hai. Milestone approval ke baad complete GitHub repository, Figma components, production environment variables aur credentials fully handover kiye jaate hain.',
+      'You own 100% of the IP from day one. Upon milestone sign-off, we hand over full GitHub repository access, Figma design tokens, environment variables, and production deployment credentials.',
   },
   {
     id: '06',
     question: 'What does the post-launch sprint support include?',
     answer:
-      'Launch ke baad aap akele nahi hote. Har release ke sath 30 days ki dedicated sprint support included hoti hai jisme real-time monitoring, edge bug fixes aur core performance fine-tuning hum handle karte hain.',
+      'Every release includes 30 days of dedicated sprint support covering real-time infrastructure monitoring, priority edge-case bug fixes, and continuous performance fine-tuning.',
   },
 ];
 
@@ -76,14 +76,14 @@ export default function FaqSection() {
               </span>
             </div>
             {/* Massive Bold Heading */}
-            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight leading-[0.95]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[1.1]">
               <span className="text-neutral-500 font-light block">Clear Answers.</span>
               <span className="text-white">Zero Bullshit<span className="text-[#ff4d00]">.</span></span>
             </h2>
           </div>
 
           <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed max-w-sm">
-            Hamare sprint cycles, code architecture aur direct development workflow ke baare me sab kuch transparent.
+            Complete transparency across our sprint cycles, code architecture, and direct development workflow.
           </p>
         </div>
 
@@ -119,8 +119,8 @@ export default function FaqSection() {
                   {/* Circular Orange / Dark Icon */}
                   <div
                     className={`flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${isOpen
-                        ? 'bg-[#ff4d00] border-[#ff4d00] text-white rotate-45 shadow-[0_0_25px_rgba(255,77,0,0.5)]'
-                        : 'bg-white/5 border-white/10 text-neutral-400 group-hover:border-[#ff4d00]/60 group-hover:text-white rotate-0'
+                      ? 'bg-[#ff4d00] border-[#ff4d00] text-white rotate-45 shadow-[0_0_25px_rgba(255,77,0,0.5)]'
+                      : 'bg-white/5 border-white/10 text-neutral-400 group-hover:border-[#ff4d00]/60 group-hover:text-white rotate-0'
                       }`}
                   >
                     <Plus className="h-5 w-5 stroke-[2.2]" />
@@ -130,8 +130,8 @@ export default function FaqSection() {
                 {/* Smooth Expandable Content */}
                 <div
                   className={`grid transition-all duration-300 ease-in-out ${isOpen
-                      ? 'grid-rows-[1fr] opacity-100 pb-8 md:pb-10'
-                      : 'grid-rows-[0fr] opacity-0 pb-0'
+                    ? 'grid-rows-[1fr] opacity-100 pb-8 md:pb-10'
+                    : 'grid-rows-[0fr] opacity-0 pb-0'
                     }`}
                 >
                   <div className="overflow-hidden pl-12 sm:pl-20">
