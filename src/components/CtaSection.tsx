@@ -18,28 +18,22 @@ export default function CtaSection() {
   };
 
   return (
-    <section className="relative w-full bg-[#fafafa] text-neutral-900 py-24 sm:py-32 px-6 md:px-12 overflow-hidden border-t border-neutral-200/70 font-sans">
-      {/* Background Orange Ambient Lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#ff4d00]/[0.08] blur-[170px] pointer-events-none rounded-full" />
-      <div className="absolute -top-32 right-10 w-96 h-96 bg-[#ff4d00]/[0.06] blur-[140px] pointer-events-none rounded-full" />
-
+    // FIX: bg-[#fafafa] ko bg-transparent kiya
+    <section className="relative w-full bg-transparent text-neutral-900 py-24 sm:py-32 px-6 md:px-12 overflow-hidden border-t border-orange-200/50 font-sans">
       <div className="relative z-10 max-w-7xl mx-auto space-y-16">
 
         {/* Main CTA Bento Box */}
-        <div className="group relative bg-white border border-neutral-200/90 rounded-[36px] sm:rounded-[44px] p-8 sm:p-14 lg:p-20 shadow-[0_20px_50px_rgba(0,0,0,0.03)] overflow-hidden transition-all duration-300 hover:border-[#ff4d00]/40">
+        <div className="group relative bg-white border-2 border-orange-200/70 rounded-[36px] sm:rounded-[44px] p-8 sm:p-14 lg:p-20 shadow-[0_20px_50px_rgba(255,77,0,0.05)] overflow-hidden transition-all duration-300 hover:border-[#ff4d00]/60">
 
           {/* Subtle Top Accent Line */}
-          <div className="absolute top-0 left-12 right-12 h-[1px] bg-gradient-to-r from-transparent via-[#ff4d00]/40 to-transparent pointer-events-none" />
-
-          {/* Subtle Corner Background Glow */}
-          <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-gradient-to-bl from-[#ff4d00]/12 via-[#ff4d00]/[0.02] to-transparent blur-[110px] pointer-events-none rounded-full" />
+          <div className="absolute top-0 left-12 right-12 h-[2px] bg-gradient-to-r from-transparent via-[#ff4d00]/50 to-transparent pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center justify-between">
 
             {/* Left Side: Typography & Conversion Action */}
             <div className="lg:col-span-7 space-y-7">
 
-              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-neutral-100/90 border border-neutral-200">
+              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-orange-50 border border-orange-200/80 shadow-xs">
                 <span className="w-1 h-2.5 rounded-[1px] bg-[#ff4d00]" />
                 <span className="text-[10.5px] font-mono font-semibold tracking-[0.16em] uppercase text-neutral-700">
                   Sprint Slots Open
@@ -75,7 +69,7 @@ export default function CtaSection() {
                 <button
                   type="button"
                   onClick={copyEmail}
-                  className="inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-full bg-neutral-50/80 hover:bg-neutral-100/80 border border-neutral-200/90 hover:border-[#ff4d00]/40 text-neutral-700 hover:text-neutral-950 text-xs font-mono tracking-wider transition-all cursor-pointer group"
+                  className="inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-full bg-orange-50/70 hover:bg-orange-100/70 border border-orange-200 hover:border-[#ff4d00]/50 text-neutral-700 hover:text-neutral-950 text-xs font-mono tracking-wider transition-all cursor-pointer group"
                 >
                   {copied ? (
                     <>
@@ -93,54 +87,92 @@ export default function CtaSection() {
 
             </div>
 
-            {/* Right Side: Micro Bento Cards */}
-            <div className="lg:col-span-5 flex flex-col gap-3.5">
+         {/* Right Side: Micro Bento Cards */}
+<div className="lg:col-span-5 flex flex-col gap-3.5">
 
-              <div className="group bg-neutral-50/70 hover:bg-white border border-neutral-200/70 hover:border-[#ff4d00]/30 rounded-2xl p-4 sm:p-5 transition-all duration-300 shadow-2xs hover:shadow-[0_4px_20px_rgba(255,77,0,0.06)] flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-white border border-neutral-200/80 group-hover:border-[#ff4d00]/30 group-hover:bg-[#ff4d00]/[0.06] flex items-center justify-center text-[#ff4d00] shrink-0 transition-colors">
-                  <Clock className="w-4 h-4 transition-transform group-hover:scale-110" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-neutral-900 tracking-tight flex items-center gap-2">
-                    Rapid Turnaround
-                  </h4>
-                  <p className="text-xs text-neutral-500 font-normal mt-0.5">MVP delivery within 14 business days.</p>
-                </div>
-              </div>
+  {/* Card 1: Rapid Turnaround */}
+  <div className="group relative bg-[#fff9f5] hover:bg-white border-2 border-[#ff4d00]/25 hover:border-[#ff4d00] rounded-2xl p-4 sm:p-5 transition-all duration-300 shadow-xs hover:shadow-[0_10px_30px_-5px_rgba(255,77,0,0.25)] hover:translate-x-1.5 flex items-center justify-between gap-4 cursor-pointer overflow-hidden">
+    
+    {/* Left Accent Bar on Hover */}
 
-              <div className="group bg-neutral-50/70 hover:bg-white border border-neutral-200/70 hover:border-[#ff4d00]/30 rounded-2xl p-4 sm:p-5 transition-all duration-300 shadow-2xs hover:shadow-[0_4px_20px_rgba(255,77,0,0.06)] flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-white border border-neutral-200/80 group-hover:border-[#ff4d00]/30 group-hover:bg-[#ff4d00]/[0.06] flex items-center justify-center text-[#ff4d00] shrink-0 transition-colors">
-                  <Zap className="w-4 h-4 transition-transform group-hover:scale-110" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-neutral-900 tracking-tight">Zero Compromise Code</h4>
-                  <p className="text-xs text-neutral-500 font-normal mt-0.5">Built on Next.js with Lighthouse 98+ scores.</p>
-                </div>
-              </div>
+    {/* Background Soft Glow on Hover */}
+    <div className="absolute inset-0 bg-gradient-to-r from-[#ff4d00]/[0.08] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-              <div className="group bg-neutral-50/70 hover:bg-white border border-neutral-200/70 hover:border-[#ff4d00]/30 rounded-2xl p-4 sm:p-5 transition-all duration-300 shadow-2xs hover:shadow-[0_4px_20px_rgba(255,77,0,0.06)] flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-white border border-neutral-200/80 group-hover:border-[#ff4d00]/30 group-hover:bg-[#ff4d00]/[0.06] flex items-center justify-center text-[#ff4d00] shrink-0 transition-colors">
-                  <ShieldCheck className="w-4 h-4 transition-transform group-hover:scale-110" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-neutral-900 tracking-tight">Direct Engineer Access</h4>
-                  <p className="text-xs text-neutral-500 font-normal mt-0.5">Daily syncs and instant feedback on Slack.</p>
-                </div>
-              </div>
+    <div className="relative z-10 flex items-center gap-4">
+      <div className="w-11 h-11 rounded-xl bg-white border border-[#ff4d00]/30 group-hover:bg-[#ff4d00] group-hover:border-[#ff4d00] flex items-center justify-center text-[#ff4d00] group-hover:text-white shrink-0 shadow-xs transition-all duration-300 group-hover:scale-105 group-hover:rotate-6">
+        <Clock className="w-5 h-5 transition-transform" />
+      </div>
+      <div>
+        <h4 className="text-sm font-bold text-neutral-900 group-hover:text-[#ff4d00] tracking-tight transition-colors">
+          Rapid Turnaround
+        </h4>
+        <p className="text-xs text-neutral-600 font-normal mt-0.5">MVP delivery within 14 business days.</p>
+      </div>
+    </div>
 
-            </div>
+    {/* Right Arrow Mini Pill */}
+    <div className="relative z-10 w-7 h-7 rounded-full bg-[#ff4d00]/10 text-[#ff4d00] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-2 transition-all duration-300 shrink-0">
+      <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
+    </div>
+  </div>
+
+  {/* Card 2: Zero Compromise Code */}
+  <div className="group relative bg-[#fff9f5] hover:bg-white border-2 border-[#ff4d00]/25 hover:border-[#ff4d00] rounded-2xl p-4 sm:p-5 transition-all duration-300 shadow-xs hover:shadow-[0_10px_30px_-5px_rgba(255,77,0,0.25)] hover:translate-x-1.5 flex items-center justify-between gap-4 cursor-pointer overflow-hidden">
+    
+    <div className="absolute inset-0 bg-gradient-to-r from-[#ff4d00]/[0.08] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+    <div className="relative z-10 flex items-center gap-4">
+      <div className="w-11 h-11 rounded-xl bg-white border border-[#ff4d00]/30 group-hover:bg-[#ff4d00] group-hover:border-[#ff4d00] flex items-center justify-center text-[#ff4d00] group-hover:text-white shrink-0 shadow-xs transition-all duration-300 group-hover:scale-105 group-hover:-rotate-6">
+        <Zap className="w-5 h-5 transition-transform" />
+      </div>
+      <div>
+        <h4 className="text-sm font-bold text-neutral-900 group-hover:text-[#ff4d00] tracking-tight transition-colors">
+          Zero Compromise Code
+        </h4>
+        <p className="text-xs text-neutral-600 font-normal mt-0.5">Built on Next.js with Lighthouse 98+ scores.</p>
+      </div>
+    </div>
+
+    <div className="relative z-10 w-7 h-7 rounded-full bg-[#ff4d00]/10 text-[#ff4d00] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-2 transition-all duration-300 shrink-0">
+      <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
+    </div>
+  </div>
+
+  {/* Card 3: Direct Engineer Access */}
+  <div className="group relative bg-[#fff9f5] hover:bg-white border-2 border-[#ff4d00]/25 hover:border-[#ff4d00] rounded-2xl p-4 sm:p-5 transition-all duration-300 shadow-xs hover:shadow-[0_10px_30px_-5px_rgba(255,77,0,0.25)] hover:translate-x-1.5 flex items-center justify-between gap-4 cursor-pointer overflow-hidden">
+    
+    <div className="absolute inset-0 bg-gradient-to-r from-[#ff4d00]/[0.08] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+    <div className="relative z-10 flex items-center gap-4">
+      <div className="w-11 h-11 rounded-xl bg-white border border-[#ff4d00]/30 group-hover:bg-[#ff4d00] group-hover:border-[#ff4d00] flex items-center justify-center text-[#ff4d00] group-hover:text-white shrink-0 shadow-xs transition-all duration-300 group-hover:scale-105 group-hover:rotate-6">
+        <ShieldCheck className="w-5 h-5 transition-transform" />
+      </div>
+      <div>
+        <h4 className="text-sm font-bold text-neutral-900 group-hover:text-[#ff4d00] tracking-tight transition-colors">
+          Direct Engineer Access
+        </h4>
+        <p className="text-xs text-neutral-600 font-normal mt-0.5">Daily syncs and instant feedback on Slack.</p>
+      </div>
+    </div>
+
+    <div className="relative z-10 w-7 h-7 rounded-full bg-[#ff4d00]/10 text-[#ff4d00] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-2 transition-all duration-300 shrink-0">
+      <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
+    </div>
+  </div>
+
+</div>
 
           </div>
 
         </div>
 
         {/* Footer Meta Row */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-500 uppercase tracking-widest pt-2">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-600 uppercase tracking-widest pt-2">
           <span className="flex items-center gap-2">
             <span className="w-1 h-2 rounded-[1px] bg-[#ff4d00]" />
             Zorzex Digital Product Studio
           </span>
-          <span className="flex items-center gap-2 text-neutral-600">
+          <span className="flex items-center gap-2 text-neutral-700">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse" />
             Currently accepting Q1 / Q2 Projects
           </span>

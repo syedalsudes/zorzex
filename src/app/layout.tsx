@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     apple: "/favicon.png",
   },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,35 +44,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${interTight.variable}`}>
-      <body className="relative min-h-screen bg-[#fafafa] font-body text-neutral-900 antialiased overflow-x-hidden selection:bg-[#ff4d00] selection:text-white">
+      <body className="relative min-h-screen bg-white font-body text-neutral-900 antialiased overflow-x-hidden selection:bg-[#ff4d00] selection:text-white">
         
-        {/* ================= EXACT IMAGE BACKGROUND LAYER ================= */}
-        {/* Right side subtle warm orange ambient glow */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed top-0 right-0 h-full w-[55vw] max-w-[900px] z-0 opacity-70 blur-[140px]"
-          style={{
-            background: "radial-gradient(circle at 100% 50%, rgba(255, 120, 60, 0.28) 0%, rgba(255, 180, 140, 0.12) 45%, transparent 75%)",
-          }}
-        />
-
-        {/* Top-Right Soft Aura Accent */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed -top-20 -right-20 h-[500px] w-[500px] rounded-full z-0 opacity-50 blur-[130px]"
-          style={{
-            background: "radial-gradient(circle, rgba(255, 90, 20, 0.25) 0%, transparent 70%)",
-          }}
-        />
-
-        {/* Global Faint Dot Grid Tint (Optional - clean rakhne ke liye opacity bilkul low rakhi hai) */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed inset-0 z-0 opacity-[0.03]"
-          style={{
-            backgroundImage: "radial-gradient(#171717 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-          }}
+        {/* Simple & Clean White + Orange Linear Gradient Base */}
+        <div 
+          aria-hidden="true" 
+          className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#ffffff] via-[#fff3eb] to-[#fed7aa]"
         />
 
         {/* Content Layer */}

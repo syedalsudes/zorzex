@@ -21,16 +21,14 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="relative w-full bg-white text-neutral-900 py-16 sm:py-20 lg:py-24 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 overflow-hidden border-t border-neutral-100 font-sans">
-      {/* Background Soft Orange Glow */}
-      <div className="absolute top-1/3 right-10 w-[350px] sm:w-[500px] lg:w-[650px] h-[350px] sm:h-[500px] lg:h-[650px] bg-gradient-to-bl from-[#ff4d00]/10 via-[#ff4d00]/5 to-transparent blur-[140px] pointer-events-none rounded-full" />
-
+    // FIX: bg-white ko bg-transparent kiya
+    <section className="relative w-full bg-transparent text-neutral-900 py-16 sm:py-20 lg:py-24 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 overflow-hidden border-t border-orange-200/50 font-sans">
       <div className="relative z-10 max-w-7xl xl:max-w-[1550px] 2xl:max-w-[1850px] mx-auto space-y-12 sm:space-y-16">
 
         {/* Top Header & CTA */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end justify-between border-b border-neutral-200/80 pb-8 sm:pb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end justify-between border-b border-orange-200/80 pb-8 sm:pb-10">
           <div className="lg:col-span-8 space-y-3 sm:space-y-4">
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-neutral-100/90 border border-neutral-200">
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-white/80 border border-orange-200/60 shadow-xs">
               <span className="w-1 h-2.5 rounded-[1px] bg-[#ff4d00]" />
               <span className="text-[10.5px] font-mono font-semibold tracking-[0.16em] uppercase text-neutral-700">
                 Methodology &amp; Flow
@@ -39,7 +37,7 @@ export default function ProcessSection() {
 
             {/* Controlled Heading Size */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light uppercase tracking-wider leading-[1.15]">
-              <span className="text-neutral-400">Engineered for</span> <br />
+              <span className="text-neutral-500">Engineered for</span> <br />
               <strong className="font-semibold text-neutral-950">
                 Agile Execution<span className="text-[#ff4d00]">.</span>
               </strong>
@@ -117,7 +115,7 @@ export default function ProcessSection() {
                 <h3 className="text-base font-semibold text-neutral-900 leading-snug group-hover:text-[#ff4d00] transition-colors">
                   {steps[0].title}
                 </h3>
-                <p className="text-xs text-neutral-500 leading-relaxed font-normal">
+                <p className="text-xs text-neutral-600 leading-relaxed font-normal">
                   {steps[0].desc}
                 </p>
               </div>
@@ -151,7 +149,7 @@ export default function ProcessSection() {
                 <h3 className="text-base font-semibold text-neutral-900 leading-snug group-hover:text-[#ff4d00] transition-colors">
                   {steps[1].title}
                 </h3>
-                <p className="text-xs text-neutral-500 leading-relaxed font-normal">
+                <p className="text-xs text-neutral-600 leading-relaxed font-normal">
                   {steps[1].desc}
                 </p>
               </div>
@@ -185,7 +183,7 @@ export default function ProcessSection() {
                 <h3 className="text-base font-semibold text-neutral-900 leading-snug group-hover:text-[#ff4d00] transition-colors">
                   {steps[2].title}
                 </h3>
-                <p className="text-xs text-neutral-500 leading-relaxed font-normal">
+                <p className="text-xs text-neutral-600 leading-relaxed font-normal">
                   {steps[2].desc}
                 </p>
               </div>
@@ -196,7 +194,7 @@ export default function ProcessSection() {
         {/* ================= MOBILE / TABLET TIMELINE (< 1024PX) ================= */}
         <div className="lg:hidden relative border-l-2 border-[#ff4d00] pl-6 ml-4 space-y-8 sm:space-y-10">
           {steps.map((step, idx) => (
-            <div key={idx} className="relative group p-3 rounded-2xl transition-colors hover:bg-[#fff9f6]">
+            <div key={idx} className="relative group p-3 rounded-2xl transition-colors hover:bg-white/60">
               {/* Outer Indicator Dot on Vertical Line */}
               <div className="absolute -left-[37px] top-3.5 w-5 h-5 rounded-full bg-white border-2 border-[#ff4d00] flex items-center justify-center shadow-xs">
                 <div className="w-2 h-2 rounded-full bg-[#ff4d00]" />
@@ -214,7 +212,7 @@ export default function ProcessSection() {
                 <h3 className="text-base sm:text-lg font-semibold text-neutral-900 group-hover:text-[#ff4d00] transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-xs text-neutral-500 leading-relaxed max-w-sm">
+                <p className="text-xs text-neutral-600 leading-relaxed max-w-sm">
                   {step.desc}
                 </p>
               </div>

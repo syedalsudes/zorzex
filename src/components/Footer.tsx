@@ -57,8 +57,8 @@ export default function Footer() {
   };
 
   return (
-    // bg-white aur z-20 add kiya hai taaki piche ka koi bhi glow/shade hide ho jaye aur space wesi hi rahe
-    <section className="relative z-20 w-full bg-white pt-10 sm:pt-16 md:pt-20 xl:pt-28 font-sans">
+    // FIX: bg-white aur z-20 hata kar bg-transparent kiya taake layout ka gradient curve ke piche aur upper seamless dikhe
+    <section className="relative w-full bg-transparent pt-10 sm:pt-16 md:pt-20 xl:pt-28 font-sans">
       <footer className="relative w-full overflow-hidden rounded-t-[36px] sm:rounded-t-[50px] md:rounded-t-[72px] lg:rounded-t-[90px] xl:rounded-t-[110px] bg-black text-white shadow-2xl">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
@@ -76,7 +76,7 @@ export default function Footer() {
 
         {/* Content Container */}
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-12 pt-12 sm:pt-16 md:pt-24 xl:max-w-[1600px] xl:px-16 xl:pt-32 2xl:max-w-[1850px] 2xl:pt-36">
-          
+
           {/* Top Brand Identity */}
           <div className="mb-10 sm:mb-14 md:mb-16 xl:mb-20">
             <div className="flex items-center gap-3">
@@ -91,11 +91,11 @@ export default function Footer() {
 
           {/* Main Footer Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-8 xl:gap-12 items-start mb-14 sm:mb-20 md:mb-24">
-            
+
             {/* Left: Call to Action & Newsletter */}
             <div className="lg:col-span-5 flex flex-col justify-start">
               <h2 className="font-heading text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6 sm:mb-8">
-                Let’s Work <br />
+                Let's Work <br />
                 Together.
               </h2>
 
@@ -105,14 +105,14 @@ export default function Footer() {
                     type="email"
                     value={email}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                    placeholder="EMAIL ADDRESS"
+                    placeholder="Enter your email address"
                     required
-                    className="w-full rounded-full bg-transparent px-4 sm:px-5 xl:px-6 py-2 text-xs sm:text-sm xl:text-base font-semibold tracking-wider text-black placeholder-neutral-500 uppercase focus:outline-none"
+                    className="w-full rounded-full bg-transparent px-4 sm:px-5 xl:px-6 py-2 text-xs sm:text-sm xl:text-base font-medium text-black placeholder-neutral-500 focus:outline-none"
                   />
                   <button
                     type="submit"
                     aria-label="Submit Email"
-                    className="flex h-9 w-9 sm:h-10 sm:w-10 xl:h-12 xl:w-12 shrink-0 items-center justify-center rounded-full bg-brand text-white transition-transform duration-200 hover:scale-105 hover:bg-brand-hover shadow-md"
+                    className="flex h-9 w-9 sm:h-10 sm:w-10 xl:h-12 xl:w-12 shrink-0 items-center justify-center rounded-full bg-brand text-white transition-transform duration-200 hover:scale-105 hover:bg-brand-hover shadow-md cursor-pointer"
                   >
                     <ArrowRight className="h-4 w-4 xl:h-5 xl:w-5 stroke-[2.5]" />
                   </button>
@@ -122,7 +122,7 @@ export default function Footer() {
 
             {/* Right: Navigation Columns */}
             <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 xl:gap-12 text-sm xl:text-base">
-              
+
               {/* Pages Column */}
               <div>
                 <h3 className="font-medium text-white text-sm md:text-base xl:text-lg mb-3 sm:mb-4 xl:mb-6">
