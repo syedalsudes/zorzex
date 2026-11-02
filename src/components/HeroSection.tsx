@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
 export default function HeroSection() {
@@ -26,23 +27,26 @@ export default function HeroSection() {
         <div className="hidden md:block md:col-span-2 lg:col-span-4" />
 
         {/* Right Info Paragraphs & CTA */}
-        <div className="md:col-span-5 lg:col-span-4 flex flex-col justify-between space-y-6 text-xs sm:text-sm md:text-xs text-neutral-400 font-light leading-relaxed">
-          <div className="space-y-3.5 max-w-md md:max-w-none">
+        <div className="md:col-span-5 lg:col-span-4 flex flex-col justify-between space-y-6 text-xs sm:text-sm md:text-[13px] text-neutral-300 font-light leading-relaxed">
+          <div className="space-y-4 max-w-md md:max-w-none">
             <p>
-              A brand becomes truly memorable when every touchpoint is crafted with purpose and consistency. From identity creation to digital execution.
+              <strong className="text-white font-medium">Zorzex</strong> is an autonomous engineering studio engineered for velocity. We design high-converting <strong className="text-white font-medium">UI/UX</strong> and build production-ready <strong className="text-white font-medium">Next.js web platforms</strong> and <strong className="text-white font-medium">Flutter mobile applications</strong>.
             </p>
-            <p>
-              Consistency builds that connection, ensuring that every time your brand appears, it leaves a lasting impression that resonates across all media platforms.
+            <p className="text-neutral-400">
+              Zero middlemen, zero bloated agency bureaucracy. Every deliverable ships within <strong className="text-white font-medium">&lt;14-day agile sprints</strong> with guaranteed <strong className="text-[#ff4d00] font-mono font-medium">Lighthouse 98+</strong> performance benchmarks, modern brand systems, and custom AI pipeline automations.
             </p>
           </div>
 
           <div className="pt-2">
-            <button className="group flex items-center justify-between w-full sm:w-auto min-w-[210px] max-w-[240px] px-5 py-3 bg-white text-black rounded-full font-medium text-xs sm:text-sm transition-all hover:bg-neutral-200 active:scale-95">
+            <Link
+              href="#contact"
+              className="group inline-flex items-center justify-between w-full sm:w-auto min-w-[210px] max-w-[240px] px-5 py-3 bg-white text-black rounded-full font-medium text-xs sm:text-sm transition-all hover:bg-neutral-200 active:scale-95"
+            >
               <span>Start a project</span>
               <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black text-white flex items-center justify-center transition-transform group-hover:rotate-45">
-                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2.5]" />
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -51,7 +55,7 @@ export default function HeroSection() {
       <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[240px] sm:w-[320px] md:w-[420px] lg:w-[480px] h-[45vh] sm:h-[55vh] md:h-[65vh] max-h-[680px] pointer-events-none z-10 flex items-end justify-center">
         <Image
           src="/robot1.png"
-          alt="Model silhouette"
+          alt="Zorzex Model silhouette"
           width={480}
           height={650}
           priority
@@ -59,10 +63,10 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Giant Bottom Typography */}
+      {/* Giant Bottom Typography - Synchronized with Agency Brand */}
       <div className="relative z-0 w-full select-none pointer-events-none mt-12 md:mt-auto">
         <h2 className="text-[19vw] font-normal leading-none tracking-tight text-center text-white/90 uppercase font-sans">
-          Studios
+          Zorzex
         </h2>
       </div>
     </section>
