@@ -52,6 +52,16 @@ export default function RootLayout({
           className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#ffffff] via-[#fff3eb] to-[#fed7aa]"
         />
 
+                {/* 2. Crisp, Visible Tech Dot Grid Pattern */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-0 z-0 opacity-20"
+          style={{
+            backgroundImage: `radial-gradient(circle, #ea580c 1.5px, transparent 1.5px)`,
+            backgroundSize: "28px 28px",
+          }}
+        />
+
         {/* Content Layer */}
         <div className="relative z-10 flex min-h-screen flex-col justify-between">
           <Navbar />

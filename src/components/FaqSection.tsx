@@ -68,13 +68,6 @@ export default function FaqSection() {
         {/* Massive High-Impact Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-12">
           <div className="space-y-6 max-w-3xl">
-            {/* Tech Status Pill */}
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-transparent border border-neutral-500">
-              <span className="w-1 h-2.5 rounded-[1px] bg-[#ff4d00]" />
-              <span className="text-[10.5px] font-mono font-semibold tracking-[0.16em] uppercase text-neutral-200">
-                FAQs &amp; Architecture
-              </span>
-            </div>
             {/* Massive Bold Heading */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[1.1]">
               <span className="text-neutral-500 font-light block">Clear Answers.</span>
@@ -120,7 +113,7 @@ export default function FaqSection() {
                   <div
                     className={`flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${isOpen
                       ? 'bg-[#ff4d00] border-[#ff4d00] text-white rotate-45 shadow-[0_0_25px_rgba(255,77,0,0.5)]'
-                      : 'bg-white/5 border-white/10 text-neutral-400 group-hover:border-[#ff4d00]/60 group-hover:text-white rotate-0'
+                      : 'bg-white/5 border-white/10 text-neutral-400 group-hover:text-white rotate-0'
                       }`}
                   >
                     <Plus className="h-5 w-5 stroke-[2.2]" />
@@ -146,23 +139,6 @@ export default function FaqSection() {
             );
           })}
         </div>
-
-        {/* Bottom Fast Contact Prompt */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-4 text-xs md:text-sm text-neutral-400">
-          <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Developers active on Slack & Discord</span>
-          </div>
-
-          <a
-            href="#contact"
-            className="group flex items-center gap-2 text-white font-medium hover:text-[#ff4d00] transition-colors"
-          >
-            <span>Have a custom requirement? Book a call directly</span>
-            <span className="text-[#ff4d00] transition-transform group-hover:translate-x-1">&rarr;</span>
-          </a>
-        </div>
-
       </div>
     </section>
   );

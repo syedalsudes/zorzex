@@ -28,12 +28,6 @@ export default function ProcessSection() {
         {/* Top Header & CTA */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end justify-between border-b border-orange-200/80 pb-8 sm:pb-10">
           <div className="lg:col-span-8 space-y-3 sm:space-y-4">
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-white/80 border border-orange-200/60 shadow-xs">
-              <span className="w-1 h-2.5 rounded-[1px] bg-[#ff4d00]" />
-              <span className="text-[10.5px] font-mono font-semibold tracking-[0.16em] uppercase text-neutral-700">
-                Methodology &amp; Flow
-              </span>
-            </div>
 
             {/* Controlled Heading Size */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light uppercase tracking-wider leading-[1.15]">

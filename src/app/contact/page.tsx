@@ -1,404 +1,358 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  ArrowUpRight,
-  Send,
-  CheckCircle2,
-  Sparkles,
-  MessageSquare,
-  Clock,
-  ShieldCheck,
-  Copy,
-  Check
+import { 
+  Mail, 
+  Phone, 
+  MapPin, 
+  ArrowUpRight, 
+  Check, 
+  Copy, 
+  Clock, 
+  ShieldCheck, 
+  Zap, 
+  Send 
 } from "lucide-react";
 
-const serviceOptions = [
-  "Web Application",
-  "UI/UX Design",
-  "Mobile App",
-  "Full Rebranding",
-  "Speed & SEO",
-];
-
-const budgetRanges = ["<$5k", "$5k - $10k", "$10k - $25k", "$25k+"];
-
 export default function ContactPage() {
+  const [copied, setCopied] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     subject: "",
     message: "",
-    service: "Web Application",
-    budget: "$5k - $10k",
   });
 
-  const [copied, setCopied] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSent, setIsSent] = useState(false);
+  const agencyEmail = "hello@zorzex.com";
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText("hello@zorzex.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(agencyEmail);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSent(true);
-    }, 1200);
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 4000);
   };
 
   return (
-    <section className="relative w-full bg-[#fafafa] text-neutral-900 py-16 sm:py-24 lg:py-32 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 overflow-hidden font-sans">
-      {/* Background Radial Glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-10 right-0 w-[500px] sm:w-[800px] h-[500px] sm:h-[800px] bg-gradient-to-bl from-[#ff4d00]/20 via-[#ff4d00]/5 to-transparent blur-[160px] rounded-full"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 w-[450px] sm:w-[650px] h-[450px] sm:h-[650px] bg-gradient-to-tr from-[#ff4d00]/15 via-transparent to-transparent blur-[150px] rounded-full"
-      />
+    <div className="relative w-full bg-transparent text-neutral-900 font-sans overflow-hidden selection:bg-[#ff4d00] selection:text-white">
 
-      <div className="relative z-10 max-w-7xl xl:max-w-[1550px] mx-auto space-y-12 sm:space-y-16">
+      {/* ================= HERO SECTION (FULL SCREEN + SOLID WHITE TEXT) ================= */}
+      <section className="relative w-full min-h-screen bg-[#070707] text-white overflow-hidden flex flex-col justify-between px-6 sm:px-10 md:px-16 lg:px-24 pt-32 sm:pt-40 pb-12 font-sans">
         
-        {/* ================= HUGE BOLD HEADER ================= */}
-        <div className="border-b border-neutral-200/90 pb-10 sm:pb-16 space-y-6">
-          <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-white border border-[#ff4d00]/30 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#ff4d00] animate-pulse" />
-            <span className="text-[11px] font-mono font-bold tracking-[0.2em] uppercase text-neutral-800">
-              Get In Touch &bull; Open For Sprints
+        {/* Subtle Dark Dot Grid Texture */}
+        <div 
+          aria-hidden="true" 
+          className="pointer-events-none absolute inset-0 z-0 opacity-[0.05]"
+          style={{
+            backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+
+        {/* Deep Orange Ambient Glow */}
+        <div 
+          aria-hidden="true" 
+          className="pointer-events-none absolute top-1/3 left-1/4 -translate-y-1/2 w-[400px] sm:w-[600px] lg:w-[800px] h-[400px] sm:h-[600px] lg:h-[800px] bg-gradient-to-tr from-[#ff4d00]/25 via-[#ff3b00]/10 to-transparent blur-[120px] md:blur-[180px] rounded-full" 
+        />
+
+        {/* Main Centered Content */}
+        <div className="relative z-10 w-full max-w-6xl my-auto space-y-7 sm:space-y-9">
+          
+          {/* Top Subtitle with Accent Dash */}
+          <div className="flex items-center gap-3">
+            <span className="w-8 sm:w-11 h-[1.5px] bg-[#ff4d00]" />
+            <span className="text-[11px] sm:text-xs font-mono font-bold tracking-[0.3em] uppercase text-[#ff4d00]">
+              Get In Touch
             </span>
           </div>
 
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl xl:text-9xl font-black uppercase tracking-tighter leading-[0.95] text-neutral-950">
-              Contact <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4d00] via-[#ff6a2b] to-neutral-800">
-                Us.
-              </span>
-            </h1>
+          {/* Giant Pure White Headline */}
+          <h1 className="font-heading text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black uppercase tracking-tight leading-[0.88] select-none text-white">
+            Contact Us.
+          </h1>
 
-            <div className="max-w-md space-y-3">
-              <p className="text-base sm:text-lg text-neutral-600 font-medium leading-relaxed border-l-2 border-[#ff4d00] pl-4">
-                Seed funding se scale-up tak, hum production-ready websites aur digital products deliver karte hain sprint speed ke sath.
-              </p>
-              <div className="flex items-center gap-4 text-xs font-mono font-semibold text-neutral-500 pl-4">
-                <span className="inline-flex items-center gap-1.5 text-[#ff4d00]">
-                  <Clock className="w-3.5 h-3.5" /> &lt;2 Hours Response
-                </span>
-                <span>&bull;</span>
-                <span className="inline-flex items-center gap-1.5 text-neutral-700">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#ff4d00]" /> NDA Protected
-                </span>
-              </div>
-            </div>
+          {/* Editorial Narrative with Left Border */}
+          <div className="pt-2">
+            <p className="font-body text-neutral-300 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl border-l-2 border-[#ff4d00] pl-5 sm:pl-7">
+              Ready to ship your next high-performance digital product? Bypass generic agency delays and collaborate directly with our lead architects.
+            </p>
+          </div>
+
+        </div>
+
+        {/* Bottom Subtle Meta Strip */}
+        <div className="relative z-10 w-full max-w-6xl pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-neutral-500">
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ff4d00] animate-pulse" />
+            <span className="text-neutral-400 uppercase tracking-widest">
+              Direct Engineering Inquiries
+            </span>
+          </div>
+
+          <div className="text-neutral-400 uppercase tracking-wider text-[11px]">
+            Average Response: &lt;2 Business Hours
           </div>
         </div>
 
-        {/* ================= MAIN INTERACTIVE GRID ================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-start">
+      </section>
+
+      {/* ================= INTERACTIVE CONTACT & FORM SECTION ================= */}
+      <section className="relative w-full py-20 sm:py-28 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 border-t border-orange-200/50">
+        <div className="relative z-10 max-w-7xl xl:max-w-[1550px] 2xl:max-w-[1850px] mx-auto">
           
-          {/* ================= LEFT SIDE: INFO & STATS ================= */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
-            {/* Quick Interactive Copy Card */}
-            <div className="group relative bg-white border border-[#ff4d00]/25 rounded-[32px] p-6 sm:p-8 shadow-xs transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(255,77,0,0.18)] hover:border-[#ff4d00]/60">
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-xs font-mono font-bold tracking-widest text-[#ff4d00] uppercase">
-                  Fast Track
-                </span>
-                <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#fff0eb] text-[#ff4d00]">
-                  Direct Founder Desk
-                </span>
-              </div>
-
-              <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-2">
-                Hassle-free discussion.
-              </h3>
-              <p className="text-sm text-neutral-500 leading-relaxed mb-6">
-                Koi sales middleman nahi. Seedha tech aur design leads aapke scope ka breakdown karenge.
-              </p>
-
-              {/* Copy Email Button */}
-              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-neutral-50 border border-neutral-200 group-hover:border-[#ff4d00]/40 transition-colors">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#fff0eb] text-[#ff4d00] flex items-center justify-center font-bold">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider block">Direct Email</span>
-                    <span className="text-sm sm:text-base font-semibold text-neutral-900">hello@zorzex.com</span>
-                  </div>
-                </div>
-                <button
-                  onClick={handleCopyEmail}
-                  type="button"
-                  className="px-3.5 py-2 rounded-xl bg-white border border-neutral-200 text-xs font-bold text-neutral-700 hover:text-[#ff4d00] hover:border-[#ff4d00] transition-all flex items-center gap-1.5 active:scale-95 cursor-pointer shadow-2xs"
-                >
-                  {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-                  {copied ? "Copied" : "Copy"}
-                </button>
-              </div>
-            </div>
-
-            {/* Contact Details Stack */}
-            <div className="bg-gradient-to-br from-white via-white to-[#fff9f6] border border-[#ff4d00]/25 rounded-[32px] p-6 sm:p-8 space-y-6 shadow-xs">
+            {/* ================= LEFT COLUMN: CONTACT DETAILS & HIGHLIGHTS ================= */}
+            <div className="lg:col-span-5 space-y-10">
               
-              {/* Phone */}
-              <a
-                href="tel:+12368884196"
-                className="group flex items-center justify-between p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#ff4d00]/60 hover:shadow-md transition-all duration-300"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#fff0eb] text-[#ff4d00] flex items-center justify-center transition-transform group-hover:scale-110">
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-white/80 border border-orange-200/70 shadow-xs">
+                  <span className="w-1 h-2.5 rounded-[1px] bg-[#ff4d00]" />
+                  <span className="text-[10.5px] font-mono font-semibold tracking-[0.16em] uppercase text-neutral-700">
+                    Direct Channels
+                  </span>
+                </div>
+
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-tight leading-[1.12]">
+                  <span className="text-neutral-500">Initiate your</span> <br />
+                  <strong className="font-extrabold text-neutral-950">
+                    Active <span className="text-[#ff4d00]">Sprint.</span>
+                  </strong>
+                </h2>
+
+                <p className="text-sm sm:text-base text-neutral-600 font-normal leading-relaxed">
+                  Have a technical roadmap ready or starting from an early concept? Reach out directly and we’ll schedule a technical discovery call.
+                </p>
+              </div>
+
+              {/* Direct Info Cards */}
+              <div className="space-y-4">
+                
+                {/* Email Card with Quick Copy */}
+                <div className="group relative bg-white border-2 border-orange-200/70 hover:border-[#ff4d00] rounded-2xl p-5 sm:p-6 transition-all duration-300 shadow-xs flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-orange-50 border border-orange-200/80 flex items-center justify-center text-[#ff4d00] group-hover:bg-[#ff4d00] group-hover:text-white transition-colors duration-300 shrink-0">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[10.5px] font-mono uppercase text-neutral-400 font-semibold tracking-wider block">
+                        Direct Email
+                      </span>
+                      <a href={`mailto:${agencyEmail}`} className="text-sm sm:text-base font-bold text-neutral-900 hover:text-[#ff4d00] transition-colors">
+                        {agencyEmail}
+                      </a>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={copyEmail}
+                    className="p-2.5 rounded-lg bg-orange-50 hover:bg-orange-100 text-[#ff4d00] transition-colors cursor-pointer"
+                    title="Copy Email"
+                  >
+                    {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+                  </button>
+                </div>
+
+                {/* Phone Card */}
+                <div className="group relative bg-white border-2 border-orange-200/70 hover:border-[#ff4d00] rounded-2xl p-5 sm:p-6 transition-all duration-300 shadow-xs flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-orange-50 border border-orange-200/80 flex items-center justify-center text-[#ff4d00] group-hover:bg-[#ff4d00] group-hover:text-white transition-colors duration-300 shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-mono uppercase text-neutral-400 font-bold tracking-wider block">
-                      Call / WhatsApp
+                    <span className="text-[10.5px] font-mono uppercase text-neutral-400 font-semibold tracking-wider block">
+                      Direct Line / WhatsApp
                     </span>
-                    <span className="text-base font-bold text-neutral-900 group-hover:text-[#ff4d00] transition-colors">
-                      (236) 888-4196[cite: 1]
+                    <a href="tel:+1234567890" className="text-sm sm:text-base font-bold text-neutral-900 hover:text-[#ff4d00] transition-colors">
+                      +1 (234) 567-890
+                    </a>
+                  </div>
+                </div>
+
+                {/* Studio Location */}
+                <div className="group relative bg-white border-2 border-orange-200/70 hover:border-[#ff4d00] rounded-2xl p-5 sm:p-6 transition-all duration-300 shadow-xs flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-orange-50 border border-orange-200/80 flex items-center justify-center text-[#ff4d00] group-hover:bg-[#ff4d00] group-hover:text-white transition-colors duration-300 shrink-0">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-[10.5px] font-mono uppercase text-neutral-400 font-semibold tracking-wider block">
+                      Operations Studio
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-neutral-900">
+                      Global Remote // Core Hub
                     </span>
                   </div>
                 </div>
-                <ArrowUpRight className="w-5 h-5 text-neutral-400 group-hover:text-[#ff4d00] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-              </a>
 
-              {/* Office Location */}
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80">
-                <div className="w-12 h-12 rounded-2xl bg-[#fff0eb] text-[#ff4d00] flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] font-mono uppercase text-neutral-400 font-bold tracking-wider block">
-                    Location[cite: 1]
-                  </span>
-                  <span className="text-base font-bold text-neutral-900">
-                    White Rock, BC &bull; Remote Worldwide[cite: 1]
-                  </span>
-                </div>
               </div>
 
-              {/* Turnaround Pill */}
-              <div className="p-4 rounded-2xl bg-[#ff4d00]/[0.06] border border-[#ff4d00]/20 flex items-center justify-between">
-                <div>
-                  <div className="text-2xl font-bold tracking-tight text-neutral-950">
-                    &lt;14 <span className="text-sm text-neutral-500 font-normal">Days</span>
-                  </div>
-                  <span className="text-[10px] font-mono uppercase font-bold tracking-wider text-[#ff4d00]">
-                    Avg. Sprint Delivery
-                  </span>
+              {/* Guarantees Box */}
+              <div className="p-6 rounded-2xl bg-white/70 border border-orange-200/70 space-y-3">
+                <div className="flex items-center gap-2.5 text-xs font-semibold text-neutral-900">
+                  <Clock className="w-4 h-4 text-[#ff4d00]" />
+                  <span>Prompt Response within 2 hours</span>
                 </div>
-                <div className="text-right">
-                  <div className="text-2xl font-bold tracking-tight text-neutral-950">
-                    99<span className="text-[#ff4d00]">+</span>
-                  </div>
-                  <span className="text-[10px] font-mono uppercase font-bold tracking-wider text-neutral-500">
-                    Code Quality
-                  </span>
+                <div className="flex items-center gap-2.5 text-xs font-semibold text-neutral-900">
+                  <ShieldCheck className="w-4 h-4 text-[#ff4d00]" />
+                  <span>Strict NDA &amp; 100% IP Ownership</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-xs font-semibold text-neutral-900">
+                  <Zap className="w-4 h-4 text-[#ff4d00]" />
+                  <span>Direct Technical Lead Evaluation</span>
                 </div>
               </div>
 
             </div>
 
-          </div>
-
-          {/* ================= RIGHT SIDE: HIGH-CONVERTING FORM ================= */}
-          <div className="lg:col-span-7">
-            <div className="relative bg-white border-2 border-[#ff4d00]/30 rounded-[36px] sm:rounded-[44px] p-6 sm:p-10 lg:p-12 shadow-sm transition-all duration-300 hover:border-[#ff4d00]/60">
-              
-              {/* Form Header */}
-              <div className="flex items-center justify-between pb-6 mb-8 border-b border-neutral-100">
-                <div>
-                  <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#ff4d00] mb-1">
-                    <Sparkles className="w-3.5 h-3.5" /> Project Blueprint
+            {/* ================= RIGHT COLUMN: 4-FIELD HIGH CONVERTING FORM ================= */}
+            <div className="lg:col-span-7">
+              <div className="relative bg-white border-2 border-orange-200/70 rounded-[32px] sm:rounded-[40px] p-8 sm:p-12 shadow-[0_20px_50px_rgba(255,77,0,0.06)]">
+                
+                {/* Form Top Header */}
+                <div className="mb-8 pb-6 border-b border-orange-100 flex items-center justify-between">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-950">
+                      Send a Message
+                    </h3>
+                    <p className="text-xs sm:text-sm text-neutral-500 mt-1">
+                      Fill out the fields below and we'll reply right back.
+                    </p>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-950 tracking-tight">
-                    Tell us about your project
-                  </h2>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#ff4d00] animate-ping hidden sm:block" />
                 </div>
-                <div className="hidden sm:flex w-12 h-12 rounded-2xl bg-[#ff4d00] text-white items-center justify-center shadow-lg shadow-[#ff4d00]/25">
-                  <MessageSquare className="w-6 h-6" />
-                </div>
-              </div>
 
-              {isSent ? (
-                <div className="py-20 text-center space-y-5 animate-in fade-in zoom-in duration-300">
-                  <div className="w-20 h-20 rounded-full bg-[#ff4d00]/10 text-[#ff4d00] mx-auto flex items-center justify-center">
-                    <CheckCircle2 className="w-10 h-10" />
-                  </div>
-                  <h3 className="text-3xl font-black text-neutral-950 uppercase tracking-tight">
-                    Inquiry Received!
-                  </h3>
-                  <p className="text-neutral-600 max-w-md mx-auto text-sm sm:text-base leading-relaxed">
-                    Hamari technical team aapki requirements review kar rahi hai. Hum agle <span className="font-bold text-[#ff4d00]">2 ghanton</span> ke andar aapse connect karenge.
-                  </p>
-                  <button
-                    onClick={() => setIsSent(false)}
-                    className="mt-6 px-8 py-3.5 rounded-full bg-neutral-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-[#ff4d00] transition-colors shadow-md"
-                  >
-                    Send Another Inquiry
-                  </button>
-                </div>
-              ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   
-                  {/* Service Selector Chips */}
-                  <div className="space-y-2.5">
-                    <label className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-600 block">
-                      Interested In
-                    </label>
-                    <div className="flex flex-wrap gap-2">
-                      {serviceOptions.map((item) => (
-                        <button
-                          key={item}
-                          type="button"
-                          onClick={() => setFormData({ ...formData, service: item })}
-                          className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer ${
-                            formData.service === item
-                              ? "bg-[#ff4d00] text-white shadow-md shadow-[#ff4d00]/30 scale-[1.02]"
-                              : "bg-neutral-100/80 text-neutral-700 hover:bg-neutral-200/80"
-                          }`}
-                        >
-                          {item}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Name + Contact Number */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {/* Field 1: Name & Field 2: Email */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    
+                    {/* Name */}
                     <div className="space-y-2">
-                      <label className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700 block">
-                        Full Name <span className="text-[#ff4d00]">*</span>[cite: 1]
+                      <label htmlFor="name" className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700">
+                        Full Name <span className="text-[#ff4d00]">*</span>
                       </label>
                       <input
+                        id="name"
                         type="text"
                         required
-                        placeholder="e.g. Rahul Sharma"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3.5 rounded-2xl bg-neutral-50/70 border border-neutral-200 text-neutral-900 text-sm placeholder:text-neutral-400 focus:bg-white focus:outline-hidden focus:border-[#ff4d00] focus:ring-4 focus:ring-[#ff4d00]/10 transition-all duration-200"
+                        placeholder="John Doe"
+                        className="w-full px-4 py-3.5 rounded-xl bg-orange-50/40 border border-orange-200/80 focus:border-[#ff4d00] focus:bg-white text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none transition-all"
                       />
                     </div>
 
+                    {/* Email */}
                     <div className="space-y-2">
-                      <label className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700 block">
-                        Contact Number <span className="text-[#ff4d00]">*</span>
+                      <label htmlFor="email" className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700">
+                        Email Address <span className="text-[#ff4d00]">*</span>
                       </label>
                       <input
-                        type="tel"
-                        required
-                        placeholder="+91 / +1 (000) 000-0000"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3.5 rounded-2xl bg-neutral-50/70 border border-neutral-200 text-neutral-900 text-sm placeholder:text-neutral-400 focus:bg-white focus:outline-hidden focus:border-[#ff4d00] focus:ring-4 focus:ring-[#ff4d00]/10 transition-all duration-200"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Email + Subject */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div className="space-y-2">
-                      <label className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700 block">
-                        Email Address <span className="text-[#ff4d00]">*</span>[cite: 1]
-                      </label>
-                      <input
+                        id="email"
                         type="email"
                         required
-                        placeholder="you@company.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3.5 rounded-2xl bg-neutral-50/70 border border-neutral-200 text-neutral-900 text-sm placeholder:text-neutral-400 focus:bg-white focus:outline-hidden focus:border-[#ff4d00] focus:ring-4 focus:ring-[#ff4d00]/10 transition-all duration-200"
+                        placeholder="john@example.com"
+                        className="w-full px-4 py-3.5 rounded-xl bg-orange-50/40 border border-orange-200/80 focus:border-[#ff4d00] focus:bg-white text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none transition-all"
                       />
                     </div>
 
+                  </div>
+
+                  {/* Field 3: Phone Number & Field 4: Subject */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                    
+                    {/* Number */}
                     <div className="space-y-2">
-                      <label className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700 block">
-                        Subject <span className="text-[#ff4d00]">*</span>[cite: 1]
+                      <label htmlFor="phone" className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700">
+                        Phone Number <span className="text-[#ff4d00]">*</span>
                       </label>
                       <input
-                        type="text"
+                        id="phone"
+                        type="tel"
                         required
-                        placeholder="e.g. SaaS MVP Development"
-                        value={formData.subject}
-                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full px-4 py-3.5 rounded-2xl bg-neutral-50/70 border border-neutral-200 text-neutral-900 text-sm placeholder:text-neutral-400 focus:bg-white focus:outline-hidden focus:border-[#ff4d00] focus:ring-4 focus:ring-[#ff4d00]/10 transition-all duration-200"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="+1 (555) 000-0000"
+                        className="w-full px-4 py-3.5 rounded-xl bg-orange-50/40 border border-orange-200/80 focus:border-[#ff4d00] focus:bg-white text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none transition-all"
                       />
                     </div>
-                  </div>
 
-                  {/* Budget Chips */}
-                  <div className="space-y-2.5">
-                    <label className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-600 block">
-                      Approximate Budget
-                    </label>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                      {budgetRanges.map((b) => (
-                        <button
-                          key={b}
-                          type="button"
-                          onClick={() => setFormData({ ...formData, budget: b })}
-                          className={`py-2.5 px-3 rounded-xl text-xs font-bold border transition-all duration-200 cursor-pointer ${
-                            formData.budget === b
-                              ? "bg-[#ff4d00]/10 border-[#ff4d00] text-[#ff4d00]"
-                              : "bg-white border-neutral-200 text-neutral-600 hover:border-neutral-300"
-                          }`}
-                        >
-                          {b}
-                        </button>
-                      ))}
+                    {/* Subject */}
+                    <div className="space-y-2">
+                      <label htmlFor="subject" className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700">
+                        Subject / Project Scope <span className="text-[#ff4d00]">*</span>
+                      </label>
+                      <input
+                        id="subject"
+                        type="text"
+                        required
+                        value={formData.subject}
+                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                        placeholder="UI/UX Design, Next.js, Flutter..."
+                        className="w-full px-4 py-3.5 rounded-xl bg-orange-50/40 border border-orange-200/80 focus:border-[#ff4d00] focus:bg-white text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none transition-all"
+                      />
                     </div>
+
                   </div>
 
-                  {/* Message */}
+                  {/* Optional Project Brief / Message */}
                   <div className="space-y-2">
-                    <label className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700 block">
-                      Message / Project Scope <span className="text-[#ff4d00]">*</span>[cite: 1]
+                    <label htmlFor="message" className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700">
+                      Project Details / Message
                     </label>
                     <textarea
-                      required
+                      id="message"
                       rows={4}
-                      placeholder="Requirements, reference links, ya deliverables brief karein..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-2xl bg-neutral-50/70 border border-neutral-200 text-neutral-900 text-sm placeholder:text-neutral-400 focus:bg-white focus:outline-hidden focus:border-[#ff4d00] focus:ring-4 focus:ring-[#ff4d00]/10 resize-none transition-all duration-200"
+                      placeholder="Tell us a little bit about your timeline and product goals..."
+                      className="w-full px-4 py-3.5 rounded-xl bg-orange-50/40 border border-orange-200/80 focus:border-[#ff4d00] focus:bg-white text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none transition-all resize-none"
                     />
                   </div>
 
                   {/* Submit Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="group relative w-full inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-neutral-950 text-white font-bold text-sm tracking-widest uppercase hover:bg-[#ff4d00] transition-all duration-300 shadow-lg hover:shadow-[0_12px_28px_rgba(255,77,0,0.35)] active:scale-[0.99] cursor-pointer disabled:opacity-75 overflow-hidden"
-                  >
-                    <span className="relative z-10 flex items-center gap-2">
-                      {isSubmitting ? "Transmitting..." : "Send Inquiry"}[cite: 1]
-                      <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </button>
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      className="group w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-neutral-950 text-white rounded-full font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:bg-[#ff4d00] hover:shadow-[0_8px_25px_rgba(255,77,0,0.35)] cursor-pointer"
+                    >
+                      <span>Submit Inquiry</span>
+                      <span className="w-7 h-7 rounded-full bg-white text-neutral-950 flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
+                        <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+                      </span>
+                    </button>
+                  </div>
 
-                  <p className="text-center text-[11px] font-mono text-neutral-400">
-                    Spam-free zone. 100% confidential.
-                  </p>
+                  {submitted && (
+                    <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-semibold flex items-center gap-2">
+                      <Check className="w-4 h-4 text-emerald-600" />
+                      Inquiry received! We will respond within 2 business hours.
+                    </div>
+                  )}
+
                 </form>
-              )}
 
+              </div>
             </div>
+
           </div>
 
         </div>
-      </div>
-    </section>
+      </section>
+
+    </div>
   );
 }

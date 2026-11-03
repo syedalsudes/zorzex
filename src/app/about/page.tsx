@@ -17,6 +17,32 @@ import {
   Sparkles
 } from "lucide-react";
 
+// --- DATA ARRAYS ---
+const SKILLS_DATA = [
+  { name: "Full-Stack Architecture & Next.js", value: "98%", tag: "0.1s TTFB" },
+  { name: "Cross-Platform Mobile (Flutter)", value: "95%", tag: "Native 60FPS" },
+  { name: "Performance & Lighthouse Engineering", value: "99%", tag: "Zero Bloat" },
+  { name: "Custom AI Pipelines & Automation", value: "92%", tag: "Sub-Second" },
+];
+
+const PILLARS_DATA = [
+  {
+    title: "Discovery & Strategy",
+    description: "We don't do generic templates. We conduct a deep-dive audit into your business goals and technical architecture to lock in a clear, milestone-driven roadmap.",
+    icon: Zap,
+  },
+  {
+    title: "Sprint Execution",
+    description: "Direct engineer access with zero account manager delays. We ship rapid progress through bi-weekly milestone builds and live staging environments.",
+    icon: Layers,
+  },
+  {
+    title: "Audit & 100% IP Handover",
+    description: "You own 100% of the intellectual property from day one. Benchmark 98+ Lighthouse performance, cloud CI/CD setup, and full production repository handoff.",
+    icon: Code2,
+  },
+];
+
 const STATS_DATA = [
   { value: "05+", label: "Years Velocity", sub: "Battle-Tested" },
   { value: "140+", label: "Deployments", sub: "Production Scale" },
@@ -24,60 +50,7 @@ const STATS_DATA = [
   { value: "<14d", label: "Average Delivery", sub: "Sprint Cycles" },
 ];
 
-const CAPABILITIES = [
-  {
-    id: "01",
-    name: "Full-Stack Architecture & Next.js",
-    metric: "99%",
-    badge: "0.1s TTFB",
-    desc: "Serverless edge runtimes, robust API pipelines, and tree-shaken modern web platforms.",
-  },
-  {
-    id: "02",
-    name: "Cross-Platform Mobile (Flutter)",
-    metric: "96%",
-    badge: "Native 60FPS",
-    desc: "Production iOS & Android systems crafted with native performance and custom micro-interactions.",
-  },
-  {
-    id: "03",
-    name: "Lighthouse Performance Engineering",
-    metric: "99+",
-    badge: "Zero Bloat",
-    desc: "Aggressive bundle pruning, main-thread optimization, and sub-second Core Web Vitals.",
-  },
-  {
-    id: "04",
-    name: "Custom AI Automations & Workflows",
-    metric: "94%",
-    badge: "Sub-Second",
-    desc: "Autonomous workflow pipelines, LLM fine-tuning integrations, and automated business agents.",
-  },
-];
 
-const PILLARS_DATA = [
-  {
-    id: "01",
-    phase: "Phase 01",
-    title: "Discovery & Architecture",
-    description: "No generic templates or recycled code. We audit your business bottlenecks and lock in milestone-driven architecture before writing production code.",
-    icon: Zap,
-  },
-  {
-    id: "02",
-    phase: "Phase 02",
-    title: "Active Sprint Execution",
-    description: "Direct engineer access with zero non-technical intermediaries. Bi-weekly builds deployed directly to active staging preview environments.",
-    icon: Layers,
-  },
-  {
-    id: "03",
-    phase: "Phase 03",
-    title: "Audit & 100% IP Handover",
-    description: "You retain full intellectual property from day one. Complete GitHub repositories, cloud infrastructure setups, and Lighthouse 98+ audit clearance.",
-    icon: Code2,
-  },
-];
 
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
@@ -160,31 +133,6 @@ export default function AboutPage() {
 
         </div>
 
-        
-
-      </section>
-      {/* ================= SECTION 1: STATS COUNTERS ================= */}
-      <section className="relative w-full py-12 sm:py-16 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 border-b border-orange-200/50">
-        <div className="relative z-10 max-w-7xl xl:max-w-[1550px] 2xl:max-w-[1850px] mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {STATS_DATA.map((stat, idx) => (
-              <div
-                key={idx}
-                className="group relative bg-white border-2 border-orange-200/70 hover:border-[#ff4d00] rounded-2xl sm:rounded-[26px] p-5 sm:p-7 shadow-xs hover:shadow-[0_12px_30px_-8px_rgba(255,77,0,0.22)] transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight text-neutral-950 group-hover:text-[#ff4d00] transition-colors">
-                  {stat.value}
-                </div>
-                <div className="text-xs sm:text-sm font-bold text-neutral-800 mt-2">
-                  {stat.label}
-                </div>
-                <div className="text-[10px] font-mono text-[#ff4d00] font-bold tracking-wider uppercase mt-0.5">
-                  {stat.sub}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* ================= SECTION 2: STUDIO RIG & OPERATIONAL MODEL ================= */}
@@ -268,85 +216,87 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ================= SECTION 3: CORE CAPABILITIES & SKILL BENCHMARKS ================= */}
-      <section className="relative w-full py-16 sm:py-20 lg:py-28 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 border-t border-orange-200/50">
-        <div className="relative z-10 max-w-7xl xl:max-w-[1550px] 2xl:max-w-[1850px] mx-auto space-y-12 sm:space-y-16">
+      
+        {/* ================= SECTION 2: SKILLS & STATS ================= */}
+      <section className="relative py-24 sm:py-32 px-6 md:px-12 z-10 max-w-7xl mx-auto border-t border-neutral-200/80">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
 
-          {/* Section Header */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end justify-between border-b border-orange-200/80 pb-8 sm:pb-10">
-            <div className="lg:col-span-8 space-y-3">
-              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-white/80 border border-orange-200/70 shadow-xs">
-                <span className="w-1 h-2.5 rounded-[1px] bg-[#ff4d00]" />
-                <span className="text-[10.5px] font-mono font-semibold tracking-[0.16em] uppercase text-neutral-700">
-                  Capabilities &amp; Scope
-                </span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-tight leading-[1.1]">
-                <span className="text-neutral-500">Continuous technical</span> <br />
-                <strong className="font-extrabold bg-gradient-to-r from-[#ff4d00] via-[#ff6a00] to-[#e03a00] bg-clip-text text-transparent">
-                  Capabilities.
-                </strong>
-              </h2>
+          {/* Left: Dynamic Animated Skills */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="space-y-6"
+          >
+            <div>
+              <h3 className="font-heading text-3xl font-light uppercase tracking-tight text-neutral-950">
+                Core <strong className="font-extrabold text-[#ff4d00]">Capabilities</strong>
+              </h3>
+              <p className="font-body text-neutral-600 text-xs sm:text-sm mt-2 max-w-md">
+                Continuous performance engineering tailored for speed, type safety, and real conversion metrics.
+              </p>
             </div>
-            <p className="lg:col-span-4 text-sm sm:text-base text-neutral-700 font-medium leading-relaxed border-l-2 border-[#ff4d00] pl-4">
-              Every deliverable is crafted on modern architecture engineered for minimum bundle size, sub-second execution, and instant Core Web Vitals compliance.
-            </p>
-          </div>
 
-          {/* Minimalist Editorial Rows (No Boxes / Clean Lines) */}
-          <div className="divide-y divide-orange-200/60 border-b border-orange-200/80">
-            {CAPABILITIES.map((cap) => (
-              <div
-                key={cap.id}
-                className="group relative py-7 sm:py-9 transition-colors duration-300"
-              >
-                {/* Top Info Row */}
-                <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-3 sm:gap-4 mb-4">
-
-                  {/* Left: ID + Title + Micro Description */}
-                  <div className="flex items-start sm:items-baseline gap-4 sm:gap-6">
-                    <span className="font-mono text-xs sm:text-sm font-bold text-[#ff4d00] tracking-widest shrink-0">
-                      {cap.id}
-                    </span>
-                    <div className="space-y-1">
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff4d00] transition-colors duration-300">
-                        {cap.name}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-neutral-500 font-normal max-w-xl">
-                        {cap.desc}
-                      </p>
+            <div className="space-y-6 pt-4">
+              {SKILLS_DATA.map((skill, index) => (
+                <motion.div key={index} variants={fadeUpVariant} className="space-y-2">
+                  <div className="flex justify-between items-center text-xs sm:text-sm font-semibold text-neutral-900 tracking-wide">
+                    <span>{skill.name}</span>
+                    <div className="flex items-center gap-3">
+                      <span className="text-[10px] font-mono uppercase text-neutral-400">{skill.tag}</span>
+                      <span className="text-[#ff4d00] font-mono font-bold">{skill.value}</span>
                     </div>
                   </div>
-
-                  {/* Right: Metric Tag & Value */}
-                  <div className="flex items-center md:flex-col md:items-end justify-between shrink-0 pl-10 sm:pl-0">
-                    <span className="text-xl sm:text-2xl md:text-3xl font-black font-mono tracking-tight text-neutral-950 group-hover:text-[#ff4d00] transition-colors duration-300">
-                      {cap.metric}
-                    </span>
-                    <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium">
-                      {cap.badge}
-                    </span>
+                  
+                  {/* Progress Line */}
+                  <div className="w-full h-2 bg-neutral-100 rounded-full overflow-hidden border border-neutral-200/70 p-[1px]">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: skill.value }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.2, delay: 0.15 + (index * 0.1), ease: [0.22, 1, 0.36, 1] }}
+                      className="h-full bg-gradient-to-r from-[#ff4d00] to-[#ff7a3d] rounded-full relative shadow-[0_0_10px_rgba(255,77,0,0.4)]"
+                    >
+                      <div className="absolute inset-0 bg-white/20 w-full animate-pulse" />
+                    </motion.div>
                   </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-                </div>
-
-                {/* Smooth Linear Progress Line */}
-                <div className="relative w-full h-[3px] bg-orange-200/40 rounded-full overflow-hidden mt-3 sm:mt-5">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: cap.metric.includes("%") ? cap.metric : "99%" }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-                    className="h-full bg-gradient-to-r from-[#ff4d00] via-[#ff6a00] to-[#ff843d] rounded-full relative shadow-[0_0_8px_rgba(255,77,0,0.5)]"
-                  />
-                </div>
-
-              </div>
+          {/* Right: Modern Stat Cards Grid */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid grid-cols-2 gap-4 sm:gap-6 items-center"
+          >
+            {STATS_DATA.map((stat, index) => (
+              <motion.div
+                key={index}
+                variants={fadeUpVariant}
+                className="group p-6 sm:p-8 rounded-[28px] bg-white border border-neutral-200/90 shadow-xs hover:border-[#ff4d00]/60 hover:shadow-[0_16px_36px_-10px_rgba(255,77,0,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-default"
+              >
+                <h4 className="text-4xl sm:text-5xl font-black text-neutral-950 font-mono group-hover:text-[#ff4d00] transition-colors">
+                  {stat.value}
+                </h4>
+                <p className="text-xs sm:text-sm font-bold text-neutral-800 mt-2">
+                  {stat.label}
+                </p>
+                <p className="text-[10.5px] font-mono text-neutral-400 mt-0.5">
+                  {stat.sub}
+                </p>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
         </div>
       </section>
+
+
       {/* ================= SECTION 4: HOW WE OPERATE (PILLARS) ================= */}
       <section className="relative w-full py-16 sm:py-20 lg:py-28 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 border-t border-orange-200/50">
         <div className="relative z-10 max-w-7xl xl:max-w-[1550px] 2xl:max-w-[1850px] mx-auto space-y-12">
@@ -376,9 +326,6 @@ export default function AboutPage() {
                       <div className="w-12 h-12 rounded-2xl bg-[#ff4d00] border-2 border-white/80 flex items-center justify-center text-white shadow-[0_4px_16px_rgba(255,77,0,0.3)] group-hover:scale-110 transition-transform duration-300">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="text-[10px] font-bold tracking-widest uppercase text-[#ff4d00] bg-orange-50 border border-orange-200/80 px-3 py-1 rounded-full">
-                        {pillar.phase}
-                      </span>
                     </div>
 
                     <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff4d00] transition-colors mb-3">

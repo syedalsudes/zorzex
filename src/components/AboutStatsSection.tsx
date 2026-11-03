@@ -21,13 +21,6 @@ export default function AboutBentoSection() {
         {/* Top Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end justify-between border-b border-[#ff4d00]/15 pb-8 sm:pb-12 xl:pb-16">
           <div className="lg:col-span-8 space-y-4 xl:space-y-6">
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-white/80 backdrop-blur-xs border border-orange-200/60 shadow-xs">
-              <span className="w-1 h-2.5 rounded-[1px] bg-[#ff4d00]" />
-              <span className="text-[10.5px] font-mono font-semibold tracking-[0.16em] uppercase text-neutral-700">
-                Mission &amp; Velocity
-              </span>
-            </div>
-
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light uppercase tracking-wider leading-[1.15]">
               <span className="text-neutral-500">Our focus is simple</span> <br />
               <strong className="font-semibold text-neutral-950">
