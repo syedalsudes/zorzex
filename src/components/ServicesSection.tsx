@@ -50,8 +50,8 @@ const services = [
 export default function ServicesSection() {
   return (
     <section className="relative w-full bg-transparent text-neutral-900 py-16 sm:py-24 lg:py-32 xl:py-40 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-28 overflow-hidden border-t border-orange-200/50 font-sans">
-      
-      {/* Warm Ambient Orange Atmospheric Glows (Bari Screen Scale) */}
+
+      {/* Warm Ambient Orange Atmospheric Glows */}
       <div className="absolute top-1/3 -left-40 w-[450px] lg:w-[700px] xl:w-[950px] h-[450px] lg:h-[700px] xl:h-[950px] bg-gradient-to-tr from-[#ea580c]/18 via-[#f97316]/10 to-transparent blur-[160px] pointer-events-none rounded-full" />
       <div className="absolute bottom-10 -right-36 w-[400px] lg:w-[650px] xl:w-[900px] h-[400px] lg:h-[650px] xl:h-[900px] bg-gradient-to-br from-[#ea580c]/16 via-[#fed7aa]/25 to-transparent blur-[170px] pointer-events-none rounded-full" />
 
@@ -60,9 +60,6 @@ export default function ServicesSection() {
         {/* Section Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-12 items-end justify-between border-b border-[#ea580c]/20 pb-8 sm:pb-12 xl:pb-16">
           <div className="lg:col-span-8 space-y-4 xl:space-y-6">
-         
-            
-            {/* Heading with layout-matched warm orange tone */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light uppercase tracking-tight leading-[1.08]">
               <span className="text-neutral-500">Crafting digital</span> <br />
               <strong className="font-bold text-[#ea580c]">
@@ -77,12 +74,12 @@ export default function ServicesSection() {
         </div>
 
         {/* Services Editorial List */}
-        <div className="divide-y divide-[#ea580c]/15 border-b border-[#ea580c]/20">
+        <div className="border-b border-[#ea580c]/20 flex flex-col">
           {services.map((service) => (
             <Link
               key={service.id}
               href={service.href}
-              className="group relative flex items-center justify-between py-5 sm:py-7 lg:py-9 xl:py-12 2xl:py-14 px-3 sm:px-6 xl:px-10 rounded-2xl xl:rounded-3xl transition-all duration-500 hover:border-[#ea580c]/60 hover:shadow-[0_20px_45px_-12px_rgba(234,88,12,0.28)] hover:-translate-y-1 cursor-pointer overflow-hidden border border-transparent"
+              className="group relative flex items-center justify-between py-5 sm:py-7 lg:py-9 xl:py-12 2xl:py-14 px-3 sm:px-6 xl:px-10 rounded-2xl xl:rounded-3xl transition-all duration-300 border border-[#ea580c]/15 hover:border-[#ea580c]/60 hover:shadow-[0_20px_45px_-12px_rgba(234,88,12,0.28)] hover:-translate-y-1 cursor-pointer overflow-hidden my-1.5"
             >
               {/* Full Visible Orange Gradient Spread on Hover */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#f97316]/18 via-[#ea580c]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -109,7 +106,7 @@ export default function ServicesSection() {
                 </div>
               </div>
 
-              {/* Right Column: Tags & Arrow (Always in one single row on mobile too) */}
+              {/* Right Column: Tags & Arrow */}
               <div className="relative z-10 flex items-center justify-end gap-2 sm:gap-4 xl:gap-6 shrink-0">
                 <div className="hidden lg:flex items-center gap-2 xl:gap-3">
                   {service.tags.map((tag, i) => (
