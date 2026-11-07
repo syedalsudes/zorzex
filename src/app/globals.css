@@ -36,3 +36,18 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background-color: #ff4d00;
   color: #ffffff;
 }
+
+
+html, body {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y pinch-zoom; 
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+a, button {
+  -webkit-touch-callout: none;
+}

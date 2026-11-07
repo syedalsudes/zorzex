@@ -52,7 +52,7 @@ export default function RootLayout({
           className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#ffffff] via-[#fff3eb] to-[#fed7aa]"
         />
 
-                {/* 2. Crisp, Visible Tech Dot Grid Pattern */}
+        {/* 2. Crisp, Visible Tech Dot Grid Pattern */}
         <div
           aria-hidden="true"
           className="pointer-events-none fixed inset-0 z-0 opacity-20"
