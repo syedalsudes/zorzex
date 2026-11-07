@@ -1,23 +1,25 @@
 "use client";
 
 import React, { useState } from "react";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  ArrowUpRight, 
-  Check, 
-  Copy, 
-  Clock, 
-  ShieldCheck, 
-  Zap, 
-  Send 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  ArrowUpRight,
+  Check,
+  Copy,
+  Clock,
+  ShieldCheck,
+  Zap,
+  Send,
+  ChevronRight
 } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [copied, setCopied] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -47,75 +49,78 @@ export default function ContactPage() {
   return (
     <div className="relative w-full bg-transparent text-neutral-900 font-sans overflow-hidden selection:bg-[#ff4d00] selection:text-white">
 
-      {/* ================= HERO SECTION (FULL SCREEN + SOLID WHITE TEXT) ================= */}
-      <section className="relative w-full min-h-screen bg-[#070707] text-white overflow-hidden flex flex-col justify-between px-6 sm:px-10 md:px-16 lg:px-24 pt-32 sm:pt-40 pb-12 font-sans">
-        
-        {/* Subtle Dark Dot Grid Texture */}
-        <div 
-          aria-hidden="true" 
-          className="pointer-events-none absolute inset-0 z-0 opacity-[0.05]"
+      <section
+        style={{
+          maskImage: "radial-gradient(135% 100% at 50% 0%, black 82%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(135% 100% at 50% 0%, black 82%, transparent 100%)",
+        }}
+        className="relative w-full overflow-hidden bg-gradient-to-b from-[#1f0a02] via-[#321105] to-[#431407] pt-32 sm:pt-40 lg:pt-48 pb-32 sm:pb-44 text-white shadow-[0_30px_70px_rgba(255,77,0,0.18)]"
+      >
+
+        {/* 1. Precision Dot Grid Overlay */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-0 opacity-15"
           style={{
-            backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
+            backgroundImage: "radial-gradient(#ff6b35 1px, transparent 1px)",
             backgroundSize: "28px 28px",
           }}
         />
 
-        {/* Deep Orange Ambient Glow */}
-        <div 
-          aria-hidden="true" 
-          className="pointer-events-none absolute top-1/3 left-1/4 -translate-y-1/2 w-[400px] sm:w-[600px] lg:w-[800px] h-[400px] sm:h-[600px] lg:h-[800px] bg-gradient-to-tr from-[#ff4d00]/25 via-[#ff3b00]/10 to-transparent blur-[120px] md:blur-[180px] rounded-full" 
+        {/* 2. Top Neon Orange Flare */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] sm:w-[850px] lg:w-[1100px] h-[350px] sm:h-[450px] bg-gradient-to-b from-[#ff4d00]/45 via-[#ea580c]/25 to-transparent blur-[130px] rounded-full z-0"
         />
 
-        {/* Main Centered Content */}
-        <div className="relative z-10 w-full max-w-6xl my-auto space-y-7 sm:space-y-9">
-          
-          {/* Top Subtitle with Accent Dash */}
-          <div className="flex items-center gap-3">
-            <span className="w-8 sm:w-11 h-[1.5px] bg-[#ff4d00]" />
-            <span className="text-[11px] sm:text-xs font-mono font-bold tracking-[0.3em] uppercase text-[#ff4d00]">
-              Get In Touch
-            </span>
-          </div>
+        {/* 3. Deep Center Core Glow behind the title */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] lg:w-[700px] h-[200px] sm:h-[300px] bg-[#ff3b00]/30 blur-[90px] rounded-full z-0"
+        />
 
-          {/* Giant Pure White Headline */}
-          <h1 className="font-heading text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black uppercase tracking-tight leading-[0.88] select-none text-white">
-            Contact Us.
+        {/* 4. Bottom Edge Warming Light */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80vw] h-28 bg-[#f97316]/20 blur-[80px] rounded-full z-0"
+        />
+
+        {/* ================= CONTENT (1:1 EXACT SAME FORMAT) ================= */}
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-5">
+
+          {/* Massive Bold Heading */}
+          <h1 className="font-heading text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black uppercase tracking-tight text-white leading-[0.88] drop-shadow-[0_15px_35px_rgba(0,0,0,0.7)] select-none">
+            Contact Us<span className="text-[#ff4d00] drop-shadow-[0_0_25px_#ff4d00]">.</span>
           </h1>
 
-          {/* Editorial Narrative with Left Border */}
-          <div className="pt-2">
-            <p className="font-body text-neutral-300 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl border-l-2 border-[#ff4d00] pl-5 sm:pl-7">
-              Ready to ship your next high-performance digital product? Bypass generic agency delays and collaborate directly with our lead architects.
-            </p>
-          </div>
+          {/* Breadcrumb Navigation: Home > Contact Us */}
+          <nav aria-label="Breadcrumb" className="inline-flex items-center justify-center gap-2 pt-2 font-body text-xs sm:text-sm font-medium">
+            <Link
+              href="/"
+              className="text-orange-200/80 hover:text-white transition-colors"
+            >
+              Home
+            </Link>
 
-        </div>
+            <ChevronRight className="w-3.5 h-3.5 text-orange-400/70 stroke-[2.5]" />
 
-        {/* Bottom Subtle Meta Strip */}
-        <div className="relative z-10 w-full max-w-6xl pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-neutral-500">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ff4d00] animate-pulse" />
-            <span className="text-neutral-400 uppercase tracking-widest">
-              Direct Engineering Inquiries
+            <span className="text-white font-semibold tracking-wide bg-white/10 px-3 py-0.5 rounded-full border border-white/15 backdrop-blur-sm">
+              Contact Us
             </span>
-          </div>
+          </nav>
 
-          <div className="text-neutral-400 uppercase tracking-wider text-[11px]">
-            Average Response: &lt;2 Business Hours
-          </div>
         </div>
-
       </section>
 
       {/* ================= INTERACTIVE CONTACT & FORM SECTION ================= */}
       <section className="relative w-full py-20 sm:py-28 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 border-t border-orange-200/50">
         <div className="relative z-10 max-w-7xl xl:max-w-[1550px] 2xl:max-w-[1850px] mx-auto">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
+
             {/* ================= LEFT COLUMN: CONTACT DETAILS & HIGHLIGHTS ================= */}
             <div className="lg:col-span-5 space-y-10">
-              
+
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-white/80 border border-orange-200/70 shadow-xs">
                   <span className="w-1 h-2.5 rounded-[1px] bg-[#ff4d00]" />
@@ -138,7 +143,7 @@ export default function ContactPage() {
 
               {/* Direct Info Cards */}
               <div className="space-y-4">
-                
+
                 {/* Email Card with Quick Copy */}
                 <div className="group relative bg-white border-2 border-orange-200/70 hover:border-[#ff4d00] rounded-2xl p-5 sm:p-6 transition-all duration-300 shadow-xs flex items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
@@ -218,7 +223,7 @@ export default function ContactPage() {
             {/* ================= RIGHT COLUMN: 4-FIELD HIGH CONVERTING FORM ================= */}
             <div className="lg:col-span-7">
               <div className="relative bg-white border-2 border-orange-200/70 rounded-[32px] sm:rounded-[40px] p-8 sm:p-12 shadow-[0_20px_50px_rgba(255,77,0,0.06)]">
-                
+
                 {/* Form Top Header */}
                 <div className="mb-8 pb-6 border-b border-orange-100 flex items-center justify-between">
                   <div>
@@ -233,10 +238,10 @@ export default function ContactPage() {
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  
+
                   {/* Field 1: Name & Field 2: Email */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-                    
+
                     {/* Name */}
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700">
@@ -273,7 +278,7 @@ export default function ContactPage() {
 
                   {/* Field 3: Phone Number & Field 4: Subject */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-                    
+
                     {/* Number */}
                     <div className="space-y-2">
                       <label htmlFor="phone" className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-700">

@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 const NAV_LINKS = [
   { label: 'About', href: '/about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Services', href: '/services' },
+  { label: 'Portfolio', href: '/portfolio' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -41,7 +41,7 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="rounded-full px-4 py-1.5 text-sm text-neutral-400 transition-colors duration-200 hover:text-white xl:px-5 xl:py-2 xl:text-base 2xl:text-lg"
+              className="rounded-full px-4 py-1.5 text-sm text-white transition-colors duration-200 hover:text-white xl:px-5 xl:py-2 xl:text-base 2xl:text-lg"
             >
               {link.label}
             </Link>
