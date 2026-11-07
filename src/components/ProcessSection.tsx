@@ -33,7 +33,7 @@ export default function ProcessSection() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light uppercase tracking-wider leading-[1.15]">
               <span className="text-neutral-500">Engineered for</span> <br />
               <strong className="font-semibold text-neutral-950">
-                Agile Execution<span className="text-[#ff4d00]">.</span>
+                Agile <span className="text-[#ff4d00]">Execution.</span>
               </strong>
             </h2>
           </div>

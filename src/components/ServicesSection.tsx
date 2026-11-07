@@ -5,10 +5,10 @@ import { ArrowUpRight } from 'lucide-react';
 const services = [
   {
     id: '01',
-    title: 'UI/UX Design',
-    href: '#ui-ux',
-    tags: ['Design Systems', 'Wireframing', 'User Flows'],
-    desc: 'High-converting design patterns built for seamless and intuitive user experiences.'
+    title: 'AI Automation & Solutions',
+    href: '#ai-automation',
+    tags: ['Custom Workflows', 'API Integrations', 'AI Agents'],
+    desc: 'Smart operational automations and modern model integrations to scale workflows.'
   },
   {
     id: '02',
@@ -33,17 +33,10 @@ const services = [
   },
   {
     id: '05',
-    title: 'Interactive Prototypes',
-    href: '#prototyping',
-    tags: ['Figma Prototypes', 'Micro-interactions', 'Demos'],
-    desc: 'High-fidelity clickable product previews to validate flows before writing code.'
-  },
-  {
-    id: '06',
-    title: 'AI Automation & Solutions',
-    href: '#ai-automation',
-    tags: ['Custom Workflows', 'API Integrations', 'AI Agents'],
-    desc: 'Smart operational automations and modern model integrations to scale workflows.'
+    title: 'UI/UX Design',
+    href: '#ui-ux',
+    tags: ['Design Systems', 'Wireframing', 'User Flows'],
+    desc: 'High-converting design patterns built for seamless and intuitive user experiences.'
   },
 ];
 

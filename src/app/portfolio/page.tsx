@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ChevronRight, ArrowUpRight, Sparkles, Filter, ExternalLink } from 'lucide-react';
+import { ChevronRight, ArrowUpRight, Filter, ExternalLink } from 'lucide-react';
 
 type ProjectCategory = 'all' | 'web' | 'app' | 'graphic' | 'ai';
 
@@ -152,7 +152,7 @@ export default function WorkPage() {
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-5">
           
           {/* Main Centered Heading */}
-          <h1 className="font-heading text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black uppercase tracking-tight text-white leading-[0.88] drop-shadow-[0_15px_35px_rgba(0,0,0,0.7)] select-none">
+          <h1 className="font-heading text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black tracking-tight text-white leading-[0.88] drop-shadow-[0_15px_35px_rgba(0,0,0,0.7)] select-none">
             Our Work<span className="text-[#ff4d00] drop-shadow-[0_0_25px_#ff4d00]">.</span>
           </h1>
 
@@ -171,117 +171,6 @@ export default function WorkPage() {
               Our Work
             </span>
           </nav>
-
-        </div>
-      </section>
-
-      {/* ================= PORTFOLIO SHOWCASE SECTION ================= */}
-      <section className="relative w-full py-16 sm:py-24 lg:py-32 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 overflow-hidden font-sans">
-        <div className="relative z-10 max-w-7xl xl:max-w-[1550px] mx-auto space-y-12 sm:space-y-16">
-
-          {/* Interactive Filter Pill Bar */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-[#ea580c]/20 pb-8">
-            <div className="space-y-1">
-              <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#ff4d00]">
-                Case Studies
-              </span>
-              <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-tight text-neutral-900">
-                Selected Productions ({filteredProjects.length})
-              </h2>
-            </div>
-
-            {/* Filter Buttons */}
-            <div className="flex flex-wrap items-center gap-2">
-              {filterCategories.map((tab) => {
-                const isActive = activeCategory === tab.id;
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveCategory(tab.id as ProjectCategory)}
-                    className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 cursor-pointer ${
-                      isActive
-                        ? 'bg-[#ff4d00] text-white shadow-[0_4px_16px_rgba(255,77,0,0.35)] scale-105'
-                        : 'bg-white/80 border border-neutral-200 text-neutral-700 hover:border-orange-300 hover:text-[#ff4d00]'
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Project Cards (Modern 2-Column Tech Studio Grid) */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="group relative flex flex-col justify-between rounded-3xl bg-white/75 border border-orange-200/70 p-7 sm:p-10 hover:border-[#ff4d00]/60 hover:shadow-[0_24px_55px_-12px_rgba(255,77,0,0.22)] hover:-translate-y-1 transition-all duration-300 overflow-hidden backdrop-blur-xs"
-              >
-                {/* Subtle Hover Gradient Spread */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#ff4d00]/8 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div>
-                  {/* Card Top: ID + Category Tag + External Icon */}
-                  <div className="flex items-center justify-between pb-6 border-b border-orange-100/80 mb-6">
-                    <div className="flex items-center gap-3">
-                      <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-orange-100/70 text-[#ff4d00] border border-orange-200">
-                        {project.id}
-                      </span>
-                      <span className="font-mono text-xs uppercase tracking-wider text-neutral-500">
-                        {project.client} • {project.year}
-                      </span>
-                    </div>
-
-                    <span className="px-3 py-1 rounded-full text-[11px] font-mono font-medium tracking-wide bg-neutral-100 border border-neutral-200 text-neutral-700 group-hover:bg-[#ff4d00] group-hover:text-white group-hover:border-transparent transition-colors">
-                      {project.categoryLabel}
-                    </span>
-                  </div>
-
-                  {/* Highlight Metric Badge */}
-                  <div className="inline-flex items-center gap-2 mb-3 px-3 py-1 rounded-md bg-orange-50 border border-orange-200/60 text-[#ea580c] font-mono text-xs font-semibold">
-                    <Sparkles className="w-3 h-3 text-[#ff4d00]" />
-                    <span>{project.metric}</span>
-                  </div>
-
-                  {/* Project Title */}
-                  <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff4d00] transition-colors mb-3">
-                    {project.title}
-                  </h3>
-
-                  {/* Project Description */}
-                  <p className="font-body text-sm sm:text-base text-neutral-600 leading-relaxed font-normal mb-8">
-                    {project.desc}
-                  </p>
-                </div>
-
-                {/* Card Bottom: Tech Stack Tags + View Action */}
-                <div className="relative z-10 pt-6 border-t border-orange-100 flex flex-wrap items-center justify-between gap-4">
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {project.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="px-2.5 py-0.5 text-[11px] font-mono text-neutral-600 bg-white border border-neutral-200 rounded-md group-hover:border-orange-200"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <Link
-                    href={project.link}
-                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-neutral-900 group-hover:text-[#ff4d00] transition-colors"
-                  >
-                    <span>View Architecture</span>
-                    <div className="w-8 h-8 rounded-full bg-white border border-neutral-200 flex items-center justify-center group-hover:bg-[#ff4d00] group-hover:text-white group-hover:border-transparent transition-all">
-                      <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
-                    </div>
-                  </Link>
-                </div>
-
-              </div>
-            ))}
-          </div>
 
         </div>
       </section>

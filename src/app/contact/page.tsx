@@ -89,7 +89,7 @@ export default function ContactPage() {
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-5">
 
           {/* Massive Bold Heading */}
-          <h1 className="font-heading text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black uppercase tracking-tight text-white leading-[0.88] drop-shadow-[0_15px_35px_rgba(0,0,0,0.7)] select-none">
+          <h1 className="font-heading text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black tracking-tight text-white leading-[0.88] drop-shadow-[0_15px_35px_rgba(0,0,0,0.7)] select-none">
             Contact Us<span className="text-[#ff4d00] drop-shadow-[0_0_25px_#ff4d00]">.</span>
           </h1>
 

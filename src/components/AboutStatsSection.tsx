@@ -120,10 +120,6 @@ export default function AboutBentoSection() {
             </div>
 
             <div className="relative z-10 inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#ff4d00]/[0.08] border border-[#ff4d00]/25 w-fit group-hover:border-[#ff4d00]/60 transition-colors">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d00] opacity-80" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff4d00]" />
-              </span>
               <span className="text-[10px] xl:text-xs font-bold uppercase tracking-wider text-[#ff4d00]">
                 Active Sprint Slots Open
               </span>

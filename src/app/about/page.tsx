@@ -130,7 +130,7 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-5">
 
           {/* Massive Bold Heading */}
-          <h1 className="font-heading text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black uppercase tracking-tight text-white leading-[0.88] drop-shadow-[0_15px_35px_rgba(0,0,0,0.7)] select-none">
+          <h1 className="font-heading text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black tracking-tight text-white leading-[0.88] drop-shadow-[0_15px_35px_rgba(0,0,0,0.7)] select-none">
             About Us<span className="text-[#ff4d00] drop-shadow-[0_0_25px_#ff4d00]">.</span>
           </h1>
 
@@ -153,87 +153,87 @@ export default function AboutPage() {
         </div>
       </section>
 
-   {/* ================= SECTION 2: STUDIO RIG & OPERATIONAL MODEL ================= */}
-<section className="relative w-full py-16 sm:py-20 lg:py-28 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 font-sans">
-  <div className="relative z-10 max-w-7xl xl:max-w-[1550px] 2xl:max-w-[1850px] mx-auto">
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch">
+      {/* ================= SECTION 2: STUDIO RIG & OPERATIONAL MODEL ================= */}
+      <section className="relative w-full py-16 sm:py-20 lg:py-28 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 font-sans">
+        <div className="relative z-10 max-w-7xl xl:max-w-[1550px] 2xl:max-w-[1850px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch">
 
-      {/* Studio Image Card (Height perfectly matches the right content) */}
-      <div className="lg:col-span-6 relative w-full min-h-[420px] sm:min-h-[520px] lg:min-h-full rounded-[32px] sm:rounded-[40px] overflow-hidden shadow-xs group bg-neutral-900">
-        <Image
-          src="/office.png"
-          alt="Zorzex Engineering Studio"
-          fill
-          priority
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-        />
-      </div>
+            {/* Studio Image Card (Height perfectly matches the right content) */}
+            <div className="lg:col-span-6 relative w-full min-h-[420px] sm:min-h-[520px] lg:min-h-full rounded-[32px] sm:rounded-[40px] overflow-hidden shadow-xs group bg-neutral-900">
+              <Image
+                src="/office.png"
+                alt="Zorzex Engineering Studio"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+            </div>
 
-      {/* Philosophy Content */}
-      <div className="lg:col-span-6 flex flex-col justify-center space-y-6 sm:space-y-8">
-        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-tight leading-[1.12]">
-          <span className="text-neutral-500">Built by engineers,</span> <br />
-          <strong className="font-extrabold text-neutral-950">
-            Driven by <span className="text-[#ff4d00]">execution.</span>
-          </strong>
-        </h2>
+            {/* Philosophy Content */}
+            <div className="lg:col-span-6 flex flex-col justify-center space-y-6 sm:space-y-8">
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-tight leading-[1.12]">
+                <span className="text-neutral-500">Built by engineers,</span> <br />
+                <strong className="font-extrabold text-neutral-950">
+                  Driven by <span className="text-[#ff4d00]">execution.</span>
+                </strong>
+              </h2>
 
-        <p className="font-body text-sm sm:text-base text-neutral-700 font-medium leading-relaxed">
-          Traditional agencies pad timelines with unnecessary communication layers and generic templates. We deliver clean, tree-shaken, high-conversion code with direct Slack pairing, bi-weekly staging builds, and complete codebase handover from day one.
-        </p>
+              <p className="font-body text-sm sm:text-base text-neutral-700 font-medium leading-relaxed">
+                Traditional agencies pad timelines with unnecessary communication layers and generic templates. We deliver clean, tree-shaken, high-conversion code with direct Slack pairing, bi-weekly staging builds, and complete codebase handover from day one.
+              </p>
 
-        {/* Guarantees List */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-          {[
-            "100% Intellectual Property Handover",
-            "Direct Developer Slack Communication",
-            "Weekly Live Staging URL Previews",
-            "Strict Next.js & Flutter Clean Code",
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="group relative flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl bg-white/90 border border-orange-200/80 shadow-xs hover:border-[#ff4d00]/60 hover:shadow-[0_12px_28px_-6px_rgba(255,77,0,0.22)] hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 cursor-pointer overflow-hidden"
-            >
-              {/* 1. Subtle Orange Gradient Spread on Hover */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#ff4d00]/12 via-[#ea580c]/6 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Guarantees List */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                {[
+                  "100% Intellectual Property Handover",
+                  "Direct Developer Slack Communication",
+                  "Weekly Live Staging URL Previews",
+                  "Strict Next.js & Flutter Clean Code",
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="group relative flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl bg-white/90 border border-orange-200/80 shadow-xs hover:border-[#ff4d00]/60 hover:shadow-[0_12px_28px_-6px_rgba(255,77,0,0.22)] hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 cursor-pointer overflow-hidden"
+                  >
+                    {/* 1. Subtle Orange Gradient Spread on Hover */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#ff4d00]/12 via-[#ea580c]/6 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-              {/* 2. Top-Right Ambient Glow Corner */}
-              <div className="pointer-events-none absolute -top-8 -right-8 w-20 h-20 bg-[#ff4d00]/25 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* 2. Top-Right Ambient Glow Corner */}
+                    <div className="pointer-events-none absolute -top-8 -right-8 w-20 h-20 bg-[#ff4d00]/25 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              {/* 3. Left Active Orange Indicator Pill */}
-              <div className="absolute left-0 top-2 bottom-2 w-1 bg-[#ff4d00] rounded-r-full opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                    {/* 3. Left Active Orange Indicator Pill */}
+                    <div className="absolute left-0 top-2 bottom-2 w-1 bg-[#ff4d00] rounded-r-full opacity-0 -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
 
-              {/* 4. Checkmark Icon with Interactive Hover Fill & Rotation */}
-              <div className="relative z-10 w-7 h-7 rounded-full bg-orange-100/80 border border-orange-200/80 flex items-center justify-center text-[#ff4d00] shrink-0 transition-all duration-300 group-hover:bg-[#ff4d00] group-hover:text-white group-hover:border-[#ff4d00] group-hover:scale-110 group-hover:shadow-[0_0_12px_rgba(255,77,0,0.45)]">
-                <Check className="w-4 h-4 stroke-[3] transition-transform duration-300 group-hover:scale-110" />
+                    {/* 4. Checkmark Icon with Interactive Hover Fill & Rotation */}
+                    <div className="relative z-10 w-7 h-7 rounded-full bg-orange-100/80 border border-orange-200/80 flex items-center justify-center text-[#ff4d00] shrink-0 transition-all duration-300 group-hover:bg-[#ff4d00] group-hover:text-white group-hover:border-[#ff4d00] group-hover:scale-110 group-hover:shadow-[0_0_12px_rgba(255,77,0,0.45)]">
+                      <Check className="w-4 h-4 stroke-[3] transition-transform duration-300 group-hover:scale-110" />
+                    </div>
+
+                    {/* 5. Typography with Contrast Transition */}
+                    <span className="relative z-10 text-xs sm:text-sm font-semibold text-neutral-800 group-hover:text-neutral-950 transition-colors">
+                      {item}
+                    </span>
+                  </div>
+                ))}
               </div>
 
-              {/* 5. Typography with Contrast Transition */}
-              <span className="relative z-10 text-xs sm:text-sm font-semibold text-neutral-800 group-hover:text-neutral-950 transition-colors">
-                {item}
-              </span>
+              <div className="pt-2">
+                <Link
+                  href="#contact"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 bg-neutral-950 text-white rounded-full font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:bg-[#ff4d00] hover:shadow-[0_8px_25px_rgba(255,77,0,0.35)] hover:-translate-y-0.5"
+                >
+                  <span>Start a Project</span>
+                  <span className="w-6 h-6 rounded-full bg-white text-neutral-950 flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
+                    <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
+                  </span>
+                </Link>
+              </div>
+
             </div>
-          ))}
+
+          </div>
         </div>
-
-        <div className="pt-2">
-          <Link
-            href="#contact"
-            className="group inline-flex items-center gap-3 px-7 py-3.5 bg-neutral-950 text-white rounded-full font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:bg-[#ff4d00] hover:shadow-[0_8px_25px_rgba(255,77,0,0.35)] hover:-translate-y-0.5"
-          >
-            <span>Start a Project</span>
-            <span className="w-6 h-6 rounded-full bg-white text-neutral-950 flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
-              <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
-            </span>
-          </Link>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
 
       {/* ================= SECTION 2: SKILLS & STATS ================= */}
@@ -284,46 +284,46 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-         {/* Right: Modern Stat Cards Grid */}
-<motion.div
-  variants={staggerContainer}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, margin: "-80px" }}
-  className="grid grid-cols-2 gap-4 sm:gap-6 items-center"
->
-  {STATS_DATA.map((stat, index) => (
-    <motion.div
-      key={index}
-      variants={fadeUpVariant}
-      className="group relative p-6 sm:p-8 rounded-[28px] bg-white/95 border border-neutral-200/90 shadow-xs hover:border-[#ff4d00]/60 hover:shadow-[0_20px_40px_-12px_rgba(255,77,0,0.22)] hover:-translate-y-1.5 hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 cursor-default overflow-hidden"
-    >
-      {/* 1. Subtle Orange Gradient Spread on Hover */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#ff4d00]/10 via-[#ea580c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {/* Right: Modern Stat Cards Grid */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid grid-cols-2 gap-4 sm:gap-6 items-center"
+          >
+            {STATS_DATA.map((stat, index) => (
+              <motion.div
+                key={index}
+                variants={fadeUpVariant}
+                className="group relative p-6 sm:p-8 rounded-[28px] bg-white/95 border border-neutral-200/90 shadow-xs hover:border-[#ff4d00]/60 hover:shadow-[0_20px_40px_-12px_rgba(255,77,0,0.22)] hover:-translate-y-1.5 hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 cursor-default overflow-hidden"
+              >
+                {/* 1. Subtle Orange Gradient Spread on Hover */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#ff4d00]/10 via-[#ea580c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-      {/* 2. Top-Right Ambient Glow Corner Spot */}
-      <div className="pointer-events-none absolute -top-10 -right-10 w-28 h-28 bg-[#ff4d00]/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500" />
+                {/* 2. Top-Right Ambient Glow Corner Spot */}
+                <div className="pointer-events-none absolute -top-10 -right-10 w-28 h-28 bg-[#ff4d00]/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500" />
 
-      {/* 3. Bottom-Left Soft Glow */}
-      <div className="pointer-events-none absolute -bottom-8 -left-8 w-20 h-20 bg-[#ea580c]/15 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* 3. Bottom-Left Soft Glow */}
+                <div className="pointer-events-none absolute -bottom-8 -left-8 w-20 h-20 bg-[#ea580c]/15 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      {/* Content */}
-      <div className="relative z-10">
-        <h4 className="text-4xl sm:text-5xl font-black text-neutral-950 font-mono tracking-tight group-hover:text-[#ff4d00] transition-colors duration-300 group-hover:drop-shadow-[0_4px_16px_rgba(255,77,0,0.3)]">
-          {stat.value}
-        </h4>
-        
-        <p className="text-xs sm:text-sm font-bold text-neutral-800 mt-2.5 transition-colors group-hover:text-neutral-950">
-          {stat.label}
-        </p>
-        
-        <p className="text-[10.5px] font-mono text-neutral-400 mt-0.5 group-hover:text-neutral-600 transition-colors">
-          {stat.sub}
-        </p>
-      </div>
-    </motion.div>
-  ))}
-</motion.div>
+                {/* Content */}
+                <div className="relative z-10">
+                  <h4 className="text-4xl sm:text-5xl font-black text-neutral-950 font-mono tracking-tight group-hover:text-[#ff4d00] transition-colors duration-300 group-hover:drop-shadow-[0_4px_16px_rgba(255,77,0,0.3)]">
+                    {stat.value}
+                  </h4>
+
+                  <p className="text-xs sm:text-sm font-bold text-neutral-800 mt-2.5 transition-colors group-hover:text-neutral-950">
+                    {stat.label}
+                  </p>
+
+                  <p className="text-[10.5px] font-mono text-neutral-400 mt-0.5 group-hover:text-neutral-600 transition-colors">
+                    {stat.sub}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
 
         </div>
       </section>
@@ -340,52 +340,52 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-  {PILLARS_DATA.map((pillar, idx) => {
-    const Icon = pillar.icon;
-    return (
-      <div
-        key={idx}
-        className="group relative bg-white/95 border-2 border-orange-200/70 hover:border-[#ff4d00]/70 rounded-[30px] p-7 sm:p-9 shadow-xs hover:shadow-[0_24px_50px_-10px_rgba(255,77,0,0.25)] hover:-translate-y-2 hover:scale-[1.015] active:scale-[0.99] transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer backdrop-blur-xs"
-      >
-        {/* 1. Subtle Orange Gradient Spread on Hover */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#ff4d00]/10 via-[#ea580c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {PILLARS_DATA.map((pillar, idx) => {
+              const Icon = pillar.icon;
+              return (
+                <div
+                  key={idx}
+                  className="group relative bg-white/95 border-2 border-orange-200/70 hover:border-[#ff4d00]/70 rounded-[30px] p-7 sm:p-9 shadow-xs hover:shadow-[0_24px_50px_-10px_rgba(255,77,0,0.25)] hover:-translate-y-2 hover:scale-[1.015] active:scale-[0.99] transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer backdrop-blur-xs"
+                >
+                  {/* 1. Subtle Orange Gradient Spread on Hover */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#ff4d00]/10 via-[#ea580c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-        {/* 2. Top-Right Ambient Corner Light */}
-        <div className="pointer-events-none absolute -top-12 -right-12 w-32 h-32 bg-[#ff4d00]/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500" />
+                  {/* 2. Top-Right Ambient Corner Light */}
+                  <div className="pointer-events-none absolute -top-12 -right-12 w-32 h-32 bg-[#ff4d00]/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500" />
 
-        {/* Top & Main Body Content */}
-        <div className="relative z-10">
-          <div className="flex items-center justify-between mb-6">
-            
-            {/* Interactive Icon Box: Turns Black + Rotates Right on Hover */}
-            <div className="w-12 h-12 rounded-2xl bg-[#ff4d00] border-2 border-white/80 flex items-center justify-center text-white shadow-[0_6px_20px_rgba(255,77,0,0.35)] transition-all duration-300 group-hover:bg-[#070707] group-hover:border-neutral-800 group-hover:rotate-6 group-hover:scale-110 group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.4)]">
-              <Icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-105" />
-            </div>
+                  {/* Top & Main Body Content */}
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-6">
+
+                      {/* Interactive Icon Box: Turns Black + Rotates Right on Hover */}
+                      <div className="w-12 h-12 rounded-2xl bg-[#ff4d00] border-2 border-white/80 flex items-center justify-center text-white shadow-[0_6px_20px_rgba(255,77,0,0.35)] transition-all duration-300 group-hover:bg-[#070707] group-hover:border-neutral-800 group-hover:rotate-6 group-hover:scale-110 group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.4)]">
+                        <Icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-105" />
+                      </div>
+                    </div>
+
+                    <h3 className="font-heading text-xl sm:text-2xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff4d00] transition-colors mb-3">
+                      {pillar.title}
+                    </h3>
+
+                    <p className="font-body text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed group-hover:text-neutral-800 transition-colors">
+                      {pillar.description}
+                    </p>
+                  </div>
+
+                  {/* Card Footer: Index + Interactive Arrow */}
+                  <div className="relative z-10 mt-8 pt-5 border-t border-orange-100/80 flex items-center justify-between text-xs">
+                    <span className="font-mono text-sm font-bold text-[#ff4d00] tracking-wider">
+                      0{idx + 1}
+                    </span>
+
+                    <div className="w-8 h-8 rounded-full bg-orange-100/70 border border-orange-200/60 flex items-center justify-center text-[#ff4d00] transition-all duration-300 group-hover:bg-[#ff4d00] group-hover:text-white group-hover:border-[#ff4d00] group-hover:scale-110 group-hover:shadow-[0_4px_14px_rgba(255,77,0,0.4)]">
+                      <ArrowUpRight className="w-4 h-4 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-
-          <h3 className="font-heading text-xl sm:text-2xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff4d00] transition-colors mb-3">
-            {pillar.title}
-          </h3>
-          
-          <p className="font-body text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed group-hover:text-neutral-800 transition-colors">
-            {pillar.description}
-          </p>
-        </div>
-
-        {/* Card Footer: Index + Interactive Arrow */}
-        <div className="relative z-10 mt-8 pt-5 border-t border-orange-100/80 flex items-center justify-between text-xs">
-          <span className="font-mono text-sm font-bold text-[#ff4d00] tracking-wider">
-            0{idx + 1}
-          </span>
-          
-          <div className="w-8 h-8 rounded-full bg-orange-100/70 border border-orange-200/60 flex items-center justify-center text-[#ff4d00] transition-all duration-300 group-hover:bg-[#ff4d00] group-hover:text-white group-hover:border-[#ff4d00] group-hover:scale-110 group-hover:shadow-[0_4px_14px_rgba(255,77,0,0.4)]">
-            <ArrowUpRight className="w-4 h-4 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
-          </div>
-        </div>
-      </div>
-    );
-  })}
-</div>
 
         </div>
       </section>

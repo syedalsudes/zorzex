@@ -72,7 +72,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services List / Grid Section */}
       <ServicesSection />
 
       <CtaSection />
