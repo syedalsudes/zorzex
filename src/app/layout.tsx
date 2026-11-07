@@ -37,6 +37,42 @@ export const metadata: Metadata = {
   },
 };
 
+// export default function RootLayout({
+//   children,
+// }: Readonly<{
+//   children: React.ReactNode;
+// }>) {
+//   return (
+//     <html lang="en" className={`${spaceGrotesk.variable} ${interTight.variable}`}>
+//       <body className="relative min-h-screen bg-white font-body text-neutral-900 antialiased overflow-x-hidden selection:bg-[#ff4d00] selection:text-white">
+        
+//         {/* Simple & Clean White + Orange Linear Gradient Base */}
+//         <div 
+//           aria-hidden="true" 
+//           className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#ffffff] via-[#fff3eb] to-[#fed7aa]"
+//         />
+
+//         {/* 2. Crisp, Visible Tech Dot Grid Pattern */}
+//         <div
+//           aria-hidden="true"
+//           className="pointer-events-none fixed inset-0 z-0 opacity-20"
+//           style={{
+//             backgroundImage: `radial-gradient(circle, #ea580c 1.5px, transparent 1.5px)`,
+//             backgroundSize: "28px 28px",
+//           }}
+//         />
+
+//         {/* Content Layer */}
+//         <div className="relative z-10 flex min-h-screen flex-col justify-between">
+//           <Navbar />
+//           <main className="flex-1">{children}</main>
+//           <Footer />
+//         </div>
+//       </body>
+//     </html>
+//   );
+// }
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -44,26 +80,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${interTight.variable}`}>
-      <body className="relative min-h-screen bg-white font-body text-neutral-900 antialiased overflow-x-hidden selection:bg-[#ff4d00] selection:text-white">
-        
-        {/* Simple & Clean White + Orange Linear Gradient Base */}
-        <div 
-          aria-hidden="true" 
-          className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#ffffff] via-[#fff3eb] to-[#fed7aa]"
-        />
+      <body 
+        className="relative min-h-screen font-body text-neutral-900 antialiased overflow-x-hidden selection:bg-[#ff4d00] selection:text-white"
+        style={{
+          backgroundColor: "#ffffff",
+          backgroundImage: `
+            radial-gradient(circle, #ea580c 1.5px, transparent 1.5px),
+            linear-gradient(to bottom, #ffffff, #fff3eb 10%, #fed7aa 90%)
+          `,
+          backgroundSize: "28px 28px, 100% 100%",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        {/* Extra fixed divs poori tarah delete kar dein */}
 
-        {/* 2. Crisp, Visible Tech Dot Grid Pattern */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed inset-0 z-0 opacity-20"
-          style={{
-            backgroundImage: `radial-gradient(circle, #ea580c 1.5px, transparent 1.5px)`,
-            backgroundSize: "28px 28px",
-          }}
-        />
-
-        {/* Content Layer */}
-        <div className="relative z-10 flex min-h-screen flex-col justify-between">
+        <div className="relative flex min-h-screen flex-col justify-between">
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
