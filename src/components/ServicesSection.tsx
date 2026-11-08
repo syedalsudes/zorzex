@@ -6,35 +6,35 @@ const services = [
   {
     id: '01',
     title: 'AI Automation & Solutions',
-    href: '#ai-automation',
+    href: '/services/ai-automation',
     tags: ['Custom Workflows', 'API Integrations', 'AI Agents'],
     desc: 'Smart operational automations and modern model integrations to scale workflows.'
   },
   {
     id: '02',
     title: 'Web Development',
-    href: '#web-development',
+    href: '/services/web-development',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     desc: 'Lightning-fast, SEO-optimized web applications engineered for scalability.'
   },
   {
     id: '03',
     title: 'App Development',
-    href: '#app-development',
+    href: '/services/app-development',
     tags: ['Flutter', 'iOS & Android', 'Cross-Platform'],
     desc: 'Native-feel mobile applications with fluid interactions and rock-solid architecture.'
   },
   {
     id: '04',
     title: 'Graphic & Brand Identity',
-    href: '#graphic-design',
+    href: '/services/graphic-brand-identity',
     tags: ['Visual Identity', 'Logos', 'Brand Guidelines'],
     desc: 'Distinctive brand identities and systems designed to leave a memorable impression.'
   },
   {
     id: '05',
     title: 'UI/UX Design',
-    href: '#ui-ux',
+    href: '/services/ui-ux-design',
     tags: ['Design Systems', 'Wireframing', 'User Flows'],
     desc: 'High-converting design patterns built for seamless and intuitive user experiences.'
   },

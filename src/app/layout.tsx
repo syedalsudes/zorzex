@@ -73,6 +73,7 @@ export const metadata: Metadata = {
 //   );
 // }
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -83,17 +84,17 @@ export default function RootLayout({
       <body 
         className="relative min-h-screen font-body text-neutral-900 antialiased overflow-x-hidden selection:bg-[#ff4d00] selection:text-white"
         style={{
-          backgroundColor: "#ffffff",
+          backgroundColor: "#fff5ed",
           backgroundImage: `
-            radial-gradient(circle, #ea580c 1.5px, transparent 1.5px),
-            linear-gradient(to bottom, #ffffff, #fff3eb 10%, #fed7aa 90%)
+            radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255, 77, 0, 0.22) 0%, rgba(254, 215, 170, 0.15) 45%, transparent 80%),
+            linear-gradient(180deg, #ffffff 0%, #fff1e6 30%, #fed7aa 75%, #fdba74 100%)
           `,
-          backgroundSize: "28px 28px, 100% 100%",
           backgroundAttachment: "fixed",
+          backgroundSize: "100vw 100vh",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Extra fixed divs poori tarah delete kar dein */}
-
+        {/* Clean layout — Zero touch glitches, 100% sharp orange vibrancy */}
         <div className="relative flex min-h-screen flex-col justify-between">
           <Navbar />
           <main className="flex-1">{children}</main>
