@@ -12,27 +12,34 @@ const services = [
   },
   {
     id: '02',
+    title: 'Custom Software Development',
+    href: '/services/custom-software-development',
+    tags: ['Enterprise Systems', 'SaaS Platforms', 'Cloud Architecture'],
+    desc: 'Tailored, high-performance software solutions built from the ground up to solve complex business logic.'
+  },
+  {
+    id: '03',
     title: 'Web Development',
     href: '/services/web-development',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     desc: 'Lightning-fast, SEO-optimized web applications engineered for scalability.'
   },
   {
-    id: '03',
+    id: '04',
     title: 'App Development',
     href: '/services/app-development',
     tags: ['Flutter', 'iOS & Android', 'Cross-Platform'],
     desc: 'Native-feel mobile applications with fluid interactions and rock-solid architecture.'
   },
   {
-    id: '04',
+    id: '05',
     title: 'Graphic & Brand Identity',
     href: '/services/graphic-brand-identity',
     tags: ['Visual Identity', 'Logos', 'Brand Guidelines'],
     desc: 'Distinctive brand identities and systems designed to leave a memorable impression.'
   },
   {
-    id: '05',
+    id: '06',
     title: 'UI/UX Design',
     href: '/services/ui-ux-design',
     tags: ['Design Systems', 'Wireframing', 'User Flows'],

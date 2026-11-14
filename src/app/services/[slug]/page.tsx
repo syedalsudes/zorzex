@@ -48,86 +48,66 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
     return (
         <div className="w-full font-sans text-neutral-900 select-none overflow-hidden">
-
-            {/* ================= 1. HERO SECTION (COMPACT & BALANCED) ================= */}
-            <section
-                style={{
-                    maskImage: 'radial-gradient(135% 100% at 50% 0%, black 82%, transparent 100%)',
-                    WebkitMaskImage: 'radial-gradient(135% 100% at 50% 0%, black 82%, transparent 100%)',
-                }}
-                className="relative w-full overflow-hidden bg-gradient-to-b from-[#1f0a02] via-[#321105] to-[#431407] pt-28 sm:pt-36 lg:pt-40 pb-24 sm:pb-32 text-white shadow-[0_30px_70px_rgba(255,77,0,0.18)]"
-            >
+            {/* ================= 1. HERO SECTION (FULL VIEWPORT FEEL) ================= */}
+            <section className="relative w-full min-h-[82vh] sm:min-h-[86vh] flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#1a0702] via-[#2b0e04] to-[#1f0a02] pt-24 pb-28 text-white border-b border-orange-500/15">
                 {/* Precision Dot Grid Overlay */}
                 <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 z-0 opacity-15"
+                    className="pointer-events-none absolute inset-0 z-0 opacity-20"
                     style={{
                         backgroundImage: 'radial-gradient(#ff6b35 1px, transparent 1px)',
-                        backgroundSize: '28px 28px',
+                        backgroundSize: '26px 26px',
                     }}
                 />
 
                 {/* Ambient Top Flare */}
                 <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[550px] sm:w-[750px] lg:w-[950px] h-[300px] sm:h-[400px] bg-gradient-to-b from-[#ff4d00]/40 via-[#ea580c]/20 to-transparent blur-[120px] rounded-full z-0"
+                    className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[550px] sm:w-[850px] lg:w-[1050px] h-[320px] sm:h-[420px] bg-gradient-to-b from-[#ea580c]/35 via-[#f97316]/15 to-transparent blur-[120px] rounded-full z-0"
                 />
 
-                {/* Deep Center Core Glow behind the title */}
+                {/* Center Core Glow behind title */}
                 <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[450px] lg:w-[600px] h-[180px] sm:h-[260px] bg-[#ff3b00]/25 blur-[80px] rounded-full z-0"
+                    className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[550px] lg:w-[700px] h-[220px] sm:h-[300px] bg-[#ff4d00]/22 blur-[100px] rounded-full z-0"
                 />
 
-                {/* Bottom Edge Warming Light */}
-                <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[75vw] h-24 bg-[#f97316]/20 blur-[70px] rounded-full z-0"
-                />
-
-                {/* Hero Content */}
-                <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-4">
-
-                    {/* Compact, Controlled Studio Heading (Single line/clean wrap without breaking awkwardly) */}
-                    <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.08] drop-shadow-[0_12px_28px_rgba(0,0,0,0.7)] select-none">
+                {/* Hero Content (Centered Vertically) */}
+                <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-5 sm:space-y-6">
+                    {/* Main Heading */}
+                    <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white leading-[1.08] drop-shadow-[0_12px_28px_rgba(0,0,0,0.7)]">
                         {service.title}
-                        <span className="text-[#ff4d00] drop-shadow-[0_0_20px_#ff4d00]">.</span>
+                        <span className="text-[#ea580c]">.</span>
                     </h1>
 
-                    {/* Dynamic 3-Level Breadcrumb */}
+                    {/* Breadcrumb Placed Below Heading */}
                     <nav
                         aria-label="Breadcrumb"
-                        className="inline-flex flex-wrap items-center justify-center gap-2 pt-1 font-body text-xs sm:text-sm font-medium"
+                        className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 backdrop-blur-md text-xs sm:text-sm font-medium"
                     >
-                        <Link href="/" className="text-orange-200/80 hover:text-white transition-colors">
+                        <Link href="/" className="text-orange-200/75 hover:text-white transition-colors">
                             Home
                         </Link>
-                        <ChevronRight className="w-3.5 h-3.5 text-orange-400/70 stroke-[2.5]" />
-                        <Link href="/services" className="text-orange-200/80 hover:text-white transition-colors">
+                        <ChevronRight className="w-3.5 h-3.5 text-orange-400/70" />
+                        <Link href="/services" className="text-orange-200/75 hover:text-white transition-colors">
                             Services
                         </Link>
-                        <ChevronRight className="w-3.5 h-3.5 text-orange-400/70 stroke-[2.5]" />
-                        <span className="text-white font-semibold tracking-wide bg-white/10 px-3 py-0.5 rounded-full border border-white/15 backdrop-blur-sm">
+                        <ChevronRight className="w-3.5 h-3.5 text-orange-400/70" />
+                        <span className="text-[#ff6b35] font-semibold">
                             {service.title}
                         </span>
                     </nav>
                 </div>
             </section>
 
-            {/* ================= 2. FLOATING STRIP (WARM ORANGE CAPSULE THEME) ================= */}
-            <section className="relative z-20 -mt-10 sm:-mt-12 max-w-7xl xl:max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8">
+            {/* ================= 2. FLOATING METRICS / VALUE STRIP ================= */}
+            <section className="relative z-20 -mt-12 sm:-mt-14 max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-orange-200/80 shadow-[0_20px_50px_-15px_rgba(234,88,12,0.18)] overflow-hidden">
 
-                {/* Outer Capsule: Soft Warm Peach/Orange Gradient (Layout Vibe) */}
-                <div
-                    className="relative p-2.5 sm:p-3.5 rounded-[28px] sm:rounded-full border-2 border-orange-300/80 backdrop-blur-xl shadow-[0_22px_45px_-10px_rgba(255,77,0,0.22)] overflow-hidden"
-                    style={{
-                        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 241, 230, 0.92) 40%, rgba(254, 215, 170, 0.85) 100%)',
-                    }}
-                >
-                    {/* Subtle Top-Edge Ambient Light */}
-                    <div className="pointer-events-none absolute inset-x-12 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#ff4d00]/50 to-transparent" />
+                    {/* Subtle Top Orange Accent Line */}
+                    <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#ea580c] to-transparent opacity-80" />
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-orange-100">
                         {[
                             { icon: Zap, label: 'Save Time', sub: 'Automate repetitive ops' },
                             { icon: TrendingUp, label: 'Boost Output', sub: 'Multiply team bandwidth' },
@@ -138,39 +118,26 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                             return (
                                 <div
                                     key={i}
-                                    className="group relative flex items-center gap-3.5 px-4 sm:px-5 py-3.5 sm:py-4 rounded-[22px] sm:rounded-full border border-orange-200/90 hover:border-[#ff4d00] hover:shadow-[0_12px_28px_-6px_rgba(255,77,0,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 overflow-hidden cursor-pointer"
-                                    style={{
-                                        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 245, 237, 0.8) 60%, rgba(254, 215, 170, 0.45) 100%)',
-                                    }}
+                                    className="group relative flex items-center gap-4 p-5 sm:p-6 hover:bg-gradient-to-br hover:from-orange-50/90 hover:to-amber-50/40 transition-all duration-300"
                                 >
-                                    {/* Smooth Warm Orange Hover Tint */}
-                                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#ff4d00]/15 via-[#ea580c]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                                    {/* Dynamic Ambient Corner Flare on Hover */}
-                                    <div className="pointer-events-none absolute -right-6 -bottom-6 w-20 h-20 bg-[#ff4d00]/25 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                                    {/* Icon Bubble: Crisp Orange Pop */}
-                                    <div className="relative z-10 w-11 h-11 rounded-full bg-white border border-orange-200/80 flex items-center justify-center text-[#ff4d00] shrink-0 group-hover:bg-[#ff4d00] group-hover:text-white group-hover:border-[#ff4d00] group-hover:shadow-[0_4px_16px_rgba(255,77,0,0.4)] group-hover:scale-105 transition-all duration-300 shadow-2xs">
-                                        <Icon className="w-5 h-5 transition-transform duration-300 group-hover:rotate-6" />
+                                    {/* Clean Icon Container */}
+                                    <div className="w-11 h-11 rounded-xl bg-orange-50 border border-orange-200/80 flex items-center justify-center text-[#ea580c] shrink-0 group-hover:bg-[#ea580c] group-hover:text-white group-hover:border-[#ea580c] group-hover:shadow-[0_6px_18px_rgba(234,88,12,0.32)] transition-all duration-300">
+                                        <Icon className="w-5 h-5" />
                                     </div>
 
-                                    {/* Text details */}
-                                    <div className="relative z-10 min-w-0">
-                                        <h4 className="text-xs sm:text-sm font-bold text-neutral-900 tracking-tight truncate group-hover:text-[#ff4d00] transition-colors">
+                                    {/* Text Details */}
+                                    <div className="min-w-0">
+                                        <h4 className="text-sm sm:text-base font-bold text-neutral-900 tracking-tight group-hover:text-[#ea580c] transition-colors truncate">
                                             {item.label}
                                         </h4>
-                                        <p className="text-[11px] font-mono text-neutral-600 truncate group-hover:text-neutral-800 transition-colors">
+                                        <p className="text-xs text-neutral-500 font-medium truncate mt-0.5">
                                             {item.sub}
                                         </p>
                                     </div>
-
-                                    {/* Tiny Interactive LED on Right */}
-                                    <div className="absolute right-4 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#ff4d00] opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_8px_#ff4d00]" />
                                 </div>
                             );
                         })}
                     </div>
-
                 </div>
             </section>
 
@@ -274,142 +241,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                                 </div>
                             );
                         })}
-                    </div>
-
-                </div>
-            </section>
-
-            {/* ================= 4. WHAT CAN YOU AUTOMATE? (SPLIT SHOWCASE + 3D FLOATING CARDS) ================= */}
-            <section className="relative py-20 sm:py-28 lg:py-36 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 border-t border-orange-200/60 font-sans overflow-hidden">
-
-                {/* Ambient Warm Orange Flare in Background */}
-                <div className="pointer-events-none absolute -left-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-[#ff4d00]/15 via-[#ea580c]/8 to-transparent blur-[160px] rounded-full" />
-
-                <div className="relative z-10 max-w-7xl xl:max-w-[1550px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-20 items-center">
-
-                    {/* ================= LEFT COLUMN: CLEAN TYPOGRAPHY & INTERACTIVE LIST ================= */}
-                    <div className="lg:col-span-6 space-y-8">
-
-
-
-                        {/* Main Headline */}
-                        <div className="space-y-3">
-                            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-neutral-950 leading-[1.05]">
-                                What Can You <br />
-                                <span className="text-[#ff4d00]">Automate?</span>
-                            </h2>
-
-                            <p className="font-body text-neutral-700 text-sm sm:text-base lg:text-lg leading-relaxed border-l-2 border-[#ff4d00] pl-5 sm:pl-6">
-                                From customer support to business operations — let our custom-tailored automation routines handle the repetitive work for you.
-                            </p>
-                        </div>
-
-
-                        {/* Prominent High-Conversion Solid CTA Button */}
-                        <div className="pt-4">
-                            <Link
-                                href="/contact"
-                                className="group relative inline-flex items-center justify-between gap-6 min-h-[58px] sm:min-h-[64px] px-8 sm:px-10 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-[#ff4d00] via-[#ff5a14] to-[#ea580c] hover:from-[#ea580c] hover:to-[#c2410c] text-white font-bold text-xs sm:text-sm tracking-wider uppercase shadow-[0_12px_32px_-4px_rgba(255,77,0,0.42)] hover:shadow-[0_18px_44px_-4px_rgba(255,77,0,0.55)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer overflow-hidden"
-                            >
-                                {/* Subtle button surface shimmer */}
-                                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
-
-                                <span className="relative z-10 font-heading tracking-wide">
-                                    Automate With Our Team
-                                </span>
-
-                                <div className="relative z-10 w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center transition-all duration-300 group-hover:rotate-45 group-hover:scale-110 group-hover:bg-white group-hover:text-[#ff4d00] shrink-0">
-                                    <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]" />
-                                </div>
-                            </Link>
-                        </div>
-
-                    </div>
-
-                    {/* ================= RIGHT COLUMN: VISIBLE DARK-ORANGE HALO + 3D FLOATING CARDS ================= */}
-                    <div className="lg:col-span-6 relative flex items-center justify-center min-h-[480px] sm:min-h-[540px]">
-
-                        {/* 1. VISIBLE Core Dark Orange Terracotta Halo Ring */}
-                        <div
-                            className="absolute w-[360px] sm:w-[480px] h-[360px] sm:h-[480px] rounded-full border-2 border-orange-400/40 pointer-events-none"
-                            style={{
-                                background: 'radial-gradient(circle, rgba(255, 77, 0, 0.28) 0%, rgba(234, 88, 12, 0.16) 45%, rgba(67, 20, 7, 0.08) 75%, transparent 100%)',
-                                boxShadow: '0 0 80px rgba(255, 77, 0, 0.35), inset 0 0 60px rgba(255, 77, 0, 0.2)',
-                            }}
-                        />
-
-                        {/* 2. Outer Rotating Orbital Dashed Ring */}
-                        <div className="absolute w-[420px] sm:w-[540px] h-[420px] sm:h-[540px] rounded-full border border-dashed border-[#ea580c]/35 pointer-events-none" />
-
-                        {/* Floating Card 1: WhatsApp (Top-Left) */}
-                        <div
-                            className="absolute top-4 sm:top-8 left-2 sm:left-6 p-4 rounded-2xl border-2 border-emerald-400/70 shadow-[0_16px_36px_rgba(16,185,129,0.22)] backdrop-blur-xl flex items-center gap-3.5 -rotate-3 hover:rotate-0 hover:scale-105 hover:shadow-[0_22px_45px_rgba(16,185,129,0.35)] transition-all duration-300 cursor-pointer z-20"
-                            style={{
-                                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 246, 238, 0.92) 60%, rgba(209, 250, 229, 0.6) 100%)',
-                            }}
-                        >
-                            <div className="w-11 h-11 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-black text-sm shadow-md">
-                                WA
-                            </div>
-                            <div>
-                                <p className="text-xs sm:text-sm font-bold text-neutral-900">WhatsApp Automation[cite: 1]</p>
-                                <p className="text-[10px] font-mono text-emerald-600 font-bold">99.98% Latency SLA</p>
-                            </div>
-                        </div>
-
-                        {/* Floating Card 2: AI Support Chatbot (Top-Right) */}
-                        <div
-                            className="absolute top-16 sm:top-20 right-1 sm:right-4 p-4 rounded-2xl border-2 border-[#ff4d00] shadow-[0_16px_40px_rgba(255,77,0,0.35)] backdrop-blur-xl flex items-center gap-3.5 rotate-3 hover:rotate-0 hover:scale-105 hover:shadow-[0_22px_50px_rgba(255,77,0,0.48)] transition-all duration-300 cursor-pointer z-20"
-                            style={{
-                                background: 'linear-gradient(135deg, #1b0902 0%, #2e0e04 60%, #120401 100%)',
-                            }}
-                        >
-                            <div className="w-11 h-11 rounded-xl bg-[#ff4d00] text-white flex items-center justify-center shadow-md">
-                                <Cpu className="w-5 h-5" />
-                            </div>
-                            <div>
-                                <p className="text-xs sm:text-sm font-bold text-white">AI Support Chatbot[cite: 1]</p>
-                                <p className="text-[10px] font-mono text-orange-400 font-semibold">Automated Triage[cite: 1]</p>
-                            </div>
-                        </div>
-
-                        {/* Floating Card 3: Appointment Booking (Bottom-Left) */}
-                        <div
-                            className="absolute bottom-16 sm:bottom-20 left-4 sm:left-10 p-4 rounded-2xl border-2 border-blue-400/70 shadow-[0_16px_36px_rgba(59,130,246,0.22)] backdrop-blur-xl flex items-center gap-3.5 rotate-2 hover:rotate-0 hover:scale-105 hover:shadow-[0_22px_45px_rgba(59,130,246,0.35)] transition-all duration-300 cursor-pointer z-20"
-                            style={{
-                                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 246, 238, 0.92) 60%, rgba(219, 234, 254, 0.6) 100%)',
-                            }}
-                        >
-                            <div className="w-11 h-11 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md">
-                                <Clock className="w-5 h-5" />
-                            </div>
-                            <div>
-                                <p className="text-xs sm:text-sm font-bold text-neutral-900">Appointment Booking[cite: 1]</p>
-                                <p className="text-[10px] font-mono text-blue-600 font-bold">Live Calendar Sync</p>
-                            </div>
-                        </div>
-
-                        {/* Floating Card 4: Email Automation (Bottom-Right) */}
-                        <div
-                            className="absolute bottom-4 sm:bottom-8 right-4 sm:right-10 p-4 rounded-2xl border-2 border-orange-400/80 shadow-[0_16px_36px_rgba(255,77,0,0.22)] backdrop-blur-xl flex items-center gap-3.5 -rotate-2 hover:rotate-0 hover:scale-105 hover:shadow-[0_22px_45px_rgba(255,77,0,0.35)] transition-all duration-300 cursor-pointer z-20"
-                            style={{
-                                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 246, 238, 0.92) 60%, rgba(254, 215, 170, 0.6) 100%)',
-                            }}
-                        >
-                            <div className="w-11 h-11 rounded-xl bg-[#ea580c] text-white flex items-center justify-center font-black text-sm shadow-md">
-                                API
-                            </div>
-                            <div>
-                                <p className="text-xs sm:text-sm font-bold text-neutral-900">Email Automation[cite: 1]</p>
-                                <p className="text-[10px] font-mono text-[#ea580c] font-bold">Dynamic Webhooks</p>
-                            </div>
-                        </div>
-
-                        {/* Center Core Floating Pill */}
-                        <div className="relative z-30 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-gradient-to-r from-[#ff4d00] to-[#ea580c] text-white font-mono text-xs font-black uppercase tracking-widest shadow-[0_0_35px_rgba(255,77,0,0.65)] hover:scale-110 transition-transform duration-300 cursor-pointer">
-                            Operational Hub
-                        </div>
-
                     </div>
 
                 </div>
