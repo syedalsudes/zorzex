@@ -1,63 +1,58 @@
 import React from 'react';
-import { 
-  ShieldCheck, 
-  Zap, 
-  Users, 
-  GitBranch, 
-  Clock, 
-  Headphones,
-  ArrowUpRight
+import {
+  ShieldCheck,
+  Zap,
+  Users,
+  GitBranch,
+  Clock,
+  Headphones
 } from 'lucide-react';
 
 const guarantees = [
   {
     icon: Users,
-    tag: 'Zero Friction',
-    title: 'Direct Developer Access',
-    desc: 'No account managers or non-technical intermediaries. Communicate directly with the engineers and designers building your product.',
+    tag: 'Direct Comms',
+    title: 'Talk to the Builders',
+    desc: 'No account managers playing telephone. You work directly in Slack with the engineers and designers shipping your code.',
   },
   {
     icon: Zap,
-    tag: 'Performance First',
-    title: 'Lighthouse 98+ Guarantee',
-    desc: 'Every web application is deployed lightning-fast, SEO-optimized, and free of main-thread blocking by default.',
+    tag: 'Speed & SEO',
+    title: '98+ Lighthouse Score',
+    desc: 'We optimize bundle sizes, caching, and Core Web Vitals from day one so your app loads instantly on any device.',
   },
   {
     icon: GitBranch,
-    tag: '100% Ownership',
-    title: 'Clean Code & Full IP Handover',
-    desc: 'Complete code ownership from day one. You receive clean GitHub repositories, system documentation, and full cloud environment control.',
+    tag: 'Full IP Rights',
+    title: 'You Own Every Line',
+    desc: 'Your repo, your cloud accounts, your infrastructure. Clean Git history and clear docs handed over from day one.',
   },
   {
     icon: Clock,
-    tag: 'Sprint Delivery',
-    title: 'Strict Timeline Commitments',
-    desc: 'We replace bloated multi-month agency cycles with focused 2-week active sprints to get your product to market faster.',
+    tag: '2-Week Sprints',
+    title: 'Predictable Delivery',
+    desc: 'No vague 6-month roadmaps. We ship working, testable features every two weeks so you can launch and iterate fast.',
   },
   {
     icon: ShieldCheck,
-    tag: 'Modern Architecture',
-    title: 'No Bloated Templates',
-    desc: 'Zero generic templates or outdated stacks. Every platform is custom-engineered using Next.js, Flutter, TypeScript, and modern systems.',
+    tag: 'Custom Stack',
+    title: 'Zero Template Bloat',
+    desc: 'Built from scratch with Next.js, TypeScript, and Flutter—tailored to your product instead of hacked-together themes.',
   },
   {
     icon: Headphones,
     tag: 'Post-Launch',
-    title: '30-Day Sprint Warranty',
-    desc: 'We stay on board post-deployment. Includes complimentary real-time monitoring, edge bug fixes, and continuous technical support.',
+    title: '30-Day Bug Warranty',
+    desc: 'We don’t disappear after deploy. Every launch includes 30 days of active monitoring, hotfixes, and deployment support.',
   },
 ];
 
 export default function WhyChooseUsSection() {
   return (
-    <section className="relative w-full bg-transparent text-neutral-900 py-16 sm:py-24 lg:py-32 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-28 overflow-hidden font-sans">
-      
-      {/* Heavy Section Ambient Glows */}
-      <div className="absolute top-1/4 -left-40 w-[550px] lg:w-[850px] h-[550px] lg:h-[850px] bg-gradient-to-tr from-[#ff4d00]/25 via-[#ff4d00]/10 to-transparent blur-[160px] pointer-events-none rounded-full" />
-      <div className="absolute -bottom-32 -right-32 w-[500px] lg:w-[750px] h-[500px] lg:h-[750px] bg-gradient-to-br from-[#ff4d00]/20 via-[#ff4d00]/8 to-transparent blur-[180px] pointer-events-none rounded-full" />
+    <section className="relative w-full bg-transparent text-neutral-900 py-20 sm:py-28 px-4 sm:px-8 md:px-12 lg:px-16 font-sans">
+      <div className="max-w-7xl mx-auto space-y-14 sm:space-y-18">
 
-      <div className="relative z-10 max-w-7xl xl:max-w-[1550px] 2xl:max-w-[1850px] mx-auto space-y-12 sm:space-y-16 lg:space-y-20">
-        
+
         {/* Section Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end justify-between border-b border-[#ff4d00]/20 pb-8 sm:pb-12">
           <div className="lg:col-span-8 space-y-4">
@@ -74,63 +69,56 @@ export default function WhyChooseUsSection() {
           </p>
         </div>
 
-        {/* 6 Grid Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+
+        {/* High-Craft Orange & White Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {guarantees.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="group relative bg-white/80 backdrop-blur-md border border-orange-200/70 rounded-[32px] p-7 sm:p-9 shadow-sm hover:border-[#ff4d00] hover:shadow-[0_22px_50px_-10px_rgba(255,77,0,0.35)] hover:-translate-y-2.5 transition-all duration-500 flex flex-col justify-between cursor-pointer overflow-hidden"
+                className="group relative overflow-hidden rounded-3xl bg-white/90 backdrop-blur-md border border-orange-200/80 p-8 sm:p-9 flex flex-col justify-between shadow-[0_2px_12px_-4px_rgba(255,77,0,0.06)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#ff4d00] hover:bg-gradient-to-b hover:from-orange-50/70 hover:to-white hover:shadow-[0_20px_40px_-15px_rgba(255,77,0,0.22)]"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#f97316]/20 via-[#ea580c]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                {/* Top Sliding Orange Accent Bar */}
+                <span className="absolute top-0 left-0 right-0 h-[3px] bg-[#ff4d00] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
 
-                {/* 2. Top-Right Radiant Orange Bulb */}
-                <div className="absolute -top-20 -right-20 w-72 h-72 bg-gradient-to-br from-[#ea580c]/35 via-[#f97316]/25 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-700 pointer-events-none" />
+                {/* Subtle Editorial Watermark Number */}
+                <span className="pointer-events-none select-none absolute top-5 right-7 font-mono text-5xl font-extrabold tracking-tighter text-orange-500/[0.08] group-hover:text-[#ff4d00]/[0.15] group-hover:-translate-y-1 transition-all duration-300">
+                  0{idx + 1}
+                </span>
 
-                {/* 3. Bottom Accent Warm Glow */}
-                <div className="absolute -bottom-16 -left-16 w-52 h-52 bg-[#fed7aa]/70 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" />
-
-                {/* Top Border Warm Orange Shimmer */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#ea580c] to-transparent opacity-30 group-hover:opacity-100 group-hover:h-[3px] transition-all duration-500" />
-                {/* Content */}
                 <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-6">
-                    {/* Icon Box: White se Black shift + 360 Spin + Scale */}
-                    <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white border border-orange-200/80 flex items-center justify-center text-[#ff4d00] shadow-[0_4px_14px_rgba(255,77,0,0.12)] transition-all duration-700 ease-out group-hover:bg-neutral-950 group-hover:text-white group-hover:border-neutral-900 group-hover:scale-110 group-hover:shadow-[0_10px_25px_rgba(0,0,0,0.35)]">
-                      <Icon className="w-6 h-6 transition-all duration-700 ease-in-out group-hover:rotate-[360deg] group-hover:scale-110 group-hover:text-[#ff4d00]" />
-                    </div>
+                  {/* Tactile Icon Container */}
+                  <div className="relative w-12 h-12 mb-8">
+                    {/* Offset Decorative Backplate */}
+                    <div className="absolute inset-0 rounded-xl bg-[#ff4d00]/15 translate-x-1 translate-y-1 group-hover:translate-x-1.5 group-hover:translate-y-1.5 group-hover:rotate-3 transition-transform duration-300" />
 
-                     <span className="text-[10px] xl:text-[11px] font-bold tracking-widest uppercase text-[#ff4d00] bg-[#ff4d00]/[0.08] border border-[#ff4d00]/20 px-3 py-1 rounded-full group-hover:bg-[#ff4d00] group-hover:text-white transition-colors duration-300">
-                      {item.tag}
-                    </span>
+                    {/* Main Icon Box */}
+                    <div className="relative w-12 h-12 rounded-xl bg-white border border-orange-200 text-[#ff4d00] flex items-center justify-center shadow-xs transition-all duration-300 group-hover:bg-[#ff4d00] group-hover:text-white group-hover:border-[#ff4d00]">
+                      <Icon className="w-5 h-5 stroke-[2] transition-transform duration-300 ease-out group-hover:-rotate-6 group-hover:scale-110" />
+                    </div>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#ff4d00] mb-3 group-hover:text-neutral-950 transition-colors">
+                  {/* Category Label */}
+                  <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#ff4d00] mb-2">
+                    {item.tag}
+                  </p>
+
+                  {/* Sharp Black Title */}
+                  <h3 className="text-xl font-bold text-neutral-950 tracking-tight mb-3">
                     {item.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed group-hover:text-neutral-800 transition-colors">
+                  {/* Clean Readable Copy */}
+                  <p className="text-sm text-neutral-700 leading-relaxed">
                     {item.desc}
                   </p>
-                </div>
-
-                {/* Bottom Bar: Black accent number badge + Interactive Arrow */}
-                <div className="relative z-10 mt-8 pt-5 border-t border-[#ff4d00]/15 group-hover:border-[#ff4d00]/35 flex items-center justify-between transition-colors">
-                  <span className="font-mono text-sm font-bold text-neutral-400 group-hover:text-neutral-950 transition-colors flex items-center gap-1.5">
-                    0{idx + 1}
-                  </span>
-                  
-                  <div className="flex items-center gap-2 text-xs font-semibold text-neutral-700 group-hover:text-neutral-950 transition-colors">
-                    <div className="w-8 h-8 rounded-full bg-white border border-orange-200/80 flex items-center justify-center text-neutral-700 shadow-xs transition-all duration-500 group-hover:bg-[#ff4d00] group-hover:text-white group-hover:scale-110">
-                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:rotate-45" />
-                    </div>
-                  </div>
                 </div>
               </div>
             );
           })}
         </div>
+
       </div>
     </section>
   );
