@@ -61,9 +61,6 @@ export default function HeroSection() {
     const smoothness = 0.14;
 
     const colorOrangeBase = new THREE.Color("#FF8200");
-    const colorWarmTint = new THREE.Color("#ffd9b3");
-    const colorPureWhite = new THREE.Color("#ffffff");
-    const colorRecessedOffWhite = new THREE.Color("#f0ebe4");
 
     // 5. Custom Shader with sRGB Output Conversion
     const material = new THREE.ShaderMaterial({
@@ -134,7 +131,6 @@ export default function HeroSection() {
     let currentNormDist: Float32Array;
     let currentBlend: Float32Array;
     const dummy = new THREE.Object3D();
-    const tempColor = new THREE.Color();
 
     const buildGrid = (w: number, h: number) => {
       if (instancedMesh) {
@@ -298,29 +294,12 @@ export default function HeroSection() {
           dummy.updateMatrix();
           instancedMesh.setMatrixAt(i, dummy.matrix);
 
-          if (r < 0.45) {
-            const t = smoothstep(0.15, 0.45, r);
-            tempColor.copy(colorRecessedOffWhite).lerp(colorPureWhite, t);
-          } else if (r < 0.78) {
-            const t = smoothstep(0.52, 0.78, r);
-            tempColor.copy(colorPureWhite).lerp(colorWarmTint, t);
-          } else {
-            const t = smoothstep(0.78, 1.0, r);
-            tempColor.copy(colorWarmTint).lerp(colorOrangeBase, t);
-          }
-
-          tempColor.lerp(colorOrangeBase, 1 - blend);
-          instancedMesh.setColorAt(i, tempColor);
-
           needsUpdate = true;
         }
       }
 
       if (needsUpdate) {
         instancedMesh.instanceMatrix.needsUpdate = true;
-        if (instancedMesh.instanceColor) {
-          instancedMesh.instanceColor.needsUpdate = true;
-        }
       }
 
       renderer.render(scene, camera);
@@ -346,7 +325,7 @@ export default function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative flex h-screen min-h-[700px] w-full flex-col items-center justify-center overflow-hidden bg-[#FF8200] px-6 text-center"
+      className="relative flex h-screen min-h-[720px] w-full flex-col items-center justify-center overflow-hidden bg-[#FF8200] px-6 pt-16 text-center"
     >
       {/* 3D Cubes Canvas */}
       <div
@@ -355,41 +334,39 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      {/* Soft Radial Readability Halo (Keeps 3D cubes visible while preventing visual noise behind letters) */}
+      {/* Soft Radial Readability Halo */}
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_62%_48%_at_50%_50%,rgba(255,148,38,0.72)_0%,rgba(255,130,0,0.22)_60%,transparent_100%)]"
+        className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_65%_50%_at_50%_50%,rgba(255,148,38,0.75)_0%,rgba(255,130,0,0.22)_62%,transparent_100%)]"
         aria-hidden="true"
       />
 
-      {/* Centered Hero Typography (Inspired by your reference layout) */}
+      {/* Centered Hero Typography */}
       <div className="pointer-events-none relative z-10 mx-auto flex max-w-5xl flex-col items-center">
-        {/* Bold 2-Line Headline */}
-        <h1 className="text-5xl font-black leading-[1.03] tracking-[-0.03em] text-[#0F0F12] sm:text-7xl md:text-[84px]">
+        {/* Bold Client-Focused 2-Line Headline */}
+        <h1 className="text-5xl font-black leading-[1.03] tracking-[-0.035em] text-[#0F0F12] sm:text-7xl md:text-[82px]">
           <span className="block">
-            Digital{" "}
-            {/* Pure White Highlight Word with Subtle Dark Edge Protection so it NEVER disguises on white cubes */}
+            We Build{" "}
             <span
               className="text-white"
               style={{
                 textShadow:
-                  "0 3px 0 #0F0F12, 0 8px 24px rgba(15, 15, 18, 0.28)",
+                  "0 3px 0 #0F0F12, 0 10px 26px rgba(15, 15, 18, 0.25)",
               }}
             >
-              Dominance.
+              Software
             </span>
           </span>
 
           <span className="relative mt-1 block">
-            Business Excellence.
-            {/* Curved Arch Underline Brush (Overlaps bottom edge of letters like reference) */}
+            That Scales Your Revenue.
+            {/* Curved Arch Underline Brush */}
             <svg
               viewBox="0 0 900 38"
               fill="none"
               preserveAspectRatio="none"
-              className="mx-auto -mt-2.5 h-5 w-[94%] sm:-mt-3.5 sm:h-7 md:-mt-4 md:h-8"
+              className="mx-auto -mt-2 h-5 w-[90%] sm:-mt-3 sm:h-7 md:-mt-3.5 md:h-8"
               aria-hidden="true"
             >
-              {/* Dark shadow stroke behind the white arch for 100% visibility even over white hover cubes */}
               <path
                 d="M 12 28 Q 450 6 888 28"
                 stroke="#0F0F12"
@@ -397,7 +374,6 @@ export default function HeroSection() {
                 strokeLinecap="round"
                 transform="translate(0, 3)"
               />
-              {/* Crisp White Curved Arch Line */}
               <path
                 d="M 12 28 Q 450 6 888 28"
                 stroke="#FFFFFF"
@@ -408,19 +384,51 @@ export default function HeroSection() {
           </span>
         </h1>
 
-        {/* Clean High-Contrast Description (Italicized & crisp dark slate) */}
-        <p className="mt-6 max-w-2xl text-base font-semibold italic leading-relaxed text-[#141418] sm:text-xl md:text-[21px]">
-          Empowering brands with high-speed execution, bulletproof
-          architecture, and conversion-engineered digital products.
+        {/* Sharp, Outcome-Driven Subheadline */}
+        <p className="mt-6 max-w-2xl text-base font-semibold leading-relaxed text-[#0F0F12]/90 sm:text-xl md:text-[21px]">
+          From custom AI agents to high-converting web &amp; mobile apps — we
+          turn ambitious ideas into fast, market-ready products in weeks, not
+          months.
         </p>
 
-        {/* Bottom CTA Row (Pill Button + Secondary Action/Contact) */}
-        <div className="pointer-events-auto mt-9 flex flex-wrap items-center justify-center gap-6">
+        {/* Eye-Catching Dual CTA Buttons */}
+        <div className="pointer-events-auto mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-5">
+          {/* Primary Magnetic Dark CTA with Orange Icon Badge */}
           <a
             href="#contact"
-            className="group inline-flex items-center gap-3.5 rounded-full bg-[#0F0F12] px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-[0_14px_30px_rgba(15,15,18,0.28)] transition-all duration-200 hover:scale-105 hover:bg-zinc-800 sm:px-9 sm:py-4.5 sm:text-sm"
+            className="group relative inline-flex items-center gap-4 overflow-hidden rounded-full bg-[#0F0F12] py-2.5 pl-8 pr-2.5 text-sm font-extrabold tracking-wide text-white shadow-[0_18px_38px_-6px_rgba(15,15,18,0.45)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_45px_-6px_rgba(15,15,18,0.6)] sm:py-3 sm:pl-9 sm:pr-3 sm:text-base"
           >
-            <span>Start Your Project</span>
+            {/* Subtle Light Sweep Effect on Hover */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+            />
+
+            <span className="relative z-10">Start Your Project</span>
+
+            <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-[#FF8200] text-[#0F0F12] transition-transform duration-300 group-hover:rotate-45 sm:h-11 sm:w-11">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M7 17 17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
+            </span>
+          </a>
+
+          {/* Secondary Crisp White Pill Button (Impossible to Ignore) */}
+          <a
+            href="#portfolio"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-white px-8 py-4 text-sm font-extrabold tracking-wide text-[#0F0F12] shadow-[0_14px_30px_-8px_rgba(15,15,18,0.22)] transition-all duration-300 hover:-translate-y-1 hover:bg-zinc-50 hover:shadow-[0_20px_38px_-8px_rgba(15,15,18,0.3)] sm:px-9 sm:py-[18px] sm:text-base"
+          >
+            <span>View Case Studies</span>
             <svg
               width="18"
               height="18"
@@ -430,18 +438,11 @@ export default function HeroSection() {
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="transition-transform duration-200 group-hover:translate-x-1"
+              className="text-[#FF8200] transition-transform duration-200 group-hover:translate-x-1"
             >
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
             </svg>
-          </a>
-
-          <a
-            href="#portfolio"
-            className="text-sm font-extrabold tracking-wide text-[#0F0F12] underline-offset-4 transition-opacity hover:underline hover:opacity-80 sm:text-base"
-          >
-            View Case Studies →
           </a>
         </div>
       </div>

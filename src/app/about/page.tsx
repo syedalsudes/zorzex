@@ -90,69 +90,68 @@ export default function AboutPage() {
   return (
     <div className="relative w-full bg-transparent text-neutral-900 font-sans overflow-hidden selection:bg-[#ff4d00] selection:text-white">
 
-      <section
+<section
         style={{
           maskImage: "radial-gradient(135% 100% at 50% 0%, black 82%, transparent 100%)",
           WebkitMaskImage: "radial-gradient(135% 100% at 50% 0%, black 82%, transparent 100%)",
         }}
-        className="relative w-full overflow-hidden bg-gradient-to-b from-[#1f0a02] via-[#321105] to-[#431407] pt-32 sm:pt-40 lg:pt-48 pb-32 sm:pb-44 text-white shadow-[0_30px_70px_rgba(255,77,0,0.18)]"
+        className="relative w-full overflow-hidden bg-[#FF8200] pt-32 sm:pt-40 lg:pt-48 pb-32 sm:pb-44 text-[#0F0F12] shadow-[0_30px_70px_rgba(255,130,0,0.35)]"
       >
 
-        {/* 1. Precision Dot Grid Overlay */}
+        {/* 1. Subtle Precision Dot Grid Overlay */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-0 opacity-15"
+          className="pointer-events-none absolute inset-0 z-0 opacity-20"
           style={{
-            backgroundImage: "radial-gradient(#ff6b35 1px, transparent 1px)",
+            backgroundImage: "radial-gradient(#0F0F12 1px, transparent 1px)",
             backgroundSize: "28px 28px",
           }}
         />
 
-        {/* 2. Top Neon Orange Flare */}
+        {/* 2. Top Warm Highlight Flare */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] sm:w-[850px] lg:w-[1100px] h-[350px] sm:h-[450px] bg-gradient-to-b from-[#ff4d00]/45 via-[#ea580c]/25 to-transparent blur-[130px] rounded-full z-0"
+          className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] sm:w-[850px] lg:w-[1100px] h-[350px] sm:h-[450px] bg-gradient-to-b from-[#ffb366]/60 via-[#ff9426]/30 to-transparent blur-[110px] rounded-full z-0"
         />
 
-        {/* 3. Deep Center Core Glow behind the title */}
+        {/* 3. Soft Center Depth Halo behind the title */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] lg:w-[700px] h-[200px] sm:h-[300px] bg-[#ff3b00]/30 blur-[90px] rounded-full z-0"
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] lg:w-[700px] h-[200px] sm:h-[300px] bg-[#e07200]/45 blur-[90px] rounded-full z-0"
         />
 
-        {/* 4. Bottom Edge Warming Light */}
+        {/* 4. Bottom Edge Warm Glow */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80vw] h-28 bg-[#f97316]/20 blur-[80px] rounded-full z-0"
+          className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[80vw] h-28 bg-[#ffd9b3]/40 blur-[80px] rounded-full z-0"
         />
 
-        {/* ================= CONTENT (1:1 EXACT SERVICES STYLE) ================= */}
+        {/* ================= CONTENT ================= */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-5">
 
           {/* Massive Bold Heading */}
-          <h1 className="font-heading text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black tracking-tight text-white leading-[0.88] drop-shadow-[0_15px_35px_rgba(0,0,0,0.7)] select-none">
-            About Us<span className="text-[#ff4d00] drop-shadow-[0_0_25px_#ff4d00]">.</span>
+          <h1 className="font-heading text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black tracking-tight text-white leading-[0.88] drop-shadow-[0_6px_0_#0F0F12] select-none">
+            About Us<span className="text-[#0F0F12] drop-shadow-none">.</span>
           </h1>
 
           {/* Breadcrumb Navigation: Home > About Us */}
-          <nav aria-label="Breadcrumb" className="inline-flex items-center justify-center gap-2 pt-2 font-body text-xs sm:text-sm font-medium">
+          <nav aria-label="Breadcrumb" className="inline-flex items-center justify-center gap-2 pt-3 font-body text-xs sm:text-sm font-bold">
             <Link
               href="/"
-              className="text-orange-200/80 hover:text-white transition-colors"
+              className="text-[#0F0F12]/80 hover:text-[#0F0F12] transition-colors"
             >
               Home
             </Link>
 
-            <ChevronRight className="w-3.5 h-3.5 text-orange-400/70 stroke-[2.5]" />
+            <ChevronRight className="w-3.5 h-3.5 text-[#0F0F12] stroke-[2.5]" />
 
-            <span className="text-white font-semibold tracking-wide bg-white/10 px-3 py-0.5 rounded-full border border-white/15 backdrop-blur-sm">
+            <span className="text-white font-semibold tracking-wide bg-[#0F0F12] px-3.5 py-1 rounded-full shadow-md">
               About Us
             </span>
           </nav>
 
         </div>
       </section>
-
       {/* ================= SECTION 2: STUDIO RIG & OPERATIONAL MODEL ================= */}
       <section className="relative w-full py-16 sm:py-20 lg:py-28 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 font-sans">
         <div className="relative z-10 max-w-7xl xl:max-w-[1550px] 2xl:max-w-[1850px] mx-auto">
