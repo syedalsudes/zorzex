@@ -67,7 +67,7 @@ export const SERVICES_DATA: Record<string, ServiceItem> = {
       headingHighlight: "APPROACH",
       description:
         "We don't just build websites; we engineer scalable digital ecosystems. From high-converting marketing platforms to complex web architectures, our solutions are built for sub-second speed, rock-solid security, and maximum user engagement.",
-      image: "/office.png",
+      image: "/servicesimg/web.png",
       imageAlt: "Web Development & Modern Architecture",
       capabilities: [
         { title: "Custom Web Applications", icon: "Layers" },
@@ -232,7 +232,7 @@ export const SERVICES_DATA: Record<string, ServiceItem> = {
       headingHighlight: "APPROACH",
       description:
         "We eliminate repetitive manual bottlenecks by embedding custom AI agents and automated workflows directly into your existing stack. From 24/7 customer support bots to autonomous lead qualification and data pipelines, we turn hours of busywork into instant execution.",
-      image: "/office.png",
+      image: "/servicesimg/automation.png",
       imageAlt: "AI Automation & Agent Workflows",
       capabilities: [
         { title: "Custom AI Agents & Copilots", icon: "Bot" },
@@ -396,7 +396,7 @@ export const SERVICES_DATA: Record<string, ServiceItem> = {
       headingHighlight: "APPROACH",
       description:
         "Off-the-shelf tools force your business to compromise. We architect tailored SaaS platforms, internal ERPs, client portals, and multi-tenant systems built around your exact operational logic—giving you a proprietary competitive edge that scales effortlessly.",
-      image: "/office.png",
+      image: "/servicesimg/software.png",
       imageAlt: "Custom Software & SaaS Engineering",
       capabilities: [
         { title: "Full-Stack SaaS Platforms", icon: "Rocket" },
@@ -560,7 +560,7 @@ export const SERVICES_DATA: Record<string, ServiceItem> = {
       headingHighlight: "APPROACH",
       description:
         "We build native-feel iOS and Android applications that users love opening every day. Using modern cross-platform architecture, we deliver 60fps animations, offline-first reliability, and seamless backend sync—cutting time-to-market in half without sacrificing quality.",
-      image: "/office.png",
+      image: "/servicesimg/app.png",
       imageAlt: "Cross-Platform Mobile App Engineering",
       capabilities: [
         { title: "iOS & Android Cross-Platform", icon: "Smartphone" },
@@ -723,7 +723,7 @@ export const SERVICES_DATA: Record<string, ServiceItem> = {
       headingHighlight: "APPROACH",
       description:
         "A forgettable brand blends into the noise. We craft sharp, timeless visual identities, distinctive logo marks, and comprehensive brand systems engineered to command instant authority across web, social, and physical touchpoints.",
-      image: "/office.png",
+      image: "/servicesimg/brand.png",
       imageAlt: "Graphic Design & Brand Identity Systems",
       capabilities: [
         { title: "Logo Marks & Wordmarks", icon: "PenTool" },
@@ -887,7 +887,7 @@ export const SERVICES_DATA: Record<string, ServiceItem> = {
       headingHighlight: "APPROACH",
       description:
         "Great design isn't decoration—it's friction removal. We combine behavioral psychology, crisp typography, and scalable Figma design systems to turn complex products into intuitive interfaces that build instant trust and lift conversion rates.",
-      image: "/office.png",
+      image: "/servicesimg/uiux.png",
       imageAlt: "UI/UX & Product Design Systems",
       capabilities: [
         { title: "SaaS & Web App Interfaces", icon: "LayoutGrid" },

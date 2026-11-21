@@ -195,18 +195,18 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Dynamic Showcase Image Card */}
+         {/* RIGHT COLUMN: Dynamic Showcase Image Card */}
           <div className="lg:col-span-6">
-            <div className="group relative rounded-[32px] overflow-hidden bg-white/80 backdrop-blur-md border border-orange-200/80 p-3 shadow-[0_20px_50px_-15px_rgba(255,77,0,0.18)] transition-all duration-500 hover:border-[#ff4d00]/60">
-              <div className="relative aspect-[4/3] w-full rounded-[24px] overflow-hidden bg-neutral-100">
-                <Image
-                  src={service.approach.image}
-                  alt={service.approach.imageAlt || service.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  fill
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-neutral-950/35 via-transparent to-[#ff4d00]/10 pointer-events-none" />
-              </div>
+            <div className="group relative w-full rounded-3xl overflow-hidden border border-orange-300/60 bg-white/40 shadow-[0_20px_50px_-15px_rgba(255,77,0,0.14)] transition-all duration-500 hover:border-[#ff4d00]/70">
+              <Image
+                src={service.approach.image}
+                alt={service.approach.imageAlt || service.title}
+                width={1200}
+                height={900}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="w-full h-auto block object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-neutral-950/20 via-transparent to-[#ff4d00]/5 pointer-events-none" />
             </div>
           </div>
         </div>
