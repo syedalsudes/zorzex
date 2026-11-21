@@ -90,7 +90,7 @@ export default function AboutPage() {
   return (
     <div className="relative w-full bg-transparent text-neutral-900 font-sans overflow-hidden selection:bg-[#ff4d00] selection:text-white">
 
-<section
+      <section
         style={{
           maskImage: "radial-gradient(135% 100% at 50% 0%, black 82%, transparent 100%)",
           WebkitMaskImage: "radial-gradient(135% 100% at 50% 0%, black 82%, transparent 100%)",

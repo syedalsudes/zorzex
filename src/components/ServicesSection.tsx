@@ -8,42 +8,42 @@ const services = [
     title: 'AI Automation & Solutions',
     href: '/services/ai-automation',
     tags: ['Custom Workflows', 'API Integrations', 'AI Agents'],
-    desc: 'Smart operational automations and modern model integrations to scale workflows.'
+    desc: 'Smart operational automations and modern model integrations to scale workflows.',
   },
   {
     id: '02',
     title: 'Custom Software Development',
-    href: '/services/custom-software-development',
+    href: '/services/custom-software',
     tags: ['Enterprise Systems', 'SaaS Platforms', 'Cloud Architecture'],
-    desc: 'Tailored, high-performance software solutions built from the ground up to solve complex business logic.'
+    desc: 'Tailored, high-performance software solutions built from the ground up to solve complex business logic.',
   },
   {
     id: '03',
     title: 'Web Development',
     href: '/services/web-development',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    desc: 'Lightning-fast, SEO-optimized web applications engineered for scalability.'
+    desc: 'Lightning-fast, SEO-optimized web applications engineered for scalability.',
   },
   {
     id: '04',
     title: 'App Development',
-    href: '/services/app-development',
+    href: '/services/mobile-app-development',
     tags: ['Flutter', 'iOS & Android', 'Cross-Platform'],
-    desc: 'Native-feel mobile applications with fluid interactions and rock-solid architecture.'
+    desc: 'Native-feel mobile applications with fluid interactions and rock-solid architecture.',
   },
   {
     id: '05',
     title: 'Graphic & Brand Identity',
     href: '/services/graphic-brand-identity',
     tags: ['Visual Identity', 'Logos', 'Brand Guidelines'],
-    desc: 'Distinctive brand identities and systems designed to leave a memorable impression.'
+    desc: 'Distinctive brand identities and systems designed to leave a memorable impression.',
   },
   {
     id: '06',
     title: 'UI/UX Design',
     href: '/services/ui-ux-design',
     tags: ['Design Systems', 'Wireframing', 'User Flows'],
-    desc: 'High-converting design patterns built for seamless and intuitive user experiences.'
+    desc: 'High-converting design patterns built for seamless and intuitive user experiences.',
   },
 ];
 

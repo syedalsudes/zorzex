@@ -3,13 +3,17 @@
 import React, { useState } from 'react';
 import { Plus } from 'lucide-react';
 
-interface FaqItem {
+export interface FaqItem {
   id: string;
   question: string;
   answer: string;
 }
 
-const faqs: FaqItem[] = [
+interface FaqSectionProps {
+  items?: FaqItem[];
+}
+
+const defaultFaqs: FaqItem[] = [
   {
     id: '01',
     question: 'What kind of digital products does Zorzex build?',
@@ -48,8 +52,9 @@ const faqs: FaqItem[] = [
   },
 ];
 
-export default function FaqSection() {
+export default function FaqSection({ items }: FaqSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const faqList = items && items.length > 0 ? items : defaultFaqs;
 
   const toggleAccordion = (index: number): void => {
     setOpenIndex((prev) => (prev === index ? null : index));
@@ -64,14 +69,14 @@ export default function FaqSection() {
       <div className="absolute -bottom-32 right-10 w-[450px] h-[450px] bg-[#ff4d00]/10 blur-[150px] pointer-events-none rounded-full" />
 
       <div className="relative z-10 max-w-6xl mx-auto space-y-20">
-
         {/* Massive High-Impact Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-12">
           <div className="space-y-6 max-w-3xl">
-            {/* Massive Bold Heading */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[1.1]">
               <span className="text-neutral-500 font-light block">Clear Answers.</span>
-              <span className="text-white">Zero Bullshit<span className="text-[#ff4d00]">.</span></span>
+              <span className="text-white">
+                Zero Bullshit<span className="text-[#ff4d00]">.</span>
+              </span>
             </h2>
           </div>
 
@@ -82,7 +87,7 @@ export default function FaqSection() {
 
         {/* Dark Accordion List */}
         <div className="divide-y divide-white/10 border-b border-white/10">
-          {faqs.map((faq: FaqItem, index: number) => {
+          {faqList.map((faq: FaqItem, index: number) => {
             const isOpen = openIndex === index;
 
             return (
@@ -103,18 +108,22 @@ export default function FaqSection() {
                     </span>
 
                     {/* Question Title */}
-                    <span className={`text-lg sm:text-2xl md:text-3xl font-medium tracking-tight transition-colors duration-300 ${isOpen ? 'text-white' : 'text-neutral-300 group-hover:text-white'
-                      }`}>
+                    <span
+                      className={`text-lg sm:text-2xl md:text-3xl font-medium tracking-tight transition-colors duration-300 ${
+                        isOpen ? 'text-white' : 'text-neutral-300 group-hover:text-white'
+                      }`}
+                    >
                       {faq.question}
                     </span>
                   </div>
 
                   {/* Circular Orange / Dark Icon */}
                   <div
-                    className={`flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${isOpen
-                      ? 'bg-[#ff4d00] border-[#ff4d00] text-white rotate-45 shadow-[0_0_25px_rgba(255,77,0,0.5)]'
-                      : 'bg-white/5 border-white/10 text-neutral-400 group-hover:text-white rotate-0'
-                      }`}
+                    className={`flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+                      isOpen
+                        ? 'bg-[#ff4d00] border-[#ff4d00] text-white rotate-45 shadow-[0_0_25px_rgba(255,77,0,0.5)]'
+                        : 'bg-white/5 border-white/10 text-neutral-400 group-hover:text-white rotate-0'
+                    }`}
                   >
                     <Plus className="h-5 w-5 stroke-[2.2]" />
                   </div>
@@ -122,10 +131,11 @@ export default function FaqSection() {
 
                 {/* Smooth Expandable Content */}
                 <div
-                  className={`grid transition-all duration-300 ease-in-out ${isOpen
-                    ? 'grid-rows-[1fr] opacity-100 pb-8 md:pb-10'
-                    : 'grid-rows-[0fr] opacity-0 pb-0'
-                    }`}
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen
+                      ? 'grid-rows-[1fr] opacity-100 pb-8 md:pb-10'
+                      : 'grid-rows-[0fr] opacity-0 pb-0'
+                  }`}
                 >
                   <div className="overflow-hidden pl-12 sm:pl-20">
                     <div className="border-l-2 border-[#ff4d00] pl-6 max-w-3xl">

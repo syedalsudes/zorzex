@@ -14,8 +14,8 @@ const SERVICES = [
   },
   {
     num: '02',
-    title: 'Custom Software Development',
-    href: '/services/custom-software-development',
+    title: 'Custom Software',
+    href: '/services/custom-software',
     desc: 'Scalable SaaS platforms & tailored enterprise systems.',
   },
   {
@@ -26,8 +26,8 @@ const SERVICES = [
   },
   {
     num: '04',
-    title: 'App Development',
-    href: '/services/app-development',
+    title: 'Mobile App Development',
+    href: '/services/mobile-app-development',
     desc: 'Smooth cross-platform iOS & Android apps in Flutter.',
   },
   {
